@@ -37,7 +37,7 @@
                     educativos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Preguntas frecuentes</a>
+                <a class="nav-link" href="{{route('question')}}">Preguntas frecuentes</a>
             </li>
             <li class="nav-item my-auto">
                 <a class="nav-link navbar-brand mx-0 d-none font-weight-bold d-md-inline" href="{{route('welcome')}}">Ko'ox
@@ -464,7 +464,7 @@
             </div>
             <div class="col-md-2 text-left">
                 <ul class="list-unstyled text-white small">
-                    <li><a href="" class="text-white"> <i class="far fa-question-circle"></i> Preguntas
+                    <li><a href="{{route('question')}}" class="text-white"> <i class="far fa-question-circle"></i> Preguntas
                             frecuentes</a></li>
                     <li><a href="#" class="text-white"> <i class="fas fa-lock"></i> Avisos de privacidad </a></li>
                     <li><a href="#" class="text-white"> <i class="fas fa-envelope"></i> Contacto </a></li>
