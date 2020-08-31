@@ -61,7 +61,7 @@
     <div id="carouselExampleSlidesOnly" class="carousel slide text-center" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="{{asset('images/banner.png')}}" alt="banner" class="img-fluid"
+                <img src="{{asset('images/banner.png')}}" alt="banner"class="img-fluid"
                     style="margin-top:32px; margin-bottom:32px;">
             </div>
         </div>
