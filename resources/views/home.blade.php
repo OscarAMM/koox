@@ -27,6 +27,7 @@
                 </div>
             </div>
         </div>
+
         <div class="col-md-4">
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
@@ -36,6 +37,17 @@
                         card's content.</p>
                     <a href="#" class="card-link">Card link</a>
                     <a href="#" class="card-link">Another link</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Usuarios</h5>
+                    <p class="card-text">Lista de usuarios</p>
+                    <a href="{{route('user_index')}}" class="card-link">Acceder</a>
                 </div>
             </div>
         </div>
