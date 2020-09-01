@@ -26,7 +26,7 @@ class UserRequest extends FormRequest
         return [
             'name'=>'required | string',
             'email' => 'required',
-            'password' => 'required | min:6 | confirmed',
+            'password' => 'required | min:8 | confirmed',
 
         ];
     }
@@ -36,7 +36,7 @@ class UserRequest extends FormRequest
             'name.string' => "El nombre de usuario debe ser escrito con caracteres y no incluir números",
             'email.required'=>"Se debe ingresar un correo electrónico.",
             'password.required'=>"Se debe ingresar una contraseña.",
-            'password.min' => 'La contraseña debe ser de al menos 6 caracteres.',
+            'password.min' => 'La contraseña debe ser de al menos 8 caracteres.',
             'password.confirmed'=>'La contraseña no es la misma.'      
         ];
     }

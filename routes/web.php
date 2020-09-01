@@ -23,3 +23,9 @@ Route::get('/question', function(){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+//usuarios
+Route::get('/usuarios/index', 'UserController@index')->name('user_index');
+Route::get('/usuarios/create', 'UserController@create')->name('user_create');
+Route::post('/usuarios/store', 'UserController@store')->name('user_store');
+Route::get('/usuarios/edit/{id}', 'UserController@edit')->name('user_edit');
+Route::put('/usuarios/update/{id}', 'UserController@update')->name('user_update');

@@ -4,8 +4,10 @@
     <h2 class="text-left border-bottom font-weight-bold">Usuarios registrados</h2>
     <div class="text-right">
         <div class="btn-group mb-2">
-        <a href="#" class="btn btn-sm btn-link"><i class="fas fa-arrow-circle-left" style="color:black;"></i> Regresar</a>
-            <a href="{{route('user_create')}}" class="btn btn-sm btn-link"><i class="fas fa-plus" style="color:green;"></i> Agregar usuario</a>
+            <a href="#" class="btn btn-sm btn-link"><i class="fas fa-arrow-circle-left" style="color:black;"></i>
+                Regresar</a>
+            <a href="{{route('user_create')}}" class="btn btn-sm btn-link"><i class="fas fa-plus"
+                    style="color:green;"></i> Agregar usuario</a>
         </div>
     </div>
     <div class="row justify-content-center">
@@ -29,7 +31,21 @@
                         @foreach($row->getRoleNames() as $row_name)
                         <td>{{$row_name}}</td>
                         @endforeach
-                        <td></td>
+                        <td>
+                            <div class="dropdown">
+                                <a class="btn btn-sm btn-link dropdown-toggle" href="#" role="button"
+                                    id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    Opciones
+                                </a>
+
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a class="dropdown-item" href="{{route('user_edit', $row->id)}}"><i class="fas fa-edit" style="color:orange;"></i> Editar</a>
+                                    <a class="dropdown-item" href="#"><i class="fas fa-check" style="color:green;"></i> Habilitar</a>
+                                    <a class="dropdown-item" href="#"><i class="far fa-times-circle" style="color:red;"></i> Inhabilitar</a>
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
