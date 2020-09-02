@@ -1,8 +1,10 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
-    <h2 class="text-left border-bottom font-weight-bold">Usuarios registrados</h2>
-    <div class="text-right">
+    <div class="pricing-header  px-3  pb-md-4 mx-auto text-center">
+        <h1 class="display-4">Usuarios</h1>
+        <p class="lead">Se listan todos los usuarios registrados en el sistema. Se muestra el perfil que tiene dentro
+            del sistema. También se puede hacer modificaciones en su perfil.</p>
         <div class="btn-group mb-2">
             <a href="#" class="btn btn-sm btn-link"><i class="fas fa-arrow-circle-left" style="color:black;"></i>
                 Regresar</a>
@@ -19,7 +21,7 @@
                         <th>Nombre</th>
                         <th>Correo</th>
                         <th>Perfil</th>
-                        <th>Opciones</th>
+                        <th colspan="3">Opciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -32,18 +34,19 @@
                         <td>{{$row_name}}</td>
                         @endforeach
                         <td>
-                            <div class="dropdown">
-                                <a class="btn btn-sm btn-link dropdown-toggle" href="#" role="button"
-                                    id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false">
-                                    Opciones
-                                </a>
+                            <div class="btn-group">
+                                <a class="btn btn-sm btn-link" href="{{route('user_edit', $row->id)}}"><i
+                                        class="fas fa-edit" style="color:orange;"></i> Editar</a>
 
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="{{route('user_edit', $row->id)}}"><i class="fas fa-edit" style="color:orange;"></i> Editar</a>
-                                    <a class="dropdown-item" href="#"><i class="fas fa-check" style="color:green;"></i> Habilitar</a>
-                                    <a class="dropdown-item" href="#"><i class="far fa-times-circle" style="color:red;"></i> Inhabilitar</a>
-                                </div>
+                                @if($row->status == "enable")
+                                <a class="btn btn-sm btn-link" href="#"><i class="far fa-times-circle"
+                                        style="color:red;"></i>
+                                    Inhabilitar</a>
+                                @else
+                                <a class="btn btn-sm btn-link" href="#"><i class="fas fa-check"
+                                        style="color:green;"></i>
+                                    Habilitar</a>
+                                @endif
                             </div>
                         </td>
                     </tr>
