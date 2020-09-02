@@ -29,6 +29,7 @@ class UserController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
+        $user->status = "enable";
         $user->assignRole($request->profile);
         if (User::where('email', $request->email)->exists()) {
             return back()->with('info', "El correo se encuentra registrado");
@@ -54,7 +55,21 @@ class UserController extends Controller
         $user->email = $request->email;
         $user->assignRole($request->profile);
         $user->update();
-
         return redirect()->route('user_index')->with('succes', 'Se ha modificado el usuario con éxito.');
+    }
+    public function user_status($id){
+        $user = User::findOrFail($id);
+        if($user->status=="enabled"){
+            $user->status = "disable";
+            $user->password = bcrypt(str_random(10));
+            $user->update();
+            return back()->with('success', 'Se ha deshabilitado el usuario con éxito.');
+        }else{
+            $user->status = "enable";
+            $user->password= bcrypt('53cr37@1');
+            $user->update();
+            return back()->with('success', 'Se ha habilitado el usuario con éxito.');
+        }
+        
     }
 }
