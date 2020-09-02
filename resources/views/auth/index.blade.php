@@ -1,12 +1,13 @@
 @extends('layouts.app')
 @section('content')
+@include('messages.success')
 <div class="container">
     <div class="pricing-header  px-3  pb-md-4 mx-auto text-center">
         <h1 class="display-4">Usuarios</h1>
         <p class="lead">Se listan todos los usuarios registrados en el sistema. Se muestra el perfil que tiene dentro
             del sistema. También se puede hacer modificaciones en su perfil.</p>
         <div class="btn-group mb-2">
-            <a href="#" class="btn btn-sm btn-link"><i class="fas fa-arrow-circle-left" style="color:black;"></i>
+            <a href="{{route('home')}}" class="btn btn-sm btn-link"><i class="fas fa-arrow-circle-left" style="color:black;"></i>
                 Regresar</a>
             <a href="{{route('user_create')}}" class="btn btn-sm btn-link"><i class="fas fa-plus"
                     style="color:green;"></i> Agregar usuario</a>
@@ -39,13 +40,19 @@
                                         class="fas fa-edit" style="color:orange;"></i> Editar</a>
 
                                 @if($row->status == "enable")
-                                <a class="btn btn-sm btn-link" href="#"><i class="far fa-times-circle"
-                                        style="color:red;"></i>
-                                    Inhabilitar</a>
+                                <form action="{{route('user_status', $row->id)}}" method="post">
+                                    @csrf
+                                    <button type="submit" class="btn btn-sm btn-link"><i class="far fa-times-circle"
+                                            style="color:red;"></i>
+                                        Inhabilitar</button>
+
+                                </form>
                                 @else
-                                <a class="btn btn-sm btn-link" href="#"><i class="fas fa-check"
-                                        style="color:green;"></i>
-                                    Habilitar</a>
+                                <form action="{{route('user_status', $row->id)}}" method="post">
+                                @csrf
+                                    <button type="submit" class="btn btn-sm btn-link"><i class="fas fa-check"
+                                            style="color:green;"></i> Habilitar</button>
+                                </form>
                                 @endif
                             </div>
                         </td>

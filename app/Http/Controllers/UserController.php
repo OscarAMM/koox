@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\UserRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use App\User;
 use Spatie\Permission\Models\Role;
 
@@ -59,9 +60,9 @@ class UserController extends Controller
     }
     public function user_status($id){
         $user = User::findOrFail($id);
-        if($user->status=="enabled"){
+        if($user->status=="enable"){
             $user->status = "disable";
-            $user->password = bcrypt(str_random(10));
+            $user->password = bcrypt(Str::random(10));
             $user->update();
             return back()->with('success', 'Se ha deshabilitado el usuario con éxito.');
         }else{
