@@ -16,6 +16,7 @@ class UserSeeder extends Seeder
             'name'=> 'Oscar',
             'email' => 'admin@example.com', 
             'password'=>bcrypt('secret12'),
+            'status'=>'enable',
         ]);
         $user->assignRole('Administrador');
     }
