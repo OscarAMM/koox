@@ -30,9 +30,3 @@ Route::post('/usuarios/store', 'UserController@store')->name('user_store');
 Route::get('/usuarios/edit/{id}', 'UserController@edit')->name('user_edit');
 Route::put('/usuarios/update/{id}', 'UserController@update')->name('user_update');
 Route::post('/usuarios/status/{id}', 'UserController@user_status')->name('user_status');
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-//Tickets
-Route::get('/usuarios/tickets', 'TicketsController@index')->name('user_tickets');
