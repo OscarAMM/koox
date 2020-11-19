@@ -30,3 +30,6 @@ Route::post('/usuarios/store', 'UserController@store')->name('user_store');
 Route::get('/usuarios/edit/{id}', 'UserController@edit')->name('user_edit');
 Route::put('/usuarios/update/{id}', 'UserController@update')->name('user_update');
 Route::post('/usuarios/status/{id}', 'UserController@user_status')->name('user_status');
+//Forum
+Route::get('/foro/index', 'ForumController@index')->name('forum_index');
+Route::get('/foro/create', 'ForumController@create')->name('forum_create');
