@@ -31,11 +31,20 @@
         <div class="col-md-4">
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
+<<<<<<< Updated upstream
                     <h5 class="card-title">Carga de Archivos</h5>
                     
                     <p class="card-text">Documentos Cargados</p>
                     <a href="{{route('document_index')}}" class="card-link">Acceder</a>
                     </div>
+=======
+                    <h5 class="card-title">Tickets</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Seccion de Tickets</h6>
+                    <p class="card-text">En esta seccion se podran ver todas las opciones sobre los tickets.</p>
+                <a href="{{route('new_ticket')}}" class="card-link">Generar ticket</a>
+                <a href="{{route('list_tickets')}}" class="card-link">Lista de Tickets</a>
+                </div>
+>>>>>>> Stashed changes
             </div>
         </div>
     </div>
