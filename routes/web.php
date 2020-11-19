@@ -57,3 +57,7 @@ Route::post('/forum/comment/delete/{id}', 'CommentController@delete')->name('com
 //Forum - Subcomments
 Route::post('/forum/subcomment/{id}', 'SubcommentController@store')->name('subcomment_post');
 Route::post('/forum/subcomment/delete/{id}', 'SubcommentController@delete')->name('subcomment_delete');
+//tickets
+Route::get('users/tickets/new', 'TicketsController@view_create')->name('new_ticket');
+Route::get('users/tickets/list', 'TicketsController@view_list')->name('list_tickets');
+

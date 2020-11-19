@@ -29,10 +29,12 @@
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">Carga de Archivos</h5>
-                    
+
                     <p class="card-text">Documentos Cargados</p>
                     <a href="{{route('document_index')}}" class="card-link">Acceder</a>
                     </div>
+
+                </div>
             </div>
         </div>
     </div>
