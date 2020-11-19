@@ -17,12 +17,16 @@ class CreateTicketsTable extends Migration
             $table->id();
             $table->string('issue');
             $table->text('description');
+<<<<<<< Updated upstream
             $table->string('program_request_forum');
             $table->string('status');
             $table->string('creator_name');
             $table->string('random_link');
 
 
+=======
+            $table->string('status');
+>>>>>>> Stashed changes
             $table->timestamps();
         });
     }
