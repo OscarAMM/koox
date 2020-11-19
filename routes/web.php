@@ -33,15 +33,16 @@ Route::post('/usuarios/status/{id}', 'UserController@user_status')->name('user_s
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-<<<<<<< Updated upstream
 
 //UploadDocuments
 Route::get('/documents/index', 'DocumentController@index')->name('document_index');
 Route::post('/documents/store', 'DocumentController@store')->name('document_store');
 Route::post('/document/delete/{id}', 'DocumentController@delete')->name('document_delete');
 Route::get('/document/download-file/{id}', 'DocumentController@downloadFile')->name('download_file');
-=======
+
+
 //tickets
 Route::get('users/tickets/new', 'TicketsController@view_create')->name('new_ticket');
 Route::get('users/tickets/list', 'TicketsController@view_list')->name('list_tickets');
->>>>>>> Stashed changes
+
+
