@@ -30,7 +30,6 @@ class UserController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
-        $user->status = "enable";
         $user->assignRole($request->profile);
         if (User::where('email', $request->email)->exists()) {
             return back()->with('info', "El correo se encuentra registrado");
