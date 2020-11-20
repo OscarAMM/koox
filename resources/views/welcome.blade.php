@@ -16,6 +16,9 @@
             <p style="color:#344A40;"><a href="https://www.facebook.com/educacionyucatan" target="_blank"><i
                         class="fab fa-facebook"></i> Síguenos </a></p>
         </li>
+        <li class="list-inline-item text-right">
+            <p style="color:#344A40;"><a href="{{route('login')}}"> Iniciar sesión</a></p>
+        </li>
     </ul>
 </div>
 <div class="container">
@@ -40,7 +43,8 @@
                 <a class="nav-link" href="{{route('question')}}">Preguntas frecuentes</a>
             </li>
             <li class="nav-item my-auto">
-                <a class="nav-link navbar-brand mx-0 d-none font-weight-bold d-md-inline" href="{{route('welcome')}}">Ko'ox
+                <a class="nav-link navbar-brand mx-0 d-none font-weight-bold d-md-inline"
+                    href="{{route('welcome')}}">Ko'ox
                     Tsikbal</a>
             </li>
             <li class="nav-item">
@@ -61,7 +65,7 @@
     <div id="carouselExampleSlidesOnly" class="carousel slide text-center" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="{{asset('images/banner.png')}}" alt="banner"class="img-fluid"
+                <img src="{{asset('images/banner.png')}}" alt="banner" class="img-fluid"
                     style="margin-top:32px; margin-bottom:32px;">
             </div>
         </div>
@@ -106,6 +110,7 @@
                 ¿Cuál es tu perfil?</h4>
         </div>
     </div>
+
     <div class="row mb-2">
         <div class="d-flex justify-content-center">
             <div class="col-md-12">
@@ -136,52 +141,42 @@
                             </li>
                         </ul>
                         <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active border border-secondary font-p" id="parent"
-                                role="tabpanel" aria-labelledby="parent-tab">
+                            <div class="tab-pane fade show active border border-secondary" id="parent" role="tabpanel"
+                                aria-labelledby="parent-tab">
                                 <p class="text-justify ml-2">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque consequuntur
-                                    enim
-                                    magnam
-                                    est
-                                    a,
-                                    animi atque ex quia placeat non quod odio vitae magni. Fugiat, deserunt. Id
-                                    incidunt
-                                    iusto
-                                    doloribus?</p>
+                                    Mantienen comunicación con la o él docente de su hija o hijo y trabajan en
+                                    conjunto con las autoridades educativas para promover la colaboración entre las
+                                    y los integrantes de la escuela.
+                                    Así mismo, son fuentes de apoyo tanto en el proceso educativo como en el ámbito
+                                    emocional de su hija o hijo.
+                                </p>
                                 <div class="card-footer card-back-color">
                                     <div class="row">
-                                        <div class="col-sm-2 col-md-2 col-lg-2">
-                                            <a href="#" class="btn  btn-link text-white text-center">Infografías
+
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <a href="docs/guides/004 guía madres y padres de familia.pdf"
+                                                target="_blank" class="btn  btn-link text-white text-center">
                                                 Guía
                                                 para
-                                                eduación a
-                                                distancia</a>
+                                                padres</a>
                                         </div>
-                                        <div class="col-sm-2 col-md-2 col-lg-2">
-                                            <a href="#" class="btn btn-link text-white text-center">Qué herramientas
-                                                para la
-                                                educación están
-                                                a tu alcance</a>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <a href="docs/info/parents/Infografía_padres de familia_libros de texto_09092020.pdf"
+                                                target="_blank" class="btn btn-link text-white text-center">
+                                                Infografía Libros de texto
+                                            </a>
                                         </div>
-                                        <div class="col-sm-2 col-md-2 col-lg-2">
-                                            <a href="#" class="btn btn-link text-white text-center">Identifica los
-                                                canales y
-                                                horas de
-                                                clases</a>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <a href="docs/info/parents/Infografía_padres de familia_radio y tv_09092020.pdf"
+                                                target="_blank" class="btn btn-link text-white text-center">Infografía
+                                                Radio y
+                                                TV</a>
                                         </div>
-                                        <div class="col-sm-2 col-md-2 col-lg-2">
-                                            <a href="#" class="btn btn-link text-white text-center">Haz un horario
-                                                de
-                                                actividades</a>
-                                        </div>
-                                        <div class="col-sm-2 col-md-2 col-lg-2">
-                                            <a href="#" class="btn btn-link text-white text-center">¿Cómo apoyar a
-                                                mi
-                                                hij@ en
-                                                clases?</a>
-                                        </div>
-                                        <div class="col-sm-2 col-md-2 col-lg-2">
-                                            <p class="text-white text-center"><i class="fa fa-copyright"></i></p>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <a href="docs/info/parents/Infografía_padres de familia_herramientas digitales_09092020.pdf"
+                                                target="_blank" class="btn btn-link text-white text-center">Infografía
+                                                Herramientas
+                                                digitales</a>
                                         </div>
                                     </div>
                                 </div>
@@ -189,145 +184,118 @@
                             <div class="tab-pane fade border border-secondary" id="teacher" role="tabpanel"
                                 aria-labelledby="teacher-tab">
                                 <p class="text-justify ml-2">
-                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius animi est, fuga
-                                    sit
-                                    illo
-                                    sunt
-                                    voluptatum accusantium totam recusandae quo quas ea ratione dolores temporibus
-                                    asperiores
-                                    eveniet ipsum molestiae! Vel.
+                                    Se encuentran en constante comunicación con estudiantes y padres o madres de
+                                    familia.
+                                    Generan condiciones para que las y los NNA de su grupo tengan la atención
+                                    educativa a distancia y consideran el apoyo de un enlace solidario para
+                                    propiciar redes de colaboración en comunidades donde no se tiene acceso a las
+                                    TIC.
+                                    Realizan procesos de coevaluación con padres y madres de familia para valorar el
+                                    desempeño del estudio a distancia y las áreas de mejora de los NNA.
+
                                 </p>
                                 <div class="card-footer card-back-color">
                                     <div class="row">
-                                        <div class="col-sm-2 col-md-2 col-lg-2">
-                                            <a href="#" class="btn  btn-link text-white text-center">Infografías
-                                                Guía
-                                                para
-                                                eduación a
-                                                distancia</a>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <a href="docs/guides/003 guía docentes.pdf" target="_blank"
+                                                class="btn  btn-link text-white text-center">Guía para docentes</a>
                                         </div>
-                                        <div class="col-sm-2 col-md-2 col-lg-2">
-                                            <a href="#" class="btn btn-link text-white text-center">Qué herramientas
-                                                para la
-                                                educación están
-                                                a tu alcance</a>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <a href="docs/info/teachers/Infografía_docentes_libros de texto_09092020.pdf"
+                                                target="_blank" class="btn btn-link text-white text-center">Infografía
+                                                Libros de
+                                                texto</a>
                                         </div>
-                                        <div class="col-sm-2 col-md-2 col-lg-2">
-                                            <a href="#" class="btn btn-link text-white text-center">Identifica los
-                                                canales y
-                                                horas de
-                                                clases</a>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <a href="docs/info/teachers/Infografía_docentes_radio y tv_09092020.pdf"
+                                                target="_blank" class="btn btn-link text-white text-center">Infografía
+                                                Radio y
+                                                TV</a>
                                         </div>
-                                        <div class="col-sm-2 col-md-2 col-lg-2">
-                                            <a href="#" class="btn btn-link text-white text-center">Haz un horario
-                                                de
-                                                actividades</a>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <a href="docs/info/teachers/Infografía_docentes_herramientas digitales_09092020.pdf"
+                                                target="_blank" class="btn btn-link text-white text-center">Infografía
+                                                Herramientas
+                                                digitales</a>
                                         </div>
-                                        <div class="col-sm-2 col-md-2 col-lg-2">
-                                            <a href="#" class="btn btn-link text-white text-center">¿Cómo apoyar a
-                                                mi
-                                                hij@ en
-                                                clases?</a>
-                                        </div>
-                                        <div class="col-sm-2 col-md-2 col-lg-2">
-                                            <p class="text-white text-center"><i class="fa fa-copyright"></i></p>
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>
                             <div class="tab-pane fade border border-secondary" id="principal" role="tabpanel"
                                 aria-labelledby="principal-tab">
-                                <p class="text-justify ml-2"> Lorem
-                                    ipsum dolor, sit amet consectetur adipisicing elit. Magni, soluta porro quia qui
-                                    earum
-                                    deserunt,
-                                    numquam tempore nihil ad similique mollitia repudiandae eos dignissimos fugit
-                                    molestiae.
-                                    Perferendis fuga quibusdam laudantium.</p>
+                                <p class="text-justify ml-2">
+                                    Siempre en contacto con las y los docentes de su centro de trabajo, el personal
+                                    de apoyo y las madres y padres, además de integrar a las o los enlaces
+                                    solidarios.
+                                    Dan autonomía al área de docencia para establecer las estrategias pedagógicas de
+                                    acuerdo con las características de sus estudiantes y apoyan en caso de alguna
+                                    dificultad.
+                                    .</p>
                                 <div class="card-footer card-back-color">
                                     <div class="row">
-                                        <div class="col-sm-2 col-md-2 col-lg-2">
-                                            <a href="#" class="btn  btn-link text-white text-center">Infografías
-                                                Guía
-                                                para
-                                                eduación a
-                                                distancia</a>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <a href="docs/guides/002 guía directoras y directores.pdf" target="_blank"
+                                                class="btn  btn-link text-white text-center">Guía
+                                                para directores(as)</a>
                                         </div>
-                                        <div class="col-sm-2 col-md-2 col-lg-2">
-                                            <a href="#" class="btn btn-link text-white text-center">Qué herramientas
-                                                para la
-                                                educación están
-                                                a tu alcance</a>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <a href="docs/info/principal/Infografía_directores_libros de texto_09092020.pdf"
+                                                target="_blank" class="btn btn-link text-white text-center">Infografía
+                                                Libros de
+                                                texto</a>
                                         </div>
-                                        <div class="col-sm-2 col-md-2 col-lg-2">
-                                            <a href="#" class="btn btn-link text-white text-center">Identifica los
-                                                canales y
-                                                horas de
-                                                clases</a>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <a href="docs/info/principal/Infografía_directores_radio y tv_09092020.pdf"
+                                                target="_blank" class="btn btn-link text-white text-center">Infografía
+                                                Radio y
+                                                TV</a>
                                         </div>
-                                        <div class="col-sm-2 col-md-2 col-lg-2">
-                                            <a href="#" class="btn btn-link text-white text-center">Haz un horario
-                                                de
-                                                actividades</a>
-                                        </div>
-                                        <div class="col-sm-2 col-md-2 col-lg-2">
-                                            <a href="#" class="btn btn-link text-white text-center">¿Cómo apoyar a
-                                                mi
-                                                hij@ en
-                                                clases?</a>
-                                        </div>
-                                        <div class="col-sm-2 col-md-2 col-lg-2">
-                                            <p class="text-white text-center"><i class="fa fa-copyright"></i></p>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <a href="docs/info/principal/Infografía_directores_herramientas digitales_09092020.pdf"
+                                                target="_blank" class="btn btn-link text-white text-center">Infografía
+                                                Herramientas
+                                                digitales</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="tab-pane fade border border-secondary" id="supervisor" role="tabpanel"
                                 aria-labelledby="supervisor-tab">
-                                <p class="text-justify ml-2"> Lorem
-                                    ipsum, dolor sit amet consectetur adipisicing elit. Sint cum et repudiandae esse
-                                    fuga,
-                                    culpa
-                                    voluptates distinctio rem beatae recusandae laboriosam voluptas nobis explicabo,
-                                    eaque
-                                    adipisci
-                                    soluta labore. Similique, quo?
+                                <p class="text-justify ml-2">
+                                    Están en comunicación con directoras y directores, así como docentes de la zona
+                                    escolar.
+                                    Integran a las o los enlaces solidarios a dicha zona.
+                                    Brindan autonomía a la dirección para establecer las estrategias pedagógicas
+                                    adecuadas al contexto y acompañan al área de dirección o docencia al presentar
+                                    dificultades.
+
                                 </p>
                                 <div class="card-footer card-back-color">
                                     <div class="row">
 
-                                        <div class="col-sm-2 col-md-2 col-lg-2">
-                                            <a href="#" class="btn  btn-link text-white text-center">Infografías
-                                                Guía
-                                                para
-                                                eduación a
-                                                distancia</a>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <a href="docs/guides/001 guía supervisoras y supervisores.pdf"
+                                                target="_blank" class="btn  btn-link text-white text-center">Guía
+                                                para supervisores(as)</a>
                                         </div>
-                                        <div class="col-sm-2 col-md-2 col-lg-2">
-                                            <a href="#" class="btn btn-link text-white text-center">Qué herramientas
-                                                para la
-                                                educación están
-                                                a tu alcance</a>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <a href="docs/info/supervisor/Infografía_supervisores_libros de texto_09092020.pdf"
+                                                target="_blank" class="btn btn-link text-white text-center">Infografía
+                                                Libros de
+                                                texto</a>
                                         </div>
-                                        <div class="col-sm-2 col-md-2 col-lg-2">
-                                            <a href="#" class="btn btn-link text-white text-center">Identifica los
-                                                canales y
-                                                horas de
-                                                clases</a>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <a href="docs/info/supervisor/Infografía_supervisores_radio y tv_09092020.pdf"
+                                                target="_blank" class="btn btn-link text-white text-center">Infografía
+                                                Radio y
+                                                TV</a>
                                         </div>
-                                        <div class="col-sm-2 col-md-2 col-lg-2">
-                                            <a href="#" class="btn btn-link text-white text-center">Haz un horario
-                                                de
-                                                actividades</a>
-                                        </div>
-                                        <div class="col-sm-2 col-md-2 col-lg-2">
-                                            <a href="#" class="btn btn-link text-white text-center">¿Cómo apoyar a
-                                                mi
-                                                hij@ en
-                                                clases?</a>
-                                        </div>
-                                        <div class="col-sm-2 col-md-2 col-lg-2">
-                                            <p class="text-white text-center"><i class="fa fa-copyright"></i></p>
+                                        <div class="col-sm-3 col-md-3 col-lg-3">
+                                            <a href="docs/info/supervisor/Infografía_supervisores_herramientas digitales_09092020.pdf"
+                                                target="_blank" class="btn btn-link text-white text-center">Infografía
+                                                Herramientas
+                                                digitales</a>
                                         </div>
                                     </div>
                                 </div>
@@ -335,50 +303,22 @@
                             <div class="tab-pane fade border border-secondary" id="connection" role="tabpanel"
                                 aria-labelledby="connection-tab">
                                 <p class="text-justify ml-2">
-                                    Lorem
-                                    ipsum, dolor sit amet consectetur adipisicing elit. Odio id ipsa officiis ad
-                                    ipsum
-                                    ab
-                                    eligendi,
-                                    quam veritatis minus voluptas, nihil quae et cumque fugit explicabo magni dolor
-                                    molestiae
-                                    aut.
+                                    Funciona como vínculo de comunicación y apoyo educativo entre NNA de comunidades
+                                    alejadas y docentes de educación básica, además que proviene de la misma
+                                    comunidad y posee recursos como las TIC.
+                                    Está presente en 3 momentos del proceso educativo: Planeación, Duración del
+                                    proceso y Evaluación.
+
                                 </p>
                                 <div class="card-footer card-back-color">
                                     <div class="row">
-                                        <div class="col-sm-2 col-md-2 col-lg-2">
-                                            <a href="#" class="btn  btn-link text-white text-center">Infografías
-                                                Guía
-                                                para
-                                                eduación a
-                                                distancia</a>
+                                        <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                                            <a href="docs/info/connection/Infografía_enlaces_libros de texto_09092020.pdf"
+                                                target="_blank" class="btn btn-link text-white text-center">Infografía
+                                                Libros de
+                                                texto</a>
                                         </div>
-                                        <div class="col-sm-2 col-md-2 col-lg-2">
-                                            <a href="#" class="btn btn-link text-white text-center">Qué herramientas
-                                                para la
-                                                educación están
-                                                a tu alcance</a>
-                                        </div>
-                                        <div class="col-sm-2 col-md-2 col-lg-2">
-                                            <a href="#" class="btn btn-link text-white text-center">Identifica los
-                                                canales y
-                                                horas de
-                                                clases</a>
-                                        </div>
-                                        <div class="col-sm-2 col-md-2 col-lg-2">
-                                            <a href="#" class="btn btn-link text-white text-center">Haz un horario
-                                                de
-                                                actividades</a>
-                                        </div>
-                                        <div class="col-sm-2 col-md-2 col-lg-2">
-                                            <a href="#" class="btn btn-link text-white text-center">¿Cómo apoyar a
-                                                mi
-                                                hij@ en
-                                                clases?</a>
-                                        </div>
-                                        <div class="col-sm-2 col-md-2 col-lg-2">
-                                            <p class="text-white text-center"><i class="fa fa-copyright"></i></p>
-                                        </div>
+                                       |
                                     </div>
                                 </div>
                             </div>
@@ -397,38 +337,38 @@
             <ul class="list-inline ">
                 <li class="list-inline-item mx-3 mt-2 mb-2">
                     <a href="https://www.gob.mx/sep" target="_blank">
-                        <img src="{{asset('images/sep.png')}}" class="img-fluid rounded-circle" width="80" alt="sep_logo"
-                            title="Secretaría de Educación Pública">
+                        <img src="{{asset('images/sep.png')}}" class="img-fluid rounded-circle" width="80"
+                            alt="sep_logo" title="Secretaría de Educación Pública">
                     </a>
                 </li>
                 <li class="list-inline-item mx-3 mt-2 mb-2">
                     <a href="http://www.yucatan.gob.mx/" target="_blank">
-                        <img src="{{asset('images/yucatan.png')}}" alt="segey_logo" class="img-fluid rounded-circle" width="80"
-                            title="Gobierno de Yucatán">
+                        <img src="{{asset('images/yucatan.png')}}" alt="segey_logo" class="img-fluid rounded-circle"
+                            width="80" title="Gobierno de Yucatán">
                     </a>
                 </li>
                 <li class="list-inline-item mx-3 mt-2 mb-2">
                     <a href="http://www.educacion.yucatan.gob.mx/" target="_blank">
-                        <img src="{{asset('images/segey.png')}}" alt="segey_logo" class="img-fluid rounded-circle" width="80"
-                            title="SEGEY">
+                        <img src="{{asset('images/segey.png')}}" alt="segey_logo" class="img-fluid rounded-circle"
+                            width="80" title="SEGEY">
                     </a>
                 </li>
                 <li class="list-inline-item mx-3 mt-2 mb-2">
                     <a href="http://formacioncontinua.sigeyucatan.gob.mx/" target="_blank">
-                        <img src="{{asset('images/formacion.png')}}" alt="formacion_logo" class="img-fluid rounded-circle" width="80"
-                            title="Formación Continúa">
+                        <img src="{{asset('images/formacion.png')}}" alt="formacion_logo"
+                            class="img-fluid rounded-circle" width="80" title="Formación Continúa">
                     </a>
                 </li>
                 <li class="list-inline-item mx-3 mt-2 mb-2">
                     <a href="#" target="_blank">
-                        <img src="{{asset('images/foro.png')}}" alt="foro_logo" class="img-fluid rounded-circle" width="80"
-                            title="Foro">
+                        <img src="{{asset('images/foro.png')}}" alt="foro_logo" class="img-fluid rounded-circle"
+                            width="80" title="Foro">
                     </a>
                 </li>
                 <li class="list-inline-item mx-3 mt-2 mb-2">
                     <a href="https://www.aprendeencasa.mx/aprende-en-casa/" target="_blank">
-                        <img src="{{asset('images/aprende.png')}}" alt="aprende_logo" class="img-fluid rounded-circle" width="80"
-                            title="Aprende en casa">
+                        <img src="{{asset('images/aprende.png')}}" alt="aprende_logo" class="img-fluid rounded-circle"
+                            width="80" title="Aprende en casa">
                     </a>
                 </li>
             </ul>
@@ -464,7 +404,8 @@
             </div>
             <div class="col-md-2 text-left">
                 <ul class="list-unstyled text-white small">
-                    <li><a href="{{route('question')}}" class="text-white"> <i class="far fa-question-circle"></i> Preguntas
+                    <li><a href="{{route('question')}}" class="text-white"> <i class="far fa-question-circle"></i>
+                            Preguntas
                             frecuentes</a></li>
                     <li><a href="#" class="text-white"> <i class="fas fa-lock"></i> Avisos de privacidad </a></li>
                     <li><a href="#" class="text-white"> <i class="fas fa-envelope"></i> Contacto </a></li>
