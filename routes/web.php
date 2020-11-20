@@ -30,6 +30,19 @@ Route::post('/usuarios/store', 'UserController@store')->name('user_store');
 Route::get('/usuarios/edit/{id}', 'UserController@edit')->name('user_edit');
 Route::put('/usuarios/update/{id}', 'UserController@update')->name('user_update');
 Route::post('/usuarios/status/{id}', 'UserController@user_status')->name('user_status');
+<<<<<<< HEAD
+Auth::routes();
+
+//preguntas y respuestas
+Route::get('/questions/index', 'QuestionsController@index')->name('questions_index');
+Route::get('/questions/create', 'QuestionsController@create')->name('questions_create');
+Route::post('/questions/store', 'QuestionsController@store')->name('questions_store');
+Route::get('/questions/edit/{id}', 'QuestionsController@edit')->name('questions_edit');
+Route::put('/questions/update/{id}', 'QuestionsController@update')->name('questions_update');
+Route::put('/questions/status/{id}', 'QuestionsController@question_status')->name('questions_status');
+
+Route::get('/home', 'HomeController@index')->name('home');
+=======
 
 //UploadDocuments
 Route::get('/documents/index', 'DocumentController@index')->name('document_index');
@@ -59,3 +72,4 @@ Route::post('/forum/subcomment/delete/{id}', 'SubcommentController@delete')->nam
 Route::get('users/tickets/new', 'TicketsController@view_create')->name('new_ticket');
 Route::get('users/tickets/list', 'TicketsController@view_list')->name('list_tickets');
 
+>>>>>>> 3493eaa1af20b4fa1ca8070c6b685b0baa336600
