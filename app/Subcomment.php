@@ -4,12 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Comment extends Model
+class Subcomment extends Model
 {
-    public function forums()
+    public function comments()
     {
-        return $this->belongsToMany(Forum::class);
+        return $this->belongsTo(Comment::class);
     }
+
     public function user()
     {
         return $this->belongsTo(User::class);
