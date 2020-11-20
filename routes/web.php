@@ -30,6 +30,14 @@ Route::post('/usuarios/store', 'UserController@store')->name('user_store');
 Route::get('/usuarios/edit/{id}', 'UserController@edit')->name('user_edit');
 Route::put('/usuarios/update/{id}', 'UserController@update')->name('user_update');
 Route::post('/usuarios/status/{id}', 'UserController@user_status')->name('user_status');
-//Forum
-Route::get('/foro/index', 'ForumController@index')->name('forum_index');
-Route::get('/foro/create', 'ForumController@create')->name('forum_create');
+
+//UploadDocuments
+Route::get('/documents/index', 'DocumentController@index')->name('document_index');
+Route::post('/documents/store', 'DocumentController@store')->name('document_store');
+Route::post('/document/delete/{id}', 'DocumentController@delete')->name('document_delete');
+Route::get('/document/download-file/{id}', 'DocumentController@downloadFile')->name('download_file');
+//tickets
+Route::get('users/tickets/new', 'TicketsController@view_create')->name('new_ticket');
+Route::get('users/tickets/list', 'TicketsController@view_list')->name('list_tickets');
+
+
