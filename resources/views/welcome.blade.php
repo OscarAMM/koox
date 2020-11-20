@@ -7,14 +7,14 @@
             <p class="d-none d-md-inline d-sm-none">Contacta con nosotros en los siguientes enlaces</p>
         </li>
         <li class="list-inline-item text-right">
-            <p style="color:#344A40;"><a href="#">Escríbenos <i class="fas fa-at"></i></a></p>
+            <p style="color:#344A40;"><a href="#"><i class="fas fa-at"></i> Escríbenos</a></p>
         </li>
         <li class="list-inline-item text-right">
-            <p style="color:#344A40;"><a href="#">Llámanos <i class="fa fa-phone"></i></a></p>
+            <p style="color:#344A40;"><a href="#"><i class="fa fa-phone"></i> Llámanos</a></p>
         </li>
         <li class="list-inline-item text-right">
-            <p style="color:#344A40;"><a href="https://www.facebook.com/educacionyucatan" target="_blank">Síguenos <i
-                        class="fab fa-facebook"></i></a></p>
+            <p style="color:#344A40;"><a href="https://www.facebook.com/educacionyucatan" target="_blank"><i
+                        class="fab fa-facebook"></i> Síguenos </a></p>
         </li>
     </ul>
 </div>

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCommentsTable extends Migration
+class CreateDocumentFilesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateCommentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('comments', function (Blueprint $table) {
+        Schema::create('document_file', function (Blueprint $table) {
             $table->id();
-            $table->text('comment');
-            $table->date('post_date');
-            $table->foreignId('user_id')->constrained();
+            $table->foreignId('document_id')->constrained();
+            $table->foreignId('file_id')->constrained();
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateCommentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comments');
+        Schema::dropIfExists('document_files');
     }
 }
