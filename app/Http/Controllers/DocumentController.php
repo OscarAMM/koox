@@ -23,6 +23,13 @@ class DocumentController extends Controller
         return view('documents.index', compact('documents'));
        
            }
+
+    public function create()
+    {
+        $documents = Document::all();
+        return view('documents.create', compact('documents'));
+       
+    }
     public function store(Request $request)
     {
         $request->validate([
@@ -60,6 +67,8 @@ class DocumentController extends Controller
             $document->save();
                         
         }
+        \Session::flash('flash_message','Documento subido con Exito');
+
         return back()->with('success', 'Documento Guardado');
 
 }

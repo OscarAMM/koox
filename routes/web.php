@@ -36,6 +36,7 @@ Route::get('/documents/index', 'DocumentController@index')->name('document_index
 Route::post('/documents/store', 'DocumentController@store')->name('document_store');
 Route::post('/document/delete/{id}', 'DocumentController@delete')->name('document_delete');
 Route::get('/document/download-file/{id}', 'DocumentController@downloadFile')->name('download_file');
+Route::get('/document/create', 'DocumentController@create')->name('document_create');
 
 //Forum
 //Forum - Index
