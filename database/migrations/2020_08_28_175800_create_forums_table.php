@@ -17,9 +17,9 @@ class CreateForumsTable extends Migration
             $table->id();
             $table->string('topic');
             $table->text('description');
-            $table->string('created_by');
-            $table->string('email_created_by');
-            $table->date('created_date');
+            $table->string('status');
+            $table->string('creator_name');
+            $table->string('random_link');
             $table->timestamps();
         });
     }

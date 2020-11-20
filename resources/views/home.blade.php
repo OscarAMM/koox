@@ -7,8 +7,8 @@
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">Foro</h5>
-                    <p class="card-text">Foro</p>
-                    <a href="{{route('forum_index')}}" class="card-link">Acceder</a>
+                     <p class="card-text">Módulo de foro.</p>
+                    <a href="{{route('forum_index')}}" class="card-link">Acceder al foro</a>
                 </div>
             </div>
         </div>
