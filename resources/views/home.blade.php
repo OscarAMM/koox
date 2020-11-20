@@ -51,6 +51,17 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Preguntas y Respuestas</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                    <p class="card-text">Seccion de las preguntas mas frecuentes con sus respectivas respuestas</p>
+                    <a href="{{route('questions_index')}}" class="card-link">Acceder</a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+
 @endsection
