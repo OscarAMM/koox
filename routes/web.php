@@ -40,6 +40,7 @@ Route::get('/questions/edit/{id}', 'QuestionsController@edit')->name('questions_
 Route::put('/questions/update/{id}', 'QuestionsController@update')->name('questions_update');
 Route::put('/questions/status/{id}', 'QuestionsController@question_status')->name('questions_status');
 
+//routes para que vea juanpi
 Route::get('/home', 'HomeController@index')->name('home');
 //UploadDocuments
 Route::get('/documents/index', 'DocumentController@index')->name('document_index');
