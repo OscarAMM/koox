@@ -30,7 +30,6 @@ Route::post('/usuarios/store', 'UserController@store')->name('user_store');
 Route::get('/usuarios/edit/{id}', 'UserController@edit')->name('user_edit');
 Route::put('/usuarios/update/{id}', 'UserController@update')->name('user_update');
 Route::post('/usuarios/status/{id}', 'UserController@user_status')->name('user_status');
-<<<<<<< HEAD
 Auth::routes();
 
 //preguntas y respuestas
@@ -42,8 +41,6 @@ Route::put('/questions/update/{id}', 'QuestionsController@update')->name('questi
 Route::put('/questions/status/{id}', 'QuestionsController@question_status')->name('questions_status');
 
 Route::get('/home', 'HomeController@index')->name('home');
-=======
-
 //UploadDocuments
 Route::get('/documents/index', 'DocumentController@index')->name('document_index');
 Route::post('/documents/store', 'DocumentController@store')->name('document_store');
@@ -71,5 +68,3 @@ Route::post('/forum/subcomment/delete/{id}', 'SubcommentController@delete')->nam
 //tickets
 Route::get('users/tickets/new', 'TicketsController@view_create')->name('new_ticket');
 Route::get('users/tickets/list', 'TicketsController@view_list')->name('list_tickets');
-
->>>>>>> 3493eaa1af20b4fa1ca8070c6b685b0baa336600
