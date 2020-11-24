@@ -32,6 +32,9 @@
             @if($documents->count() > 0)
             @foreach($documents as $document)
 
+             <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+
             <div class="card mt-2">
                 <div class="card-body">
                     <form action="{{route('document_delete', $document->id)}}" method="post">
@@ -46,6 +49,7 @@
                     
                 </div>
             </div>
+            </nav>
             @endforeach
             @else
             <div class="card">
@@ -87,6 +91,8 @@
             </h4>
             @if($documents->count() > 0)
             @foreach($documents as $document)
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
 
             <div class="card mt-2">
                 <div class="card-body">
@@ -99,6 +105,7 @@
                     
                 </div>
             </div>
+            </nav>
             @endforeach
             @else
             <div class="card">
