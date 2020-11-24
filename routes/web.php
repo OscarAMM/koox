@@ -60,7 +60,18 @@ Route::post('/forum/subcomment/delete/{id}', 'SubcommentController@delete')->nam
 //tickets
 Route::get('users/tickets/new', 'TicketsController@view_create')->name('new_ticket');
 Route::get('users/tickets/list', 'TicketsController@view_list')->name('list_tickets');
+Route::get('/tickets/new', 'TicketsController@create')->name('new_ticket');
+Route::post('/tickets/store', 'TicketsController@store')->name('tickets_store');
+Route::get('/tickets/list', 'TicketsController@index')->name('list_tickets');
 
+
+Route::put('/tickets/view/options/{id}','TicketsController@update_options')->name('options_tickets');
+Route::get('/tickets/view/data/{id}','TicketsController@view_options')->name('data_tickets');
+
+
+Route::get('/tickets/edit/{id}', 'TicketsController@edit')->name('tickets_edit');
+Route::get('/tickets/update/{id}', 'TicketsController@update')->name('tickets_update');
+Route::get('/tickets/status/{id}', 'TicketsController@question_status')->name('tickets_status');
 //Preguntas y respuestas
 Auth::routes();
 //preguntas y respuestas
