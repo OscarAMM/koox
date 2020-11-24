@@ -22,20 +22,17 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <label for="user">Usuarios</label>
-
-
+                                <label for="user">Administradores disponibles</label>
                                 @foreach($users as $user)
-
+                                @if($user->hasRole('Administrador'))
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="users[]" value="{{$user->id}}" id="user-{{$user->id}}">
                                     <label class="form-check-label" for="user-{{$user->id}}">
                                         {{$user->name}}
                                     </label>
                                 </div>
-
+                                @endif
                                 @endforeach
-
                             </div>
                         </div>
                         <div class="row mt-3">

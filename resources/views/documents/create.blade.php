@@ -3,7 +3,8 @@
 <div class="container">
 
 <div class="pricing-header  px-3  pb-md-4 mx-auto text-center">
-        <h1 class="display-4">Archivos</h1>
+        
+        <h1 class="display-4">Administrador</h1>
         <p class="lead">Seccion de Carga de Archivos </p>
         <div class="btn-group mb-2">
             <a href="{{route('document_index')}}" class="btn btn-sm btn-link"><i class="fas fa-arrow-circle-left" style="color:black;"></i>
@@ -11,25 +12,21 @@
             
         </div>
     </div>
-  
-    
-    
+     
+    <div class="d-flex justify-content-center mt-5 h-100">
+    <div class="card p-5">
     <form action="{{route('document_store')}}" method="post" enctype="multipart/form-data">
       @csrf                    
-        <div class="col-md-4 order-md-2 mb-4">
+             
 
-
+        <!--<div class="d-flex align-items-center align-self-center card p-3 text-center cookies">    -->               
         
-                           
-        <h4 class="d-flex justify-content-between align-items-center mb-3">
-                <span class="text-muted border-bottom">ADMINISTRADOR</span>
+               
         </h4>
-       
-                 
             
             
             <label for="comment">Titulo</label>
-                    <textarea name="title_document" id="title_document" cols="6" rows="1" class="form-control"></textarea>
+                    <textarea name="title_document" id="title_document" cols="8" rows="1" class="form-control"></textarea>
               <div class="input-group mb-3">
                         <div class="form-group">
                             <label for="file">Carga de archivo</label>
