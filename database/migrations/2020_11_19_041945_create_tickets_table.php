@@ -17,13 +17,12 @@ class CreateTicketsTable extends Migration
             $table->id();
             $table->string('issue');
             $table->text('description');
-            $table->string('program_request_forum');
             $table->string('status');
-            $table->string('creator_name');
-            $table->string('random_link');
+
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.

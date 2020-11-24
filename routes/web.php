@@ -31,6 +31,8 @@ Route::get('/usuarios/edit/{id}', 'UserController@edit')->name('user_edit');
 Route::put('/usuarios/update/{id}', 'UserController@update')->name('user_update');
 Route::post('/usuarios/status/{id}', 'UserController@user_status')->name('user_status');
 
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
 //UploadDocuments
 Route::get('/documents/index', 'DocumentController@index')->name('document_index');
 Route::post('/documents/store', 'DocumentController@store')->name('document_store');
@@ -61,7 +63,6 @@ Route::get('users/tickets/list', 'TicketsController@view_list')->name('list_tick
 
 //Preguntas y respuestas
 Auth::routes();
-
 //preguntas y respuestas
 Route::get('/questions/index', 'QuestionsController@index')->name('questions_index');
 Route::get('/questions/user_index', 'QuestionsController@index')->name('questions_user_index');
