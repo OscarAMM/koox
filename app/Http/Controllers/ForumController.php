@@ -8,6 +8,8 @@ use App\Subcomment;
 use App\User;
 use Illuminate\Support\Str;
 use Auth;
+use App\File;
+use Illuminate\Support\Facades\Storage;
 
 class ForumController extends Controller
 {
@@ -46,8 +48,14 @@ class ForumController extends Controller
         foreach ($users as $user) {
             $forum->users()->attach(User::where('id', $user)->first());
         }
-     
+
         return redirect()->route('forum_index')->with('success', 'Se ha creado el foro con éxito.');
+    }
+
+    public function downloadFile($id)
+    {
+        $file = File::findOrFail($id);
+        return Storage::download('/files/' . $file->name);
     }
 
     public function list_all()
