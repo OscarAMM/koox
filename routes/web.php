@@ -64,6 +64,7 @@ Auth::routes();
 
 //preguntas y respuestas
 Route::get('/questions/index', 'QuestionsController@index')->name('questions_index');
+Route::get('/questions/user_index', 'QuestionsController@index')->name('questions_user_index');
 Route::get('/questions/create', 'QuestionsController@create')->name('questions_create');
 Route::post('/questions/store', 'QuestionsController@store')->name('questions_store');
 Route::get('/questions/edit/{id}', 'QuestionsController@edit')->name('questions_edit');

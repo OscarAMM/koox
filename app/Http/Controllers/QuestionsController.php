@@ -12,6 +12,12 @@ class QuestionsController extends Controller
         $question = Questions::all();
         return view('questions.index', compact('question'));
     }
+
+    public function user_index()
+    {
+        $question = Questions::all();
+        return view('questions.user_index', compact('question'));
+    }
     public function create()
     {
         return view('questions.create');
