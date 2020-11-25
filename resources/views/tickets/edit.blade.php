@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+@include('messages.error')
     <div class="container">
         <div class="row justify-content-center">
             <div class="class col-md-12">
@@ -15,23 +16,24 @@
 <div class="card shadow-sm">
 <div class="class card-body">
 {{--Aqui abrimos el form--}}
-<form action="" method="POST">
+<form action="{{route('tickets_update',$ticket->id)}}" method="POST">
+    @csrf
     <div class="row">
-        @csrf
+        {{method_field('PUT')}}
         <div class="col-md-6">
             <label for="ticket_own" >Nombre</label>
-            <input type="text" name="ticket_own" id="ticket_own" class="form-control" value="{{auth::user()->name}}" readonly>
+            <input type="text" name="name" id="name" class="form-control" value="{{auth::user()->name}}" readonly>
         </div>{{--<div class="col-md-6">--}}
 
         <div class="col-md-12">
             <label for="ticket_name" >Asunto</label>
-            <input type="text" name="ticket_name" id="ticket_name" class="form-control">
+            <input type="text" name="issue" id="issue" class="form-control" value="{{$ticket->issue}}">
         </div>{{--<div class="col-md-6">--}}
 
         <div class="col-md-12">
             <label for="decription">Descripción</label>
-            <textarea name="ticket_description" id="ticket_description" cols="30" rows="10"
-                class="form-control"></textarea>
+            <textarea name="description" id="description" cols="30" rows="10"
+                class="form-control" value="{{$ticket->description}}">{{$ticket->description}}</textarea>
         </div>
 
         <div class="input-group mb-3">
@@ -48,7 +50,7 @@
             </div>
         </div>
 
-        <button type="submit" class="btn btn-sm btn-primary">Guardar</button>
+        <button type="submit" class="btn btn-sm btn-primary ">Guardar</button>
 
         {{--Pueden utilizar un href o con js cualquiera esto es un comentario --}}
     </div>
