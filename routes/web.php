@@ -67,12 +67,13 @@ Route::get('/tickets/view/data/{id}','TicketsController@view_options')->name('da
 Route::get('/tickets/edit/{id}', 'TicketsController@edit')->name('tickets_edit');
 Route::put('/tickets/update/{id}', 'TicketsController@update')->name('tickets_update');
 Route::get('/tickets/status/{id}', 'TicketsController@question_status')->name('tickets_status');
-
+Route::put('/tickets/status/cancel/{id}', 'TicketsController@cancel')->name('tickets_cancel');
 //Content routes
 Route::get('/main-content/index', 'ContentController@index')->name('content_index');
 Route::get('/main-content/create', 'ContentController@create')->name('content_create');
 Route::post('/main-content/post', 'ContentController@store')->name('content_store');
-
+Route::put('/tickets/view/options/{id}', 'TicketsController@update_options')->name('options_tickets');
+Route::get('/tickets/view/data/{id}', 'TicketsController@view_options')->name('data_tickets');
 //Preguntas y respuestas
 Auth::routes();
 //preguntas y respuestas

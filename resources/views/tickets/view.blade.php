@@ -46,13 +46,17 @@
                             <div class="btn-group" role="group" aria-label="Basic example">
 
 
-                                <a href="{{route('tickets_edit',$ticket->id)}}" class="btn btn-primary">Editar</a>
-                                <form action="" method="post">
-                                @csrf
-                                {{method_field('put')}}
-                                <button type="submit" class=" btn btn-sm btn-danger">Cancelar</button>
+                                <a href="{{ route('tickets_edit', $ticket->id) }}" type="submit"
+                                    class="btn btn-primary">Editar</a>
+                                <form action="{{ route('tickets_cancel',$ticket->id) }}" method="post">
+                                    @csrf
+                                    {{ method_field('PUT') }}
+
+                                    <button type="submit" class="btn btn-warning">Cancelar</a>
+                                        <button href="" class="btn btn-danger "> Cerrar</a>
                                 </form>
-                                <a href="" class="btn btn-danger "> Cerrar</a>
+
+
 
 
 
@@ -65,15 +69,18 @@
 
 
 
-                        </div>{{--<div class="class card-body">--}}
+                        </div>{{--<div class="class card-body">
+                                        --}}
 
-                    </div>{{--<div class="card shadow-sm">--}}
+                    </div>{{--<div class="card shadow-sm">
+                                        --}}
 
                 </div>{{--div de <div class="class col-md-12">
-                        --}}
+                                        --}}
             </div>{{-- <div class="row justify-content-center">
-                        --}}
-        </div>{{-- <div class="container">--}}
+                                        --}}
+        </div>{{-- <div class="container">
+                                        --}}
 
 
         @endsection

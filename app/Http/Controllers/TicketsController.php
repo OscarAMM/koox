@@ -40,7 +40,8 @@ class TicketsController extends Controller
         $ticket->description = $request->description;
         $ticket->name = $request->name;
         $ticket->user_id = Auth::user()->id;
-        $ticket->status = 1; //Nuevo
+        $ticket->status = $request->status;
+        $ticket->status = "Activado";
         $ticket->save();
         return redirect()->route('list_tickets');
     }
@@ -49,7 +50,6 @@ class TicketsController extends Controller
         $ticket = Ticket::findOrFail($id);
         //dd($ticket);
         return view('tickets.edit', compact('ticket'));
-
     }
     public function update(Request $request, $id)
     {
@@ -57,15 +57,16 @@ class TicketsController extends Controller
         $date = Carbon::now(); // Dec 25, 1975
         $date->toTimeString();
         if ($ticket->created_at < $date) {
-            return redirect()->route('list_tickets')->with('error', 'No se puedes modificar'. $ticket->id);
-        } else {
             $ticket->issue = $request->issue;
             $ticket->description = $request->description;
-            $ticket->status = 2; //Editado
+            $ticket->status = $request->status;
+            $ticket->status = "Editado";
             $ticket->update();
             return redirect()->route('list_tickets');
+
+        } else {
+            return redirect()->route('list_tickets')->with('error', 'No se puedes modificar'. $ticket->id);
         }
-        //CANCELAR Y FINALIZADO 
 
     }
     public function view_options($id)
@@ -78,38 +79,22 @@ class TicketsController extends Controller
         $ticket = Ticket::findOrFail($id);
         $ticket->issue = $request->issue;
         $ticket->description = $request->description;
-        // $ticket->status = $ticket->status;
-
-        return redirect()->route('list_tickets');
-
+              return redirect()->route('list_tickets');
     }
     public function cancel($id)
     {
         $ticket = Ticket::findOrFail($id);
-        $ticket->status = "Canceled";
+       if($ticket->status == "Cancelado"){
+        $ticket->status = "Cerrado";
         $ticket->update();
+        return redirect()->route('list_tickets');
+       }else{
+        $ticket->status = "Cancelado";
+        $ticket->update();
+        return redirect()->route('list_tickets');
+       }
+
+
     }
-    /*  public function ticket_status ($id){
-$ticket = Ticket::findOrFail($id);
-$status=1;
-$status=2;
-$status=3;
-if($ticket->status == 1){
-$ticket->status = "Activo";
-$ticket->update();
-return back()->with('Success', 'Se ha inhabilitado la pregunta.');
-}else if($ticket->status == 2){
-$ticket->status = "Cancelado";
-$ticket->update();
-return back()->with('success', 'Se ha habilitado la pregunta.');
-}else if($ticket->status == 3){
-$ticket->status = "Cancelado";
-$ticket->update();
-return back()->with('success', 'Se ha habilitado la pregunta.');
-
-}else{
-
-}
-}*/
 
 }
