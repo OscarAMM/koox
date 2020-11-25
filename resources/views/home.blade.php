@@ -89,7 +89,7 @@
                         <div class="media d-flex">
                             <div class="media-body text-left">
                                 <h3 class="danger">Q&A</h3>
-                                <span><a href="" class="btn btn-sm btn-link">Acceder <i
+                                <span><a href="{{route('questions_index')}}" class="btn btn-sm btn-link">Acceder <i
                                             class="fas fa-external-link-square-alt"></i></a></span>
                             </div>
                             <div class="align-self-center">

@@ -2,9 +2,9 @@
 @section('content')
 <div class="container">
     <div class="py-3 text-center">
-        <i class="fas fa-university fa-3x"></i>
-        <h2>Preguntas Frecuentes</h2>
-        <p class="lead">Se listan las preguntas con las que mas frecuencia nos llegan junto con sus respectivas respuestas.</p>
+        <h2 class="font-weight-bold">Preguntas Frecuentes</h2>
+        <p class="lead">Esta sección contiene las preguntas más frecuentes. Si tiene alguna pregunta que no se
+            encuentra aquí, realice un <a href="{{route('new_ticket')}}">ticket</a> para resolver sus dudas.</p>
         <div class="text-center">
             <div class="btn-group">
                 <a href="{{route('home')}}" class="btn btn-sm btn-link"><i class="fas fa-arrow-circle-left"
@@ -27,25 +27,28 @@
                             <tbody>
                                 @foreach($question as $row)
                                 <tr>
-                                <td>
-                                    <div id="accordion">
-                                        <div class="card">
-                                            <div class="card-header" id="headingOne">
-                                                <h5 class="mb-0">
-                                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapse-{{$row->id}}" aria-expanded="true" aria-controls="collapseOne">
-                                                    {{$row->question}}
-                                                    </button>
-                                                </h5>
-                                            </div>
+                                    <td>
+                                        <div id="accordion">
+                                            <div class="card">
+                                                <div class="card-header" id="headingOne">
+                                                    <h5 class="mb-0">
+                                                        <button class="btn btn-link" data-toggle="collapse"
+                                                            data-target="#collapse-{{$row->id}}" aria-expanded="true"
+                                                            aria-controls="collapseOne">
+                                                            {{$row->question}}
+                                                        </button>
+                                                    </h5>
+                                                </div>
 
-                                            <div id="collapse-{{$row->id}}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                                                <div class="card-body">
-                                                {{$row->answer}}
+                                                <div id="collapse-{{$row->id}}" class="collapse"
+                                                    aria-labelledby="headingOne" data-parent="#accordion">
+                                                    <div class="card-body">
+                                                        {{$row->answer}}
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </td>   
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>

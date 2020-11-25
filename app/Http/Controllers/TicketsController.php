@@ -24,7 +24,6 @@ class TicketsController extends Controller
     //se llama a la vista para crear un nuevo ticket
     public function create()
     {
-
         return view('tickets.create');
     }
     //Aqui servira para ver el modulo que solo vera los datos
@@ -41,7 +40,7 @@ class TicketsController extends Controller
         $ticket->description = $request->description;
         $ticket->name = $request->name;
         $ticket->user_id = Auth::user()->id;
-        $ticket->status = 1;
+        $ticket->status = 1; //Nuevo
         $ticket->save();
         return redirect()->route('list_tickets');
     }
@@ -62,11 +61,11 @@ class TicketsController extends Controller
         } else {
             $ticket->issue = $request->issue;
             $ticket->description = $request->description;
-            $ticket->status = 2;
+            $ticket->status = 2; //Editado
             $ticket->update();
             return redirect()->route('list_tickets');
         }
-        //
+        //CANCELAR Y FINALIZADO 
 
     }
     public function view_options($id)
@@ -83,6 +82,12 @@ class TicketsController extends Controller
 
         return redirect()->route('list_tickets');
 
+    }
+    public function cancel($id)
+    {
+        $ticket = Ticket::findOrFail($id);
+        $ticket->status = "Canceled";
+        $ticket->update();
     }
     /*  public function ticket_status ($id){
 $ticket = Ticket::findOrFail($id);

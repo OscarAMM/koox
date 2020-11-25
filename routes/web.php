@@ -62,28 +62,27 @@ Route::get('users/tickets/list', 'TicketsController@view_list')->name('list_tick
 Route::get('/tickets/new', 'TicketsController@create')->name('new_ticket');
 Route::post('/tickets/store', 'TicketsController@store')->name('tickets_store');
 Route::get('/tickets/list', 'TicketsController@index')->name('list_tickets');
+Route::put('/tickets/view/options/{id}','TicketsController@update_options')->name('options_tickets');
+Route::get('/tickets/view/data/{id}','TicketsController@view_options')->name('data_tickets');
+Route::get('/tickets/edit/{id}', 'TicketsController@edit')->name('tickets_edit');
+Route::put('/tickets/update/{id}', 'TicketsController@update')->name('tickets_update');
+Route::get('/tickets/status/{id}', 'TicketsController@question_status')->name('tickets_status');
 
 //Content routes
 Route::get('/main-content/index', 'ContentController@index')->name('content_index');
 Route::get('/main-content/create', 'ContentController@create')->name('content_create');
 Route::post('/main-content/post', 'ContentController@store')->name('content_store');
 
-
-Route::put('/tickets/view/options/{id}','TicketsController@update_options')->name('options_tickets');
-Route::get('/tickets/view/data/{id}','TicketsController@view_options')->name('data_tickets');
-
-
-Route::get('/tickets/edit/{id}', 'TicketsController@edit')->name('tickets_edit');
-Route::put('/tickets/update/{id}', 'TicketsController@update')->name('tickets_update');
-Route::get('/tickets/status/{id}', 'TicketsController@question_status')->name('tickets_status');
 //Preguntas y respuestas
 Auth::routes();
 //preguntas y respuestas
 Route::get('/questions/index', 'QuestionsController@index')->name('questions_index');
-Route::get('/questions/user_index', 'QuestionsController@index')->name('questions_user_index');
+Route::get('/questions/user_index', 'QuestionsController@user_index')->name('questions_user_index');
 Route::get('/questions/create', 'QuestionsController@create')->name('questions_create');
 Route::post('/questions/store', 'QuestionsController@store')->name('questions_store');
 Route::get('/questions/edit/{id}', 'QuestionsController@edit')->name('questions_edit');
 Route::put('/questions/update/{id}', 'QuestionsController@update')->name('questions_update');
 Route::put('/questions/status/{id}', 'QuestionsController@question_status')->name('questions_status');
 
+//Perfiles
+route::get('/profiles/create', 'ProfileController@create')->name('profiles_create');

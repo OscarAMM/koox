@@ -40,38 +40,7 @@
         style="margin-bottom:24px; margin-top:24px;">
 </div>
 <!---- FIN LOGO --->
-<!---- NAV BAR --->
-<nav class="navbar navbar-light navbar-expand-lg bg-light justify-content-lg-center">
-    <a class="navbar-brand font-weight-bold d-md-none d-inline" href="{{route('welcome')}}">Ko'ox Tsikbal</a>
-    <button class="navbar-toggler justify-content-end ml-3" type="button" data-toggle="collapse"
-        data-target="#collapsingNavbar2">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="navbar-collapse collapse justify-content-between align-items-center w-100" id="collapsingNavbar2">
-        <ul class="navbar-nav mx-auto text-lg-center text-left">
-            <li class="nav-item">
-                <a class="nav-link" href="http://recursoseducativos.segey.gob.mx/" target="_blank"> Recursos
-                    educativos</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('question')}}">Preguntas frecuentes</a>
-            </li>
-            <li class="nav-item my-auto">
-                <a class="nav-link navbar-brand mx-0 d-none font-weight-bold d-md-inline"
-                    href="{{route('welcome')}}">Ko'ox
-                    Tsikbal</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="http://www.kaambal.mx/" target="_blank">Kaambal</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link"
-                    href="http://www.educacion.yucatan.gob.mx/multimedia/publicaciones/200605_CalendarioCierreCiclo.pdf"
-                    target="_blank">Calendario escolar</a>
-            </li>
-        </ul>
-    </div>
-</nav>
+
 
 <!--- fin navbar -->
 <!-- banner-->
@@ -177,9 +146,8 @@
                                 </p>
                                 <div class="card-footer card-back-color">
                                     <div class="row">
-
                                         <div class="col-sm-3 col-md-3 col-lg-3">
-                                            <a href="docs/guides/004 guía madres y padres de familia.pdf"
+                                        <a href="docs/guides/004 guía madres y padres de familia.pdf"
                                                 target="_blank" class="btn  btn-link text-white text-center">
                                                 Guía
                                                 para
@@ -354,104 +322,5 @@
         </div>
     </div>
 </div>
-<footer class="footer mt-auto py-3" style="background-color: #DDDDDD">
-    <div class="container text-center mb-2">
-        <h5 class="text-center font-weight-bold">Sitios de interés</h5>
-        <div class="row d-flex justify-content-center">
-            <ul class="list-inline ">
-                <li class="list-inline-item mx-3 mt-2 mb-2">
-                    <a href="https://www.gob.mx/sep" target="_blank">
-                        <img src="{{asset('images/sep.png')}}" class="img-fluid rounded-circle" width="80"
-                            alt="sep_logo" title="Secretaría de Educación Pública">
-                    </a>
-                </li>
-                <li class="list-inline-item mx-3 mt-2 mb-2">
-                    <a href="http://www.yucatan.gob.mx/" target="_blank">
-                        <img src="{{asset('images/yucatan.png')}}" alt="segey_logo" class="img-fluid rounded-circle"
-                            width="80" title="Gobierno de Yucatán">
-                    </a>
-                </li>
-                <li class="list-inline-item mx-3 mt-2 mb-2">
-                    <a href="http://www.educacion.yucatan.gob.mx/" target="_blank">
-                        <img src="{{asset('images/segey.png')}}" alt="segey_logo" class="img-fluid rounded-circle"
-                            width="80" title="SEGEY">
-                    </a>
-                </li>
-                <li class="list-inline-item mx-3 mt-2 mb-2">
-                    <a href="http://formacioncontinua.sigeyucatan.gob.mx/" target="_blank">
-                        <img src="{{asset('images/formacion.png')}}" alt="formacion_logo"
-                            class="img-fluid rounded-circle" width="80" title="Formación Continúa">
-                    </a>
-                </li>
-                <li class="list-inline-item mx-3 mt-2 mb-2">
-                    <a href="#" target="_blank">
-                        <img src="{{asset('images/foro.png')}}" alt="foro_logo" class="img-fluid rounded-circle"
-                            width="80" title="Foro">
-                    </a>
-                </li>
-                <li class="list-inline-item mx-3 mt-2 mb-2">
-                    <a href="https://www.aprendeencasa.mx/aprende-en-casa/" target="_blank">
-                        <img src="{{asset('images/aprende.png')}}" alt="aprende_logo" class="img-fluid rounded-circle"
-                            width="80" title="Aprende en casa">
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</footer>
-<footer>
-    <div class="container-fluid" style="background-color: #343A40;">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <h4 class="text-white font-weight-bolder text-center mt-3">SEGEY</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-2 text-left">
-                    <hr style="height:6px;color:gray;background-color:#F18B39; width:50px; margin-right:100%;">
-                    <img src="{{asset('images/EscudoArmas_gris.png')}}" alt="Logo" class="img-fluid">
-                </div>
-                <div class="col-md-5 text-left">
-                    <hr style="height:6px;color:gray;background-color:#F18B39; width:50px; margin-right:100%;">
-                    <ul class="list-unstyled text-white small ">
-                        <li>Secretaría de Educación del Gobierno del Estado de Yucatán</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Calle 34 No.101A x 25.Col.García Ginerés C.P.97070
-                        </li>
-                        <li>Mérida, Yucatán, México</li>
-                        <li><i class="fas fa-phone-alt"></i> 999 930 39 50</li>
-                    </ul>
-                </div>
-                <div class="col-md-2 text-left">
-                    <hr style="height:6px;color:gray;background-color:#F18B39; width:50px; margin-right:100%;">
-                    <ul class="list-unstyled text-white small">
-                        <li><a href="{{route('question')}}" class="text-white"> <i class="far fa-question-circle"></i>
-                                Preguntas
-                                frecuentes</a></li>
-                        <li><a href="#" class="text-white"> <i class="fas fa-lock"></i> Avisos de privacidad </a></li>
-                        <li><a href="#" class="text-white"> <i class="fas fa-envelope"></i> Contacto </a></li>
-                    </ul>
-                </div>
-                <div class="col-md-2 text-left">
-                    <hr style="height:6px;color:gray;background-color:#F18B39; width:50px; margin-right:100%;">
-                    <span class="text-white">Siguenos en:</span>
-                    <ul class="list-unstyled text-white small">
-                        <li><a href="https://www.facebook.com/educacionyucatan" class="text-white" target="_blank"><i
-                                    class="fab fa-facebook"></i>
-                                /educacionyucatan</a></li>
-                        <li><a href="https://twitter.com/educacionyuc" class="text-white" target="_blank"><i
-                                    class="fab fa-twitter"></i> @educacionyuc</a>
-                        </li>
-                        <li><a href="https://www.instagram.com/educacionyucatan/" class="text-white" target="_blank"><i
-                                    class="fab fa-instagram"></i> @educacionyucatan</a></li>
-                        <li><a href="https://www.youtube.com/channel/UCEtOqLXpgUPf8XuuBgkQx9g" class="text-white"
-                                target="_blank"><i class="fab fa-youtube"></i> /educacionyuc</i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
+
 @endsection

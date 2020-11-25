@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Profile;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+
+        $profile = Profile::all();
+        if(Auth::user()->hasRole('Administrador')){
+            return view('home');
+        }else{
+            
+            return view('Welcome', compact('profile'));
+        }
+        
     }
 }
