@@ -61,17 +61,17 @@ class TicketsController extends Controller
 
 
         $date=Carbon::now();               // Dec 25, 1975
-      // $date=$date->toTimeString();
-      if( $endDate = $date->addMinutes(30) ){
-        return redirect()->route('list_tickets')->with('holi');
+      $date->toTimeString();
+     if( $endDate = $date->addMinutes(30) ){
+       return redirect()->route('list_tickets')->with('holi');
             }else{
         $ticket->issue = $request->issue;
         $ticket->description = $request->description;
-        $ticket->status = $request->status;
+        $ticket->status = 2;
 
         $ticket->update();
         return redirect()->route('list_tickets');
-      }
+    }
                              //
 
 
@@ -90,7 +90,7 @@ class TicketsController extends Controller
         return redirect()->route('list_tickets');
 
     }
-    public function ticket_status ($id){
+  /*  public function ticket_status ($id){
         $ticket = Ticket::findOrFail($id);
         $status=1;
         $status=2;
@@ -111,7 +111,7 @@ class TicketsController extends Controller
         }else{
 
         }
-    }
+    }*/
 
 }
 
