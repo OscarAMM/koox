@@ -55,16 +55,14 @@ class TicketsController extends Controller
     public function update(Request $request, $id)
     {
         $ticket = Ticket::findOrFail($id);
-
         $date = Carbon::now(); // Dec 25, 1975
         $date->toTimeString();
-        if ($endDate = $date->addMinutes(30)) {
-            return redirect()->route('list_tickets')->with('holi');
+        if ($ticket->created_at < $date) {
+            return redirect()->route('list_tickets')->with('error', 'No se puedes modificar'. $ticket->id);
         } else {
             $ticket->issue = $request->issue;
             $ticket->description = $request->description;
             $ticket->status = 2;
-
             $ticket->update();
             return redirect()->route('list_tickets');
         }

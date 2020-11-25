@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+@include('messages.single_error')
 <div class="container">
     <div class="py-3 text-center">
         <i class="fas fa-university fa-3x"></i>
