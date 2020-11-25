@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-
-use Carbon\Carbon;
 use App\Ticket;
 use App\User;
-use App\Http\Controllers\success;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TicketsController extends Controller
 {
@@ -31,7 +29,6 @@ class TicketsController extends Controller
     }
     //Aqui servira para ver el modulo que solo vera los datos
 
-
     public function store(Request $request)
     {
         $request->validate([
@@ -44,7 +41,8 @@ class TicketsController extends Controller
         $ticket->description = $request->description;
         $ticket->name = $request->name;
         $ticket->user_id = Auth::user()->id;
-        $ticket->status = 1;
+        $ticket->status = $request->status;
+        //$ticket->status = 1;
         $ticket->save();
         return redirect()->route('list_tickets');
     }
@@ -57,17 +55,19 @@ class TicketsController extends Controller
     public function update(Request $request, $id)
     {
         $ticket = Ticket::findOrFail($id);
-        $date = Carbon::now();               // Dec 25, 1975
-        if ($date->addMinutes(30)) {
-            return redirect()->route('list_tickets')->with('tiempo excedido');
-        } else {
+        $date = Carbon::now(); // Dec 25, 1975
+        $date->toTimeString();
+        if ($ticket->created_at < $date) {
             $ticket->issue = $request->issue;
             $ticket->description = $request->description;
-            $ticket->status = 2;
+            $ticket->status = $request->status;
+            //$ticket->status = 2;
             $ticket->update();
             return redirect()->route('list_tickets');
+
+        } else {
+            return redirect()->route('list_tickets')->with('error', 'No se puedes modificar'. $ticket->id);
         }
-        //
 
 
     }
@@ -81,31 +81,23 @@ class TicketsController extends Controller
         $ticket = Ticket::findOrFail($id);
         $ticket->issue = $request->issue;
         $ticket->description = $request->description;
-        // $ticket->status = $ticket->status;
-
-
-        return redirect()->route('list_tickets');
+              return redirect()->route('list_tickets');
     }
-    /*  public function ticket_status ($id){
-        $ticket = Ticket::findOrFail($id);
-        $status=1;
-        $status=2;
-        $status=3;
-        if($ticket->status == 1){
-            $ticket->status = "Activo";
-            $ticket->update();
-            return back()->with('Success', 'Se ha inhabilitado la pregunta.');
-        }else if($ticket->status == 2){
-            $ticket->status = "Cancelado";
-            $ticket->update();
-            return back()->with('success', 'Se ha habilitado la pregunta.');
-        }else if($ticket->status == 3){
-            $ticket->status = "Cancelado";
-            $ticket->update();
-            return back()->with('success', 'Se ha habilitado la pregunta.');
+    public function ticket_status($id)
+    {
+        $user = User::findOrFail($id);
+        if ($user->status == "enable") {
+            $user->status = "disable";
 
-        }else{
-
+            $user->update();
+            return back()->with('success', 'Se ha deshabilitado el usuario con éxito.');
+        } else {
+            $user->status = "enable";
+            $user->password = bcrypt('53cr37@1');
+            $user->update();
+            return back()->with('success', 'Se ha habilitado el usuario con éxito.');
         }
-    }*/
+    }
+
+
 }

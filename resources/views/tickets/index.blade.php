@@ -1,17 +1,17 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container">
-        <div class="py-3 text-center">
-            <i class="fas fa-university fa-3x"></i>
-            <h2>Tickets</h2>
-            <p class="lead"></p>
-            <div class="text-center">
-                <div class="btn-group">
-                    <a href="{{ route('home') }}" class="btn btn-sm btn-link"><i class="fas fa-arrow-circle-left"
-                            style="color:black;"></i> Regresar</a>
-                    <a href="{{ route('new_ticket') }}" class="btn btn-sm btn-link"><i class="fas fa-plus-circle"
-                            style="color:green;"></i> Agregar ticket</a>
-                </div>
+@include('messages.single_error')
+<div class="container">
+    <div class="py-3 text-center">
+        <i class="fas fa-university fa-3x"></i>
+        <h2>Tickets</h2>
+        <p class="lead"></p>
+        <div class="text-center">
+            <div class="btn-group">
+                <a href="{{route('home')}}" class="btn btn-sm btn-link"><i class="fas fa-arrow-circle-left"
+                        style="color:black;"></i> Regresar</a>
+                <a href="{{route('new_ticket')}}" class="btn btn-sm btn-link"><i class="fas fa-plus-circle"
+                        style="color:green;"></i> Agregar ticket</a>
             </div>
         </div>
 

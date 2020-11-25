@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+@include('messages.single_error')
     <div class="container">
         <div class="row justify-content-center">
             <div class="class col-md-12">
