@@ -38,12 +38,14 @@ class UserController extends Controller
             return redirect()->route('user_index')->with('success', 'Se ha registrado con éxito el usuario.');
         }
     }
-    public function edit($id){
+    public function edit($id)
+    {
         $user = User::findOrFail($id);
         $profile = Role::all();
         return view('auth.edit', compact('user', 'profile'));
     }
-    public function update(Request $request, $id){
+    public function update(Request $request, $id)
+    {
         $request->validate([
             'name' => 'required',
             'email' => 'required',
@@ -57,19 +59,19 @@ class UserController extends Controller
         $user->update();
         return redirect()->route('user_index')->with('succes', 'Se ha modificado el usuario con éxito.');
     }
-    public function user_status($id){
+    public function user_status($id)
+    {
         $user = User::findOrFail($id);
-        if($user->status=="enable"){
+        if ($user->status == "enable") {
             $user->status = "disable";
             $user->password = bcrypt(Str::random(10));
             $user->update();
             return back()->with('success', 'Se ha deshabilitado el usuario con éxito.');
-        }else{
+        } else {
             $user->status = "enable";
-            $user->password= bcrypt('53cr37@1');
+            $user->password = bcrypt('53cr37@1');
             $user->update();
             return back()->with('success', 'Se ha habilitado el usuario con éxito.');
         }
-        
     }
 }

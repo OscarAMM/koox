@@ -19,12 +19,12 @@ class TicketsController extends Controller
     //esto es para definir que el usuario con aceso
     public function index()
     {
-     $ticket = Ticket::all();
-     $user = Auth::user();
+        $ticket = Ticket::all();
+        $user = Auth::user();
         return view('tickets.index', compact('ticket'));
     }
     //se llama a la vista para crear un nuevo ticket
-     public function create()
+    public function create()
     {
 
         return view('tickets.create');
@@ -32,15 +32,15 @@ class TicketsController extends Controller
     //Aqui servira para ver el modulo que solo vera los datos
 
 
-   public function store(Request $request )
+    public function store(Request $request)
     {
         $request->validate([
-            'issue'=>'required',
-            'description'=>'required',
+            'issue' => 'required',
+            'description' => 'required',
         ]);
 
         $ticket = new Ticket();
-         $ticket->issue = $request->issue;
+        $ticket->issue = $request->issue;
         $ticket->description = $request->description;
         $ticket->name = $request->name;
         $ticket->user_id = Auth::user()->id;
@@ -53,44 +53,40 @@ class TicketsController extends Controller
         $ticket = Ticket::findOrFail($id);
         //dd($ticket);
         return view('tickets.edit', compact('ticket'));
-
     }
     public function update(Request $request, $id)
     {
         $ticket = Ticket::findOrFail($id);
-
-
-        $date=Carbon::now();               // Dec 25, 1975
-      $date->toTimeString();
-     if( $endDate = $date->addMinutes(30) ){
-       return redirect()->route('list_tickets')->with('holi');
-            }else{
-        $ticket->issue = $request->issue;
-        $ticket->description = $request->description;
-        $ticket->status = 2;
-
-        $ticket->update();
-        return redirect()->route('list_tickets');
-    }
-                             //
+        $date = Carbon::now();               // Dec 25, 1975
+        if ($date->addMinutes(30)) {
+            return redirect()->route('list_tickets')->with('tiempo excedido');
+        } else {
+            $ticket->issue = $request->issue;
+            $ticket->description = $request->description;
+            $ticket->status = 2;
+            $ticket->update();
+            return redirect()->route('list_tickets');
+        }
+        //
 
 
     }
-  public function view_options($id){
-      $ticket = Ticket::findOrFail($id);
-       return view('tickets.view', compact('ticket'));
+    public function view_options($id)
+    {
+        $ticket = Ticket::findOrFail($id);
+        return view('tickets.view', compact('ticket'));
     }
-    public function update_options($id, Request $request){
+    public function update_options($id, Request $request)
+    {
         $ticket = Ticket::findOrFail($id);
         $ticket->issue = $request->issue;
         $ticket->description = $request->description;
-       // $ticket->status = $ticket->status;
+        // $ticket->status = $ticket->status;
 
 
         return redirect()->route('list_tickets');
-
     }
-  /*  public function ticket_status ($id){
+    /*  public function ticket_status ($id){
         $ticket = Ticket::findOrFail($id);
         $status=1;
         $status=2;
@@ -112,6 +108,4 @@ class TicketsController extends Controller
 
         }
     }*/
-
 }
-

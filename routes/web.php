@@ -69,8 +69,8 @@ Route::get('/main-content/create', 'ContentController@create')->name('content_cr
 Route::post('/main-content/post', 'ContentController@store')->name('content_store');
 
 
-Route::put('/tickets/view/options/{id}','TicketsController@update_options')->name('options_tickets');
-Route::get('/tickets/view/data/{id}','TicketsController@view_options')->name('data_tickets');
+Route::put('/tickets/view/options/{id}', 'TicketsController@update_options')->name('options_tickets');
+Route::get('/tickets/view/data/{id}', 'TicketsController@view_options')->name('data_tickets');
 
 
 Route::get('/tickets/edit/{id}', 'TicketsController@edit')->name('tickets_edit');
@@ -86,4 +86,3 @@ Route::post('/questions/store', 'QuestionsController@store')->name('questions_st
 Route::get('/questions/edit/{id}', 'QuestionsController@edit')->name('questions_edit');
 Route::put('/questions/update/{id}', 'QuestionsController@update')->name('questions_update');
 Route::put('/questions/status/{id}', 'QuestionsController@question_status')->name('questions_status');
-

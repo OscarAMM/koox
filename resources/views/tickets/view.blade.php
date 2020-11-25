@@ -17,7 +17,7 @@
                     <div class="class card-body">
                         {{--Aqui abrimos el form--}}
 
-                        <div class="{{ route('options_tickets', $ticket->id) }}" >
+                        <div class="{{ route('options_tickets', $ticket->id) }}">
                             @csrf
 
                             <div class="row">
@@ -46,13 +46,14 @@
                                         <div class="btn-group" role="group" aria-label="Basic example">
 
 
-                                            <a href="{{route('tickets_edit',$ticket->id)}}" class="btn btn-primary">Editar</a>
-                                                        <a href="" class="btn btn-warning">Cancelar</a>
-                                                        <a href="" class="btn btn-danger "> Cerrar</a>
+                                            <a href="{{ route('tickets_edit', $ticket->id) }}"
+                                                class="btn btn-primary">Editar</a>
+                                            <a href="" class="btn btn-warning">Cancelar</a>
+                                            <a href="" class="btn btn-danger "> Cerrar</a>
 
 
 
-                                            </div>
+                                        </div>
 
 
 
@@ -61,15 +62,18 @@
 
 
 
-                    </div>{{--<div class="class card-body">--}}
+                                    </div>{{--<div class="class card-body">
+                                        --}}
 
-                    </div>{{--<div class="card shadow-sm">--}}
+                                    </div>{{--<div class="card shadow-sm">
+                                        --}}
 
-                    </div>{{--div de <div class="class col-md-12">
-                        --}}
-                    </div>{{-- <div class="row justify-content-center">
-                        --}}
-                    </div>{{-- <div class="container">--}}
+                                    </div>{{--div de <div class="class col-md-12">
+                                        --}}
+                                    </div>{{-- <div class="row justify-content-center">
+                                        --}}
+                                    </div>{{-- <div class="container">
+                                        --}}
 
 
-                    @endsection
+                                    @endsection
