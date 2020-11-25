@@ -20,7 +20,7 @@
         @csrf
         <div class="col-md-6">
             <label for="ticket_own" >Nombre</label>
-            <input type="text" name="ticket_own" id="ticket_own" class="form-control" values="prueba" readonly>
+            <input type="text" name="ticket_own" id="ticket_own" class="form-control" value="{{auth::user()->name}}" readonly>
         </div>{{--<div class="col-md-6">--}}
 
         <div class="col-md-12">

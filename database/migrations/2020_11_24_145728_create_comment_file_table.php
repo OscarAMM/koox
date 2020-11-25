@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTicketsTable extends Migration
+class CreateCommentFileTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,13 @@ class CreateTicketsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tickets', function (Blueprint $table) {
+        Schema::create('comment_file', function (Blueprint $table) {
             $table->id();
-            $table->string('issue');
-            $table->text('description');
-            $table->string('status');
-
+            $table->foreignId('comment_id')->constrained();
+            $table->foreignId('file_id')->constrained();
             $table->timestamps();
         });
     }
-
 
     /**
      * Reverse the migrations.
@@ -31,6 +28,6 @@ class CreateTicketsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tickets');
+        Schema::dropIfExists('comment_file');
     }
 }

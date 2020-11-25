@@ -40,6 +40,14 @@
                             </div>
                         </div>
                     </div>
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Tickets</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Seccion de Tickets</h6>
+                    <p class="card-text">En esta seccion se podran ver todas las opciones sobre los tickets.</p>
+                <a href="{{route('new_ticket')}}" class="card-link">Generar ticket</a>
+                <a href="{{route('list_tickets')}}" class="card-link">Lista de Tickets</a>
                 </div>
             </div>
         </div>
@@ -102,4 +110,8 @@
     </div>
 </div>
 
+<<<<<<< HEAD
 @endsection
+=======
+@endsection
+>>>>>>> a3d3d2aed49db91a928d32eced8912eeee2bf868

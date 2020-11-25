@@ -64,3 +64,14 @@ Route::get('/main-content/index', 'ContentController@index')->name('content_inde
 Route::get('/main-content/create', 'ContentController@create')->name('content_create');
 Route::post('/main-content/post', 'ContentController@store')->name('content_store');
 
+//Preguntas y respuestas
+Auth::routes();
+//preguntas y respuestas
+Route::get('/questions/index', 'QuestionsController@index')->name('questions_index');
+Route::get('/questions/user_index', 'QuestionsController@index')->name('questions_user_index');
+Route::get('/questions/create', 'QuestionsController@create')->name('questions_create');
+Route::post('/questions/store', 'QuestionsController@store')->name('questions_store');
+Route::get('/questions/edit/{id}', 'QuestionsController@edit')->name('questions_edit');
+Route::put('/questions/update/{id}', 'QuestionsController@update')->name('questions_update');
+Route::put('/questions/status/{id}', 'QuestionsController@question_status')->name('questions_status');
+

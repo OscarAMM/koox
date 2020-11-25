@@ -10,9 +10,20 @@
             <form action="{{route('subcomment_post', $comment->id)}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
-                    <label for="comment">Comentario </label>
-                    <textarea name="comment" id="comment" cols="10" rows="5" class="form-control"></textarea>
-                   
+                    <label for="comment">Responder al comentario</label>
+                    <textarea required name="comment" id="comment" cols="10" rows="5" class="form-control"></textarea>
+                    <div class="input-group mb-3">
+                        <div class="form-group">
+                            <label for="file">Carga de archivo</label>
+                            <input type="file" name="file" class="form-control-file  @error('file') is-invalid @enderror" id="file">
+                            @error('file')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                            <small>La carga de archivo es opcional.</small>
+                        </div>
+                    </div>
 
                 </div>
                 <div class="modal-footer">

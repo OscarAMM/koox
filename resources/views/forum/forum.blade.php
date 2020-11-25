@@ -41,14 +41,18 @@
             @include('forum.modal.forum_subcomment_modal')
             <div class="card mt-2">
                 <div class="card-body">
+                    @if(Auth::user()->hasRole('Administrador'))
                     <form action="{{route('comment_delete', $comment->id)}}" method="post">
                         @csrf
                         <button type="submit" class="btn btn-sm btn-danger float-right">X</button>
                     </form>
+                    @endif
                     <p class="title border-bottom">{{$comment->user->name}}
                     </p>
                     <p class="card-text">{{$comment->comment}}</p>
-
+                    @foreach($comment->files as $file)
+                    <p>Archivo: <a href="{{route('download_file', $file->id)}}">{{$file->name}}</a></p>
+                    @endforeach
                     <small class="text-muted">Contacto: {{$comment->user->email}} - Fecha de posteo:
                         {{$comment->post_date}} -
                         Posted {{$comment->created_at->diffForHumans()}}</small>
@@ -65,13 +69,18 @@
                             <div>
                                 <div class="d-flex flex-column w-100" data-region="replies-container">
                                     <div class="div">
+                                        @if(Auth::user()->hasRole('Administrador'))
+
                                         <form action="{{route('subcomment_delete', $subcomment->id)}}" method="post">
                                             @csrf
                                             <button type="submit" class="btn btn-sm btn-danger float-right">X</button>
                                         </form>
+                                        @endif
                                         <p class="title border-bottom">{{$subcomment->user->name}}</p>
                                         <p class="card-text"> {{$subcomment->subcomment}}</p>
-                                        <small class="text-muted">Contacto: {{$subcomment->user->email}} - Fecha de posteo:
+                                        @foreach($subcomment->files as $file)
+                                        <p>Archivo: <a href="{{route('download_file', $file->id)}}">{{$file->name}}</a></p>
+                                        @endforeach <small class="text-muted">Contacto: {{$subcomment->user->email}} - Fecha de posteo:
                                             {{$subcomment->post_date}} -
                                             Posted {{$subcomment->created_at->diffForHumans()}}</small>
                                     </div>
