@@ -75,7 +75,8 @@ Route::get('/tickets/view/data/{id}', 'TicketsController@view_options')->name('d
 
 Route::get('/tickets/edit/{id}', 'TicketsController@edit')->name('tickets_edit');
 Route::put('/tickets/update/{id}', 'TicketsController@update')->name('tickets_update');
-Route::get('/tickets/status/{id}', 'TicketsController@question_status')->name('tickets_status');
+Route::put('/tickets/status/cancel/{id}', 'TicketsController@cancel')->name('tickets_cancel');
+
 //Preguntas y respuestas
 Auth::routes();
 //preguntas y respuestas

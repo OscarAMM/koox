@@ -48,9 +48,16 @@
 
 
                                             <a href="{{ route('tickets_edit', $ticket->id) }}"
-                                                class="btn btn-primary">Editar</a>
-                                            <a href="" class="btn btn-warning">Cancelar</a>
-                                            <a href="" class="btn btn-danger "> Cerrar</a>
+                                                type="submit" class="btn btn-primary">Editar</a>
+                                                <form action="{{ route('tickets_cancel',$ticket->id) }}" method="post">
+@csrf
+{{ method_field('PUT') }}
+
+                                                    <button type="submit" class="btn btn-warning">Cancelar</a>
+                                                    <button href="" class="btn btn-danger "> Cerrar</a>
+                                                </form>
+
+
 
 
 

@@ -42,7 +42,7 @@ class TicketsController extends Controller
         $ticket->name = $request->name;
         $ticket->user_id = Auth::user()->id;
         $ticket->status = $request->status;
-        //$ticket->status = 1;
+        $ticket->status = "Activado";
         $ticket->save();
         return redirect()->route('list_tickets');
     }
@@ -61,7 +61,7 @@ class TicketsController extends Controller
             $ticket->issue = $request->issue;
             $ticket->description = $request->description;
             $ticket->status = $request->status;
-            //$ticket->status = 2;
+            $ticket->status = "Editado";
             $ticket->update();
             return redirect()->route('list_tickets');
 
@@ -83,21 +83,22 @@ class TicketsController extends Controller
         $ticket->description = $request->description;
               return redirect()->route('list_tickets');
     }
-    public function ticket_status($id)
+    public function cancel($id)
     {
-        $user = User::findOrFail($id);
-        if ($user->status == "enable") {
-            $user->status = "disable";
+        $ticket = Ticket::findOrFail($id);
+       if($ticket->status == "Cancelado"){
+        $ticket->status = "Cerrado";
+        $ticket->update();
+        return redirect()->route('list_tickets');
+       }else{
+        $ticket->status = "Cancelado";
+        $ticket->update();
+        return redirect()->route('list_tickets');
+       }
 
-            $user->update();
-            return back()->with('success', 'Se ha deshabilitado el usuario con éxito.');
-        } else {
-            $user->status = "enable";
-            $user->password = bcrypt('53cr37@1');
-            $user->update();
-            return back()->with('success', 'Se ha habilitado el usuario con éxito.');
-        }
+
     }
+
 
 
 }
