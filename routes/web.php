@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Content;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $content = Content::orderBy('id', 'desc')->get()->take(1);
+    return view('welcome', compact('content'));
 })->name('welcome');
 Route::get('/question', function () {
     return view('guest.question');
@@ -56,6 +57,10 @@ Route::post('/forum/comment/delete/{id}', 'CommentController@delete')->name('com
 Route::post('/forum/subcomment/{id}', 'SubcommentController@store')->name('subcomment_post');
 Route::post('/forum/subcomment/delete/{id}', 'SubcommentController@delete')->name('subcomment_delete');
 //tickets
-Route::get('users/tickets/new', 'TicketsController@view_create')->name('new_ticket');
-Route::get('users/tickets/list', 'TicketsController@view_list')->name('list_tickets');
+Route::get('/users/tickets/new', 'TicketsController@view_create')->name('new_ticket');
+Route::get('/users/tickets/list', 'TicketsController@view_list')->name('list_tickets');
+//Content routes
+Route::get('/main-content/index', 'ContentController@index')->name('content_index');
+Route::get('/main-content/create', 'ContentController@create')->name('content_create');
+Route::post('/main-content/post', 'ContentController@store')->name('content_store');
 

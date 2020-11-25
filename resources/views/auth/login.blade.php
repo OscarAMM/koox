@@ -1,12 +1,12 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
-    <div class="row d-flex justify-content-center">
-        <div class="col-md-8">
+    <div class="row d-flex justify-content-center mt-4">
+        <div class="col-md-6">
             <div class="card box shadow mb-3" style="max-width: 540px;">
                 <div class="row no-gutters">
                     <div class="col-md-4">
-                        <img src="..." class="card-img" alt="...">
+                        <img src="{{asset('images/login.jpg')}}" class="img-fluid" alt="login_img">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">

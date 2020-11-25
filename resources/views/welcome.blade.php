@@ -7,18 +7,32 @@
             <p class="d-none d-md-inline d-sm-none">Contacta con nosotros en los siguientes enlaces</p>
         </li>
         <li class="list-inline-item text-right">
-            <p style="color:#344A40;"><a href="#"><i class="fas fa-at"></i> Escríbenos</a></p>
+            <p style="color:#344A40"><a href="#" style="color:#344A40;"><i class="fas fa-at"></i> Escríbenos</a></p>
         </li>
         <li class="list-inline-item text-right">
-            <p style="color:#344A40;"><a href="#"><i class="fa fa-phone"></i> Llámanos</a></p>
+            <p style="color:#344A40;"><a href="#" style="color:#344A40;"><i class="fa fa-phone"></i> Llámanos</a></p>
         </li>
         <li class="list-inline-item text-right">
-            <p style="color:#344A40;"><a href="https://www.facebook.com/educacionyucatan" target="_blank"><i
-                        class="fab fa-facebook"></i> Síguenos </a></p>
+            <p style="color:#344A40;"><a href="https://www.facebook.com/educacionyucatan" target="_blank"
+                    style="color:#344A40;"><i class="fab fa-facebook"></i> Síguenos </a></p>
         </li>
+        @guest
         <li class="list-inline-item text-right">
-            <p style="color:#344A40;"><a href="{{route('login')}}"> Iniciar sesión</a></p>
+            <p style="color:#344A40;" class="d-none d-md-inline d-sm-none"><a href="{{route('login')}}"
+                    style="color:#344A40;"><i class="fas fa-sign-in-alt"></i> Iniciar
+                    sesión</a></p>
         </li>
+        @elseif(Auth::check() && Auth::user()->hasRole('Administrador'))
+        <li class="list-inline-item text-right">
+            <p style="color:#344A40;" class="d-none d-md-inline d-sm-none"><i class="fas fa-user"></i> <a
+                    href="{{route('home')}}" style="color:#344A40;"> {{Auth::user()->name}}</a></p>
+        </li>
+        @else
+        <li class="list-inline-item text-right">
+            <p style="color:#344A40;" class="d-none d-md-inline d-sm-none"><i class="fas fa-user"></i>
+                {{Auth::user()->name}}</p>
+        </li>
+        @endguest
     </ul>
 </div>
 <div class="container">
@@ -27,16 +41,16 @@
 </div>
 <!---- FIN LOGO --->
 <!---- NAV BAR --->
-<nav class="navbar navbar-light navbar-expand-md bg-light justify-content-md-center ">
+<nav class="navbar navbar-light navbar-expand-lg bg-light justify-content-lg-center">
     <a class="navbar-brand font-weight-bold d-md-none d-inline" href="{{route('welcome')}}">Ko'ox Tsikbal</a>
     <button class="navbar-toggler justify-content-end ml-3" type="button" data-toggle="collapse"
         data-target="#collapsingNavbar2">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="navbar-collapse collapse justify-content-between align-items-center w-100" id="collapsingNavbar2">
-        <ul class="navbar-nav mx-auto text-md-center text-left">
+        <ul class="navbar-nav mx-auto text-lg-center text-left">
             <li class="nav-item">
-                <a class="nav-link" href="http://recursoseducativos.segey.gob.mx/" target="_blank">Recursos
+                <a class="nav-link" href="http://recursoseducativos.segey.gob.mx/" target="_blank"> Recursos
                     educativos</a>
             </li>
             <li class="nav-item">
@@ -73,36 +87,47 @@
     <!--fin banner --->
     <div class="border-bottom"></div>
     <div class="row mt-3 text-justify">
-        <div class="col-md-2 col-lg-2 col-sm-2 text-center">
+        <div class="col-md-3 col-lg-3 col-sm-3 text-center">
             <img src="{{asset('images/hex7.jpg')}}" alt="koox-left" class="img-fluid">
         </div>
-        <div class="col-md-10 col-lg-10 col-sm-10 font-p">
-            <p>La contingencia por COVID-19 ha desafiado a todos los sistemas educativos.</p>
-            <p>Las y los docentes nos enfrentamos a una situación en la que se requieren nuevas competencias</p>
-            <p>El acompañamiento a través de un diálogo entre colegas permitirá compartir nuestros saberes y
-                construir caminos que permitan que todas y todos avancemos, que nadie se quede atrás</p>
+        <div class="col-md-9 col-lg-9 col-sm-9 font-p">
+            @if(count($content)>0)
+            @foreach($content as $row)
+            <p>{!!$row->first_paragraph!!}</p>
+            @endforeach
+            @else
+            <p>No se tiene contenido aún. Estamos trabajando para mejorar.</p>
+            @endif
         </div>
     </div>
     <div class="row">
-        <div class="col-md-2 col-lg-2 col-sm-2">
+        <div class="col-md-3 col-lg-3 col-sm-3">
+            @if(count($content)>0)
+            @foreach($content as $row)
             <h4 class="text-white text-center font-weight-bold" style="background-color:#F18B39; font-family:'Panton'">
-                Objetivo</h4>
+                {{$row->sub_title}}
+            </h4>
+            @endforeach
+            @else
+            <h4 class="text-white text-center font-weight-bold" style="background-color:#F18B39; font-family:'Panton'">
+                No contenido.
+            </h4>
+            @endif
         </div>
     </div>
     <div class="row">
         <div class="col-md-8 col-sm-8 col-lg-8 font-p">
-            <p>Acompañar a las figuras educativas mediante un diálogo constructivo orientado al desarrollo de
-                prácticas educativas pertinentes e incluyentes que respondan a las necesidades de educación a
-                distancia en Yucatán.
-            </p>
-            <p>
-                Con estrategias apoyadas en la formación contínua, sugerencias y guías; acompañamiento y atención
-                vía telefónica, correo y redes sociales de la SEGEY para responder dudas y ampliar información</p>
+            @if(count($content)>0)
+            @foreach($content as $objective)
+            {!!$objective->objective_paragraph!!}
+            @endforeach
+            @else
+            <p>No se tiene contenido aún. Estamos trabajando para mejorar.</p>
+            @endif
         </div>
         <div class="col-md-4 col-sm-4 col-lg-4 text-center">
             <img src="{{asset('images/imagen01.png')}}" alt="koox-right" class="img-fluid">
         </div>
-
     </div>
     <div class="row">
         <div class="col-md-3 col-lg-3 col-sm-3">
@@ -318,7 +343,6 @@
                                                 Libros de
                                                 texto</a>
                                         </div>
-                                       |
                                     </div>
                                 </div>
                             </div>
@@ -377,54 +401,55 @@
 </footer>
 <footer>
     <div class="container-fluid" style="background-color: #343A40;">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="d-flex justify-content-between align-items-center">
-                    <h4 class="text-white font-weight-bolder text-center mt-3">SEGEY</h4>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h4 class="text-white font-weight-bolder text-center mt-3">SEGEY</h4>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-
-            <div class="col-md-12">
-                <hr style="height:6px;color:gray;background-color:#F18B39">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-2 text-center">
-                <img src="{{asset('images/EscudoArmas_gris.png')}}" alt="Logo" class="img-fluid">
-            </div>
-            <div class="col-md-5 text-left">
-                <ul class="list-unstyled text-white small ">
-                    <li>Secretaría de Educación del Gobierno del Estado de Yucatán</li>
-                    <li><i class="fas fa-map-marker-alt"></i> Calle 34 No.101A x 25.Col.García Ginerés C.P.97070</li>
-                    <li>Mérida, Yucatán, México</li>
-                    <li><i class="fas fa-phone-alt"></i> 999 930 39 50</li>
-                </ul>
-            </div>
-            <div class="col-md-2 text-left">
-                <ul class="list-unstyled text-white small">
-                    <li><a href="{{route('question')}}" class="text-white"> <i class="far fa-question-circle"></i>
-                            Preguntas
-                            frecuentes</a></li>
-                    <li><a href="#" class="text-white"> <i class="fas fa-lock"></i> Avisos de privacidad </a></li>
-                    <li><a href="#" class="text-white"> <i class="fas fa-envelope"></i> Contacto </a></li>
-                </ul>
-            </div>
-            <div class="col-md-2 text-left">
-                <span class="text-white">Siguenos en:</span>
-                <ul class="list-unstyled text-white small">
-                    <li><a href="https://www.facebook.com/educacionyucatan" class="text-white" target="_blank"><i
-                                class="fab fa-facebook"></i>
-                            /educacionyucatan</a></li>
-                    <li><a href="https://twitter.com/educacionyuc" class="text-white" target="_blank"><i
-                                class="fab fa-twitter"></i> @educacionyuc</a>
-                    </li>
-                    <li><a href="https://www.instagram.com/educacionyucatan/" class="text-white" target="_blank"><i
-                                class="fab fa-instagram"></i> @educacionyucatan</a></li>
-                    <li><a href="https://www.youtube.com/channel/UCEtOqLXpgUPf8XuuBgkQx9g" class="text-white"
-                            target="_blank"><i class="fab fa-youtube"></i> /educacionyuc</i></a></li>
-                </ul>
+            <div class="row">
+                <div class="col-md-2 text-left">
+                    <hr style="height:6px;color:gray;background-color:#F18B39; width:50px; margin-right:100%;">
+                    <img src="{{asset('images/EscudoArmas_gris.png')}}" alt="Logo" class="img-fluid">
+                </div>
+                <div class="col-md-5 text-left">
+                    <hr style="height:6px;color:gray;background-color:#F18B39; width:50px; margin-right:100%;">
+                    <ul class="list-unstyled text-white small ">
+                        <li>Secretaría de Educación del Gobierno del Estado de Yucatán</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Calle 34 No.101A x 25.Col.García Ginerés C.P.97070
+                        </li>
+                        <li>Mérida, Yucatán, México</li>
+                        <li><i class="fas fa-phone-alt"></i> 999 930 39 50</li>
+                    </ul>
+                </div>
+                <div class="col-md-2 text-left">
+                    <hr style="height:6px;color:gray;background-color:#F18B39; width:50px; margin-right:100%;">
+                    <ul class="list-unstyled text-white small">
+                        <li><a href="{{route('question')}}" class="text-white"> <i class="far fa-question-circle"></i>
+                                Preguntas
+                                frecuentes</a></li>
+                        <li><a href="#" class="text-white"> <i class="fas fa-lock"></i> Avisos de privacidad </a></li>
+                        <li><a href="#" class="text-white"> <i class="fas fa-envelope"></i> Contacto </a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 text-left">
+                    <hr style="height:6px;color:gray;background-color:#F18B39; width:50px; margin-right:100%;">
+                    <span class="text-white">Siguenos en:</span>
+                    <ul class="list-unstyled text-white small">
+                        <li><a href="https://www.facebook.com/educacionyucatan" class="text-white" target="_blank"><i
+                                    class="fab fa-facebook"></i>
+                                /educacionyucatan</a></li>
+                        <li><a href="https://twitter.com/educacionyuc" class="text-white" target="_blank"><i
+                                    class="fab fa-twitter"></i> @educacionyuc</a>
+                        </li>
+                        <li><a href="https://www.instagram.com/educacionyucatan/" class="text-white" target="_blank"><i
+                                    class="fab fa-instagram"></i> @educacionyucatan</a></li>
+                        <li><a href="https://www.youtube.com/channel/UCEtOqLXpgUPf8XuuBgkQx9g" class="text-white"
+                                target="_blank"><i class="fab fa-youtube"></i> /educacionyuc</i></a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
