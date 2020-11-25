@@ -1,15 +1,13 @@
-p{
-    font-family: 'Panton'; color:black;
-}
-a{
-    font-family: 'Panton'; color:#343A40;
-}
+
+/*@font-face {
+    font-family: Panton;
+    src: url(panton.light-caps.otf);
+  }*/
 .card-back-color{
     background-color: #6C757D;
 }
-.font-p{
-    font-family: 'Panton'; font-size: 16px;
+.div{
+    font-family: Panton;
 }
-.h4-panton{
-    font-family: 'Panton';
-}
+
+

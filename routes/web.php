@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Content;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $content = Content::orderBy('id', 'desc')->get()->take(1);
+    return view('welcome', compact('content'));
 })->name('welcome');
 Route::get('/question', function () {
     return view('guest.question');
@@ -31,8 +32,6 @@ Route::get('/usuarios/edit/{id}', 'UserController@edit')->name('user_edit');
 Route::put('/usuarios/update/{id}', 'UserController@update')->name('user_update');
 Route::post('/usuarios/status/{id}', 'UserController@user_status')->name('user_status');
 
-Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
 //UploadDocuments
 Route::get('/documents/index', 'DocumentController@index')->name('document_index');
 Route::post('/documents/store', 'DocumentController@store')->name('document_store');
@@ -64,6 +63,11 @@ Route::get('/tickets/new', 'TicketsController@create')->name('new_ticket');
 Route::post('/tickets/store', 'TicketsController@store')->name('tickets_store');
 Route::get('/tickets/list', 'TicketsController@index')->name('list_tickets');
 
+//Content routes
+Route::get('/main-content/index', 'ContentController@index')->name('content_index');
+Route::get('/main-content/create', 'ContentController@create')->name('content_create');
+Route::post('/main-content/post', 'ContentController@store')->name('content_store');
+
 
 Route::put('/tickets/view/options/{id}','TicketsController@update_options')->name('options_tickets');
 Route::get('/tickets/view/data/{id}','TicketsController@view_options')->name('data_tickets');
@@ -83,4 +87,3 @@ Route::get('/questions/edit/{id}', 'QuestionsController@edit')->name('questions_
 Route::put('/questions/update/{id}', 'QuestionsController@update')->name('questions_update');
 Route::put('/questions/status/{id}', 'QuestionsController@question_status')->name('questions_status');
 
-Route::get('/home', 'HomeController@index')->name('home');

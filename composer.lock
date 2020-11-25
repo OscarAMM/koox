@@ -965,18 +965,6 @@
         },
         {
             "name": "laravel/ui",
-<<<<<<< HEAD
-            "version": "v2.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laravel/ui.git",
-                "reference": "f5398544a9cd4804a42d09ce51735e37cd51ea2d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laravel/ui/zipball/f5398544a9cd4804a42d09ce51735e37cd51ea2d",
-                "reference": "f5398544a9cd4804a42d09ce51735e37cd51ea2d",
-=======
             "version": "v2.5.0",
             "source": {
                 "type": "git",
@@ -987,22 +975,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/ui/zipball/d01a705763c243b07be795e9d1bb47f89260f73d",
                 "reference": "d01a705763c243b07be795e9d1bb47f89260f73d",
->>>>>>> 3493eaa1af20b4fa1ca8070c6b685b0baa336600
                 "shasum": ""
             },
             "require": {
                 "illuminate/console": "^7.0",
                 "illuminate/filesystem": "^7.0",
                 "illuminate/support": "^7.0",
-<<<<<<< HEAD
                 "php": "^7.2.5"
             },
             "require-dev": {
                 "mockery/mockery": "^1.0",
-                "phpunit/phpunit": "^8.0"
-=======
+                "phpunit/phpunit": "^8.0",
                 "php": "^7.2.5|^8.0"
->>>>>>> 3493eaa1af20b4fa1ca8070c6b685b0baa336600
             },
             "type": "library",
             "extra": {
@@ -1033,11 +1017,7 @@
                 "laravel",
                 "ui"
             ],
-<<<<<<< HEAD
-            "time": "2020-09-11T15:31:52+00:00"
-=======
             "time": "2020-11-03T19:45:19+00:00"
->>>>>>> 3493eaa1af20b4fa1ca8070c6b685b0baa336600
         },
         {
             "name": "laravelcollective/html",
