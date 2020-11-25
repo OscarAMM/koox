@@ -22,39 +22,7 @@
 
 <body>
     <div id="app" style="background-color:#ffffff">
-        <!---- NAV BAR --->
-        <nav class="navbar navbar-light navbar-expand-lg bg-light justify-content-lg-center">
-            <a class="navbar-brand font-weight-bold d-md-none d-inline" href="{{route('welcome')}}">Ko'ox Tsikbal</a>
-            <button class="navbar-toggler justify-content-end ml-3" type="button" data-toggle="collapse"
-                data-target="#collapsingNavbar2">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-collapse collapse justify-content-between align-items-center w-100"
-                id="collapsingNavbar2">
-                <ul class="navbar-nav mx-auto text-lg-center text-left">
-                    <li class="nav-item">
-                        <a class="nav-link" href="http://recursoseducativos.segey.gob.mx/" target="_blank"> Recursos
-                            educativos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('questions_user_index')}}">Preguntas frecuentes</a>
-                    </li>
-                    <li class="nav-item my-auto">
-                        <a class="nav-link navbar-brand mx-0 d-none font-weight-bold d-md-inline"
-                            href="{{route('welcome')}}">Ko'ox
-                            Tsikbal</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="http://www.kaambal.mx/" target="_blank">Kaambal</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link"
-                            href="http://www.educacion.yucatan.gob.mx/multimedia/publicaciones/200605_CalendarioCierreCiclo.pdf"
-                            target="_blank">Calendario escolar</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+        
         <main>
             @yield('content')
         </main>
