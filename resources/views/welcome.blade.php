@@ -1,4 +1,4 @@
-@extends('layouts.guest')
+@extends('layouts.public')
 @section('content')
 <!--- LOGO --->
 <div class="container-fluid text-center" style="background-color: #DDDDDD;">
@@ -42,37 +42,36 @@
 <!---- FIN LOGO --->
 <!---- NAV BAR --->
 <nav class="navbar navbar-light navbar-expand-lg bg-light justify-content-lg-center">
-            <a class="navbar-brand font-weight-bold d-md-none d-inline" href="{{route('welcome')}}">Ko'ox Tsikbal</a>
-            <button class="navbar-toggler justify-content-end ml-3" type="button" data-toggle="collapse"
-                data-target="#collapsingNavbar2">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-collapse collapse justify-content-between align-items-center w-100"
-                id="collapsingNavbar2">
-                <ul class="navbar-nav mx-auto text-lg-center text-left">
-                    <li class="nav-item">
-                        <a class="nav-link" href="http://recursoseducativos.segey.gob.mx/" target="_blank"> Recursos
-                            educativos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('questions_user_index')}}">Preguntas frecuentes</a>
-                    </li>
-                    <li class="nav-item my-auto">
-                        <a class="nav-link navbar-brand mx-0 d-none font-weight-bold d-md-inline"
-                            href="{{route('welcome')}}">Ko'ox
-                            Tsikbal</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="http://www.kaambal.mx/" target="_blank">Kaambal</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link"
-                            href="http://www.educacion.yucatan.gob.mx/multimedia/publicaciones/200605_CalendarioCierreCiclo.pdf"
-                            target="_blank">Calendario escolar</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+    <a class="navbar-brand font-weight-bold d-md-none d-inline" href="{{route('welcome')}}">Ko'ox Tsikbal</a>
+    <button class="navbar-toggler justify-content-end ml-3" type="button" data-toggle="collapse"
+        data-target="#collapsingNavbar2">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse justify-content-between align-items-center w-100" id="collapsingNavbar2">
+        <ul class="navbar-nav mx-auto text-lg-center text-left">
+            <li class="nav-item">
+                <a class="nav-link" href="http://recursoseducativos.segey.gob.mx/" target="_blank"> Recursos
+                    educativos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('questions_user_index')}}">Preguntas frecuentes</a>
+            </li>
+            <li class="nav-item my-auto">
+                <a class="nav-link navbar-brand mx-0 d-none font-weight-bold d-md-inline"
+                    href="{{route('welcome')}}">Ko'ox
+                    Tsikbal</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://www.kaambal.mx/" target="_blank">Kaambal</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"
+                    href="http://www.educacion.yucatan.gob.mx/multimedia/publicaciones/200605_CalendarioCierreCiclo.pdf"
+                    target="_blank">Calendario escolar</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 
 <!--- fin navbar -->
 <!-- banner-->
@@ -99,6 +98,11 @@
             @else
             <p>No se tiene contenido aún. Estamos trabajando para mejorar.</p>
             @endif
+        </div>
+    </div>
+    <div class="row my-auto text-center">
+        <div class="col-md-12">
+            <h3 class="font-weight-bold"><a href="#" class="btn btn-sm btn-primary">Conoce la estrategia</a></h3>
         </div>
     </div>
     <div class="row">
@@ -179,7 +183,7 @@
                                 <div class="card-footer card-back-color">
                                     <div class="row">
                                         <div class="col-sm-3 col-md-3 col-lg-3">
-                                        <a href="docs/guides/004 guía madres y padres de familia.pdf"
+                                            <a href="docs/guides/004 guía madres y padres de familia.pdf"
                                                 target="_blank" class="btn  btn-link text-white text-center">
                                                 Guía
                                                 para
