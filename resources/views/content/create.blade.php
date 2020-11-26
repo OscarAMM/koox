@@ -22,7 +22,7 @@
                                 <textarea name="objective_paragraph" id="objective_paragraph" cols="30" rows="10"
                                     class="form-control"></textarea>
                             </div>
-                        
+
                         <button type="submit" class="btn btn-sm btn-primary my-3"><i class="fas fa-save"></i> Guardar</button>
                     </form>
                 </div>
