@@ -42,7 +42,7 @@
                 <h5 class="mb-0">
                     FAQ</h5><span class="small text-uppercase text-muted">Módulo dedicado para la sección de preguntas
                     frecuentes.</span>
-                    <p><a href="" class="btn btn-sm btn-primary">Acceder </a></p>
+                    <p><a href="{{route('questions_index')}}" class="btn btn-sm btn-primary">Acceder </a></p>
                 
             </div>
         </div>
