@@ -42,7 +42,7 @@ public function __construct()
         //}else{
             $profile->save();
         //}
-        return redirect()->route('profiles_create')->with('succes','se ha agregado el perfil con exito');
+        return redirect()->route('profiles_index')->with('succes','se ha agregado el perfil con exito');
 
     }
 
