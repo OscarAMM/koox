@@ -18,6 +18,7 @@ class CreateProfilesTable extends Migration
             $table->string('profile_name');
             $table->text('profile_content');
             $table->text('profile_status');
+            $table->foreignId('user_id')->constrained('users');
             $table->timestamps();
         });
     }

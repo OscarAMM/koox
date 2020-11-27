@@ -88,9 +88,10 @@ Route::put('/questions/update/{id}', 'QuestionsController@update')->name('questi
 Route::put('/questions/status/{id}', 'QuestionsController@question_status')->name('questions_status');
 
 //Perfiles
-route::get('/profiles/create', 'ProfileController@create')->name('profiles_create');
-
+Route::get('/profiles/create', 'ProfileController@create')->name('profiles_create');
+Route::post('/profiles/new', 'ProfileController@store')->name('profiles_store');
 //Profile_files
-route::get('/profiles/createfile', 'FileController@create')->name('files_create');
+Route::get('/profiles/createfile', 'FileController@create')->name('files_create');
 Route::post('/profiles/store', 'FileController@store')->name('file_store');
-route::post('/profiles/new', 'ProfileController@store')->name('profiles_store');
+
+

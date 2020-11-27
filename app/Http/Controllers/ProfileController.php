@@ -16,12 +16,12 @@ public function __construct()
 
     public function index(){
         $profile = Profile::all();
+        $user = Auth::user();
         return view('content.profiles.index', compact('profile'));
     }
 
     public function create(){
-        $ticket =Profile::all();
-        $user = Auth::user();
+
         return view('content.profiles.create');
         }
 
@@ -30,20 +30,19 @@ public function __construct()
         $request->validate([
             'profile_name'=>'required',
             'profile_content'=>'required',
-            'profile_status'=>'required',
-        ]);
+            ]);
 
         $profile = new Profile();
         $profile->profile_name = $request->profile_name;
         $profile->profile_content= $request->profile_content;
-        $profile->profile_status = $request->profile_status;
-        $profile->user_id = Auth::user()->id;
+       $profile->user_id = Auth::user()->id;
+        $profile->profile_status = 1;
         //if(Profile::where('profile_name', $request->profile_namee)->exists()){
-         //   return back()->with('error', 'el perfil ya se encuentra registrado.');
+         //   return back()->with(d----------------------'error', 'el perfil ya se encuentra registrado.');
         //}else{
             $profile->save();
         //}
-        return redirect()->route('content.profiles.create')->with('succes','se ha agregado el perfil con exito');
+        return redirect()->route('profiles_create')->with('succes','se ha agregado el perfil con exito');
 
     }
 
@@ -56,7 +55,7 @@ public function __construct()
         $profile = Questions::findOrFail($id);
         $profile->profile_name = $request->profile_name;
         $profile->profile_content = $request->profile_content;
-        $profile->status = $profile->status;
+        $profile->profile_status = $profile->profile_status;
         $profile->update();
         return redirect()->route('questions_index')->with('succes', 'Se ha actualizado el perfil');
 
