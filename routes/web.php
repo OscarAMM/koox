@@ -39,7 +39,9 @@ Route::post('/document/delete/{id}', 'DocumentController@delete')->name('documen
 Route::get('/document/download-file/{id}', 'DocumentController@downloadFile')->name('download_file');
 Route::get('/document/create', 'DocumentController@create')->name('document_create');
 
-//Forum
+
+
+
 //Forum - Index
 Route::get('/forum/index', 'ForumController@index')->name('forum_index');
 Route::get('/forum/forum/{id}-{name?}', 'ForumController@forum', function ($id, $random_link = null) {
@@ -87,3 +89,7 @@ Route::put('/questions/status/{id}', 'QuestionsController@question_status')->nam
 
 //Perfiles
 route::get('/profiles/create', 'ProfileController@create')->name('profiles_create');
+
+//Profile_files
+route::get('/profiles/createfile', 'FileController@create')->name('files_create');
+Route::post('/profiles/store', 'FileController@store')->name('file_store');
