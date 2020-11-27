@@ -8,8 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Profile extends Model
 {
     //
-    public function file_profile()
+    public function users()
     {
-        return $this->belongsToMany(file_profile::class);
+        return $this->belongsToMany(User::class);
+    }
+    public function files()
+    {
+        return $this->belongsToMany(File::class);
     }
 }

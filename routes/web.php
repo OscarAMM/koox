@@ -93,3 +93,4 @@ route::get('/profiles/create', 'ProfileController@create')->name('profiles_creat
 //Profile_files
 route::get('/profiles/createfile', 'FileController@create')->name('files_create');
 Route::post('/profiles/store', 'FileController@store')->name('file_store');
+route::post('/profiles/new', 'ProfileController@store')->name('profiles_store');
