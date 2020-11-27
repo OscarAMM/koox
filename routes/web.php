@@ -88,6 +88,7 @@ Route::put('/questions/update/{id}', 'QuestionsController@update')->name('questi
 Route::put('/questions/status/{id}', 'QuestionsController@question_status')->name('questions_status');
 
 //Perfiles
+route::get('/profiles/index', 'ProfileController@index')->name('profiles_index');
 route::get('/profiles/create', 'ProfileController@create')->name('profiles_create');
 
 //Profile_files
