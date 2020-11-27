@@ -6,8 +6,8 @@
                 <div class="card shadow-sm">
                     <div class="card-body">
                         <h1 class="text-center border-bottom"><i class="fas fa-file-alt"></i> Contenido</h1>
-                        <h2 class="text-center border-bottom"><i class="fas fa-file-alt"></i> ¿Cual es tu perfil?</h2>
-                        <form action="{{ route('content_store') }}" method="post">
+                        <p class="text-center border-bottom">¿Cual es tu perfil?</p>
+                        <form action="{{ route('profiles_store') }}" method="post">
                             @csrf
                             <div class="form-group">
                                 <label for="content_paragraph">Contenido para la sección barra de perfiles</label>
@@ -18,7 +18,7 @@
 
                                     <div class="form-group">
                                         <label for="ticket_own">Nombre del perfil</label>
-                                        <input type="text" name="name" id="name" class="form-control"
+                                        <input type="text" name="profile_name" id="profile_name" class="form-control"
                                             value="">
                                     </div>
 
@@ -27,7 +27,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="content_paragraph">Contenido para el perfil</label>
-                                <textarea name="first_paragraph" id="content_paragraph" cols="30" rows="10"
+                                <textarea name="profile_content" id="profile_content" cols="30" rows="10"
                                     class="form-control"></textarea>
                             </div>
 
