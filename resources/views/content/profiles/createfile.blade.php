@@ -37,8 +37,49 @@
                     <button type="submit" class="btn btn-primary">Subir Archivos</button>
             </div>
                 </form>
-                       
+                    
    
+</div>
+</div>
+<h1 class="display-4"></h1>
+<div class="container">
+
+        <div class="table-responsive">
+            <table class="table table-sm table-striped table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ARCHIVO</th>
+                        
+                        <th>OPCIONES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($files as $row)
+                    <tr>
+                        <td>Archivo: <a href="{{route('download_file', $file->id)}}">{{$row->filename}}</a></td>
+                       
+                        <td>
+
+                        <div class="btn-group">
+                                                             
+                                <form action="{{route('file_delete', $row->id)}}" method="post">
+                                    @csrf
+                                    <button type="submit" class="btn btn-sm btn-link"><i class="far fa-times-circle"
+                                            style="color:red;"></i>
+                                        Inhabilitar</button>
+
+                                </form>
+                                
+                            </div>
+
+                        </td>
+                                             
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 @endsection
 

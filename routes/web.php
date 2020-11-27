@@ -89,8 +89,9 @@ Route::put('/questions/status/{id}', 'QuestionsController@question_status')->nam
 
 //Perfiles
 route::get('/profiles/create', 'ProfileController@create')->name('profiles_create');
+route::post('/profiles/new', 'ProfileController@store')->name('profiles_store');
 
 //Profile_files
 route::get('/profiles/createfile', 'FileController@create')->name('files_create');
 Route::post('/profiles/store', 'FileController@store')->name('file_store');
-route::post('/profiles/new', 'ProfileController@store')->name('profiles_store');
+Route::post('/file/delete/{id}', 'FileController@delete')->name('file_delete');
