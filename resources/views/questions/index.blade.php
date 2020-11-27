@@ -2,9 +2,10 @@
 @section('content')
 <div class="container">
     <div class="py-3 text-center">
-        <i class="fas fa-university fa-3x"></i>
-        <h2>Preguntas Frecuentes</h2>
-        <p class="lead">Se listan las preguntas con las que mas frecuencia nos llegan junto con sus respectivas respuestas.</p>
+        <i class="fas fa-question-circle fa-3x"></i>
+        <h1 class="font-weight-bold">Preguntas Frecuentes</h1>
+        <p class="lead">Se listan las preguntas con las que mas frecuencia nos llegan junto con sus respectivas
+            respuestas.</p>
         <div class="text-center">
             <div class="btn-group">
                 <a href="{{route('home')}}" class="btn btn-sm btn-link"><i class="fas fa-arrow-circle-left"
@@ -37,7 +38,8 @@
                                     <td>{{$row->status}}</td>
                                     <td>
                                         <div class="btn-group">
-                                            <a href="{{route('questions_edit', $row->id)}}" class="btn btn-sm btn-link"><i class="fas fa-edit"
+                                            <a href="{{route('questions_edit', $row->id)}}"
+                                                class="btn btn-sm btn-link"><i class="fas fa-edit"
                                                     style="color:orange;"></i> Editar</a>
                                             @if($row->status == "Active")
                                             <form action="{{route('questions_status', $row->id)}}" method="post">
