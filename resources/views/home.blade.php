@@ -53,6 +53,13 @@
                     <p><a href="{{route('list_tickets')}}" class="btn btn-sm btn-primary">Acceder</a></p>
             </div>
         </div>
+        <div class="col-xl-3 col-sm-6 mb-5 text-center">
+            <div class="bg-white rounded shadow-sm py-5 px-4"><i class="fas fa-users fa-3x" style="color: #F18B39"></i>
+                <h5 class="mb-0">Perfiles</h5><span class="small text-uppercase text-muted">Módulo dedicado para la
+                    sección de perfiles y archivos relacionados </span>
+                    <p><a href="{{route('profiles_index')}}" class="btn btn-sm btn-primary">Acceder</a></p>
+            </div>
+        </div>
     </div>
 </div>
 @endsection
