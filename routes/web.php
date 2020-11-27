@@ -90,6 +90,9 @@ Route::put('/questions/status/{id}', 'QuestionsController@question_status')->nam
 //Perfiles
 Route::get('/profiles/create', 'ProfileController@create')->name('profiles_create');
 Route::post('/profiles/new', 'ProfileController@store')->name('profiles_store');
+route::get('/profiles/index', 'ProfileController@index')->name('profiles_index');
+
+
 //Profile_files
 Route::get('/profiles/createfile', 'FileController@create')->name('files_create');
 Route::post('/profiles/store', 'FileController@store')->name('file_store');
