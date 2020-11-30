@@ -10,6 +10,6 @@ class file_profile extends Model
     //
     public function profile()
     {
-        return $this->belongsto(profile::class);
+        return $this->belongsTo(profile::class);
     }
 }

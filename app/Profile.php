@@ -1,7 +1,6 @@
 <?php
 
 namespace App;
-use App\file_profile;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -14,6 +13,6 @@ class Profile extends Model
     }
     public function files()
     {
-        return $this->belongsToMany(File::class);
+        return $this->belongsToMany(file_profile::class);
     }
 }
