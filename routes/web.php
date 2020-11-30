@@ -96,5 +96,4 @@ route::get('/profiles/index', 'ProfileController@index')->name('profiles_index')
 //Profile_files
 Route::get('/profiles/createfile', 'FileController@create')->name('files_create');
 Route::post('/profiles/store', 'FileController@store')->name('file_store');
-
-
+Route::post('/file/delete/{id}', 'FileController@delete')->name('file_delete');

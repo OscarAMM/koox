@@ -4,19 +4,22 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
-
+use App\file_profile;
 
 class FileController extends Controller {
     public function create(){
      
-        return view('content.profiles.createfile');
+
+        $files = file_profile::all();
+        return view('content.profiles.createfile', compact('files'));
+        
         }
     public function store(Request $request) {
         $request->validate([
             'file' => 'required',
         ]);
 
-        $files = new File();
+        $files = new file_profile();
         /* $file = $request->file('file'); //<---- Como arreglo
          */
 
@@ -45,7 +48,7 @@ class FileController extends Controller {
     }
 
     public function downloadFile($id) {
-        $file = File::findOrFail($id);
+        $file = file_profile::findOrFail($id);
         return Storage::download('/files/' . $file->name);
     }
 }
