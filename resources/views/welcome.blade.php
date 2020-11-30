@@ -146,8 +146,27 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body">
+
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+
+                    @foreach($profiles as $row)
+                    <li class="nav-item" role="presentation">
+                    <p>{!!$row->profile_name!!}</p>
+                    </li>
+
+                    
+                    @endforeach
+
+
+                    </ul>
+
+                    <!--           
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        
                             <li class="nav-item" role="presentation">
+                                
+                                
+                                
                                 <a class="nav-link active" id="parent-tab" data-toggle="tab" href="#parent" role="tab"
                                     aria-controls="parent" aria-selected="true">Soy madre/padre de
                                     familia/tutor</a>
@@ -351,7 +370,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
             </div>

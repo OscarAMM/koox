@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Content;
+use App\Profile;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,8 +16,10 @@ use App\Content;
 
 Route::get('/', function () {
     $content = Content::orderBy('id', 'desc')->get()->take(1);
-    return view('welcome', compact('content'));
+    $profiles = Profile::orderBy('profile_name', 'desc')->get()->take(1);
+    return view('welcome', compact('content','profiles'));
 })->name('welcome');
+
 Route::get('/question', function () {
     return view('guest.question');
 })->name('question');
