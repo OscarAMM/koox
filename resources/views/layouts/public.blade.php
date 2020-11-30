@@ -12,7 +12,12 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
+   <!--reload sin refresh-->
+   <script type="text/javascript">
+        function actualizar(){location.reload(true);}
+      //Función para actualizar cada 4 segundos(4000 milisegundos)
+        setInterval("actualizar()",4000);
+      </script>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <!-- Styles -->
