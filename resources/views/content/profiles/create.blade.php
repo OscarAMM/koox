@@ -7,7 +7,7 @@
                     <div class="card-body">
                         <h1 class="text-center border-bottom"><i class="fas fa-file-alt"></i> Contenido</h1>
                         <p class="text-center border-bottom">¿Cual es tu perfil?</p>
-                        <form action="{{ route('profiles_store') }}" method="post">
+                        <form action="{{ route('profiles_store') }}" method="POST">
                             @csrf
                             <div class="form-group">
                                 <label for="content_paragraph">Contenido para la sección barra de perfiles</label>

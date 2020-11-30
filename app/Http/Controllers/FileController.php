@@ -10,10 +10,13 @@ use Illuminate\Support\Facades\Storage;
 
 
 class FileController extends Controller {
-    public function create() {
+    public function create(){
+     
 
-        return view('content.profiles.createfile');
-    }
+        $files = file_profile::all();
+        return view('content.profiles.createfile', compact('files'));
+        
+        }
     public function store(Request $request) {
         $request->validate([
             'file' => 'required',
@@ -45,7 +48,7 @@ class FileController extends Controller {
     }
 
     public function downloadFile($id) {
-        $file = File::findOrFail($id);
+        $file = file_profile::findOrFail($id);
         return Storage::download('/files/' . $file->name);
     }
 }

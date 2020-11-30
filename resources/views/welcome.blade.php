@@ -128,7 +128,9 @@
             @endforeach
             @else
             <p>No se tiene contenido aún. Estamos trabajando para mejorar.</p>
+
             @endif
+
         </div>
         <div class="col-md-4 col-sm-4 col-lg-4 text-center">
             <img src="{{asset('images/imagen01.png')}}" alt="koox-right" class="img-fluid">
