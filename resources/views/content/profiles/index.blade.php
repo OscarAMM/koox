@@ -30,14 +30,14 @@
                                 <div class="card">
                                     <div class="card-header" id="headingOne">
                                         <h5 class="mb-0">
-                                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
+                                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapse-{{$row->id}}"
                                                 aria-expanded="true" aria-controls="collapseOne">
                                                 {{$row->profile_name}}
                                             </button>
                                         </h5>
                                     </div>
 
-                                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                                    <div id="collapse-{{$row->id}}" class="collapse" aria-labelledby="headingOne"
                                         data-parent="#accordion">
                                         <div class="card-body">
                                             {{$row->profile_content}}
