@@ -20,50 +20,41 @@
                 </h4>
                 <div class="input-group mb-3">
                     <div class="form-group">
-                        <input type="file" name = "file[]" id="file" multiple>
+                        <input type="file" name="file[]" id="file" multiple>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary">Subir Archivos</button>
-            </div>
-                </form>
-                    
-   
-</div>
-</div>
-<h1 class="display-4"></h1>
-<div class="container">
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+    <h1 class="display-4"></h1>
+    <div class="container">
 
         <div class="table-responsive">
             <table class="table table-sm table-striped table-bordered">
                 <thead class="thead-dark">
                     <tr>
                         <th>ARCHIVO</th>
-                        
                         <th>OPCIONES</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($files as $row)
+                    @foreach($files as $file)
                     <tr>
-                        <td>Archivo: <a href="{{route('download_file', $file->id)}}">{{$row->filename}}</a></td>
-                       
+                        <td>Archivo: <a href="{{route('download_file', $file->id)}}">{{$file->fileName}}</a></td>
                         <td>
-
-                        <div class="btn-group">
-                                                             
-                                <form action="{{route('file_delete', $row->id)}}" method="post">
+                            <div class="btn-group">
+                                <form action="{{route('file_delete', $file->id)}}" method="post">
                                     @csrf
-                                    <button type="submit" class="btn btn-sm btn-link"><i class="far fa-times-circle"
-                                            style="color:red;"></i>
+                                    <button type="submit" class="btn btn-sm btn-link"><i class="far fa-times-circle" style="color:red;"></i>
                                         Inhabilitar</button>
-
                                 </form>
-                                
                             </div>
-
                         </td>
-                                             
                     </tr>
                     @endforeach
                 </tbody>
@@ -72,4 +63,3 @@
     </div>
 </div>
 @endsection
-
