@@ -39,12 +39,12 @@ class FileController extends Controller {
                     $file_model->profile()->attach(Profile::where('id', $profile->id)->first());
                     /* Aquí terminaría el foreach */
                 }
-                \Session::flash('success_message', 'Documento subido con Exito');
-                return back()->with('success', 'Documento Guardado');
+                \Session::flash('success_message', 'Documento subido con éxito.');
+                return back();
             }
         } else {
-            \Session::flash('fail_message', 'Se alcanzó el límite de documentos permitidos.');
-            return back()->with('success', 'Demasiados documentos');
+            \Session::flash('fail_message', 'Se alcanzó el límite de documentos permitidos (4). Elimina uno para continuar.');
+            return back();
         }
     }
 
