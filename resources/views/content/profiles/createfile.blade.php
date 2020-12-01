@@ -7,7 +7,7 @@
         <h1 class="display-4">Seccion Archivos de Perfil</h1>
 
         <div class="btn-group mb-2">
-            <a href="" class="btn btn-sm btn-link"><i class="fas fa-arrow-circle-left" style="color:black;"></i>
+        <a href="{{route('home')}}" class="btn btn-sm btn-link"><i class="fas fa-arrow-circle-left" style="color:black;"></i>
                 Regresar</a>
 
         </div>
