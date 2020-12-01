@@ -128,7 +128,9 @@
             @endforeach
             @else
             <p>No se tiene contenido aún. Estamos trabajando para mejorar.</p>
+
             @endif
+
         </div>
         <div class="col-md-4 col-sm-4 col-lg-4 text-center">
             <img src="{{asset('images/imagen01.png')}}" alt="koox-right" class="img-fluid">
@@ -146,11 +148,33 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body">
+
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+
+                    @foreach($profiles as $row)
+                    <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="parent-tab" data-toggle="tab" href="" role="tab"
+                                    aria-controls="parent" aria-selected="true">
+                    {!!$row->profile_name!!}</a>
+                    </li>
+
+                    
+                    @endforeach
+
+
+                    </ul>
+
+                    <!--           
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        
                             <li class="nav-item" role="presentation">
+                                                               
+                                
                                 <a class="nav-link active" id="parent-tab" data-toggle="tab" href="#parent" role="tab"
                                     aria-controls="parent" aria-selected="true">Soy madre/padre de
                                     familia/tutor</a>
+
+
                             </li>
                             <li class="nav-item" role="presentation">
                                 <a class="nav-link" id="teacher-tab" data-toggle="tab" href="#teacher" role="tab"
@@ -178,7 +202,7 @@
                                     conjunto con las autoridades educativas para promover la colaboración entre las
                                     y los integrantes de la escuela.
                                     Así mismo, son fuentes de apoyo tanto en el proceso educativo como en el ámbito
-                                    emocional de su hija o hijo.
+                                    emocional de su hija o hijo.zxczxczcx
                                 </p>
                                 <div class="card-footer card-back-color">
                                     <div class="row">
@@ -351,7 +375,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
             </div>
