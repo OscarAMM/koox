@@ -16,7 +16,7 @@ use App\Profile;
 
 Route::get('/', function () {
     $content = Content::orderBy('id', 'desc')->get()->take(1);
-    $profiles = Profile::orderBy('profile_name', 'desc')->get()->take(1);
+    $profiles = Profile::all();
     return view('welcome', compact('content','profiles'));
 })->name('welcome');
 
