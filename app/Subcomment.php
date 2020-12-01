@@ -7,24 +7,19 @@ use App\File;
 use App\User;
 use App\Comment;
 
-class Subcomment extends Model
-{
+class Subcomment extends Model {
 
-    public function files()
-    {
+    public function files() {
         return $this->belongsToMany(File::class, 'subcomment_file');
     }
-    public function comments()
-    {
+    public function comments() {
         return $this->belongsTo(Comment::class);
     }
 
-    public function user()
-    {
+    public function user() {
         return $this->belongsTo(User::class);
     }
-    public function hasFile($id)
-    {
+    public function hasFile($id) {
         if ($this->files()->where('file_id', $id)->first()) {
             return true;
         } else {

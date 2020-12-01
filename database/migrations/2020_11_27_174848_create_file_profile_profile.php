@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFileProfilesProfile extends Migration
+class CreateFileProfileProfile extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateFileProfilesProfile extends Migration
      */
     public function up()
     {
-        Schema::create('file_profiles_profile', function (Blueprint $table) {
+        Schema::create('file_profile_profile', function (Blueprint $table) {
             $table->id();
             $table->foreignId('profile_id')->constrained();
-            $table->foreignId('file_id')->constrained();
+            $table->foreignId('file_profile_id')->constrained();
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateFileProfilesProfile extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('file_profiles_profile');
+        Schema::dropIfExists('file_profile_profile');
     }
 }

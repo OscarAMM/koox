@@ -44,7 +44,7 @@
                                         </div>
                                         <div class="pricing-header  px-3  pb-md-2 mx-auto text-center">
                                             <div class="btn-group mb-2">
-                                                <p><a href="{{ route('files_create') }}" class="btn btn-sm btn-primary" id="{{$row->id}}">Carga de archivos</a></p>
+                                                <p><a href="{{ route('files_create', $row->id )}}" class="btn btn-sm btn-primary" id="{{$row->id}}">Carga de archivos</a></p>
                                             </div>
                                         </div>
                                     </div>

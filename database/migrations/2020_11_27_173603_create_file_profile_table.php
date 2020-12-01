@@ -17,7 +17,6 @@ class CreateFileProfileTable extends Migration
             $table->id();
             $table->string('fileName');
             $table->string('file_path');
-            $table->foreignId('profile_id')->nullable();
             $table->timestamps();
         });
     }

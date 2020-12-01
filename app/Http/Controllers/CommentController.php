@@ -11,14 +11,11 @@ use App\Subcomment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class CommentController extends Controller
-{
-    public function __construct()
-    {
+class CommentController extends Controller {
+    public function __construct() {
         $this->middleware('auth');
     }
-    public function store(Request $request, $id)
-    {
+    public function store(Request $request, $id) {
 
 
         $forum = Forum::findOrFail($id);
@@ -53,8 +50,7 @@ class CommentController extends Controller
         }
         return back()->with('success', 'Se ha realizado con éxito el comentario. Cuenta con 24 horas para eliminar el comentario.');
     }
-    public function delete($id)
-    {
+    public function delete($id) {
 
         $comment = Comment::findOrFail($id);
 
