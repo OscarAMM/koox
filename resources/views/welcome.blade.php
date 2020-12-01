@@ -153,7 +153,9 @@
 
                     @foreach($profiles as $row)
                     <li class="nav-item" role="presentation">
-                    <p>{!!$row->profile_name!!}</p>
+                    <a class="nav-link active" id="parent-tab" data-toggle="tab" href="" role="tab"
+                                    aria-controls="parent" aria-selected="true">
+                    {!!$row->profile_name!!}</a>
                     </li>
 
                     
@@ -166,12 +168,13 @@
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                         
                             <li class="nav-item" role="presentation">
-                                
-                                
+                                                               
                                 
                                 <a class="nav-link active" id="parent-tab" data-toggle="tab" href="#parent" role="tab"
                                     aria-controls="parent" aria-selected="true">Soy madre/padre de
                                     familia/tutor</a>
+
+
                             </li>
                             <li class="nav-item" role="presentation">
                                 <a class="nav-link" id="teacher-tab" data-toggle="tab" href="#teacher" role="tab"
@@ -199,7 +202,7 @@
                                     conjunto con las autoridades educativas para promover la colaboración entre las
                                     y los integrantes de la escuela.
                                     Así mismo, son fuentes de apoyo tanto en el proceso educativo como en el ámbito
-                                    emocional de su hija o hijo.
+                                    emocional de su hija o hijo.zxczxczcx
                                 </p>
                                 <div class="card-footer card-back-color">
                                     <div class="row">
