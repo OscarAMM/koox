@@ -10,10 +10,10 @@ use Illuminate\Support\Facades\Storage;
 
 
 class FileController extends Controller {
-    public function create(){
+    public function create($id){
      
-
-        $files = file_profile::all();
+        $files = file_profile::findOrFail($id);
+        
         return view('content.profiles.createfile', compact('files'));
         
         }

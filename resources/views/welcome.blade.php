@@ -149,22 +149,7 @@
                 <div class="card">
                     <div class="card-body">
 
-                    <ul class="nav nav-tabs" id="myTab" role="tablist">
-
-                    @foreach($profiles as $row)
-                    <li class="nav-item" role="presentation">
-                    <a class="nav-link active" id="parent-tab" data-toggle="tab" href="" role="tab"
-                                    aria-controls="parent" aria-selected="true">
-                    {!!$row->profile_name!!}</a>
-                    </li>
-
-                    
-                    @endforeach
-
-
-                    </ul>
-
-                    <!--           
+                               
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                         
                             <li class="nav-item" role="presentation">
@@ -375,7 +360,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div> -->
+                    </div> 
 
                 </div>
             </div>
