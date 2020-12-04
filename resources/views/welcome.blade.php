@@ -1,5 +1,6 @@
 @extends('layouts.public')
 @section('content')
+@include('modal.welcome_modal')
 <!--- LOGO --->
 <div class="container-fluid text-center" style="background-color: #DDDDDD;">
     <ul class="list-inline">
@@ -16,21 +17,32 @@
             <p style="color:#344A40;"><a href="https://www.facebook.com/educacionyucatan" target="_blank"
                     style="color:#344A40;"><i class="fab fa-facebook"></i> Síguenos </a></p>
         </li>
+        <!-- Authentication Links -->
         @guest
-        <li class="list-inline-item text-right">
-            <p style="color:#344A40;" class="d-none d-md-inline d-sm-none"><a href="{{route('login')}}"
-                    style="color:#344A40;"><i class="fas fa-sign-in-alt"></i> Iniciar
-                    sesión</a></p>
-        </li>
-        @elseif(Auth::check() && Auth::user()->hasRole('Administrador'))
-        <li class="list-inline-item text-right">
-            <p style="color:#344A40;" class="d-none d-md-inline d-sm-none"><i class="fas fa-user"></i> <a
-                    href="{{route('home')}}" style="color:#344A40;"> {{Auth::user()->name}}</a></p>
+        <li class="list-inline-item">
+            <p style="color:#344A40;"> <a href="{{ route('login') }}"  style="color:#344A40;"><i class="fas fa-sign-in-alt"  style="color:#344A40;"></i>
+                    {{ __('Iniciar sesión') }}</a></p>
         </li>
         @else
-        <li class="list-inline-item text-right">
-            <p style="color:#344A40;" class="d-none d-md-inline d-sm-none"><i class="fas fa-user"></i>
-                {{Auth::user()->name}}</p>
+        <li class="list-inline-item dropdown">
+            <a id="navbarDropdown" class="dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false" v-pre>
+                <i class="fas fa-user" style="color:#344A40;"></i> {{ Auth::user()->name }}
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                    <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+                </a>
+                @if(Auth::user()->hasRole('Administrador'))
+                <a class="dropdown-item" href="{{route('home')}}">
+                    <i class="fas fa-cog"></i> Administrar sitio
+                </a>
+                @endif
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+            </div>
         </li>
         @endguest
     </ul>
@@ -53,8 +65,21 @@
                 <a class="nav-link" href="http://recursoseducativos.segey.gob.mx/" target="_blank"> Recursos
                     educativos</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('questions_user_index')}}">Preguntas frecuentes</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Servicios
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{route('questions_user_index')}}">Preguntas frecuentes</a>
+                    @if(Auth::check())
+                    <a class="dropdown-item" href="{{route('forum_index')}}">Foro</a>
+                    <a class="dropdown-item" href="{{route('new_ticket')}}">Realiza tu ticket</a>
+                    @else
+                    <a class="dropdown-item" href="{{route('forum_public_index')}}" >Foro</a>
+                    <a class="dropdown-item" href="#"  data-toggle="modal" data-target="#welcome_modal">Realiza tu ticket</a>
+                    @endif
+                </div>
             </li>
             <li class="nav-item my-auto">
                 <a class="nav-link navbar-brand mx-0 d-none font-weight-bold d-md-inline"

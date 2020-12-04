@@ -1,7 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Content;
+use App\Forum;
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,7 +13,7 @@ use App\Content;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
 Route::get('/', function () {
     $content = Content::orderBy('id', 'desc')->get()->take(1);
@@ -39,11 +41,12 @@ Route::post('/document/delete/{id}', 'DocumentController@delete')->name('documen
 Route::get('/document/download-file/{id}', 'DocumentController@downloadFile')->name('download_file');
 Route::get('/document/create', 'DocumentController@create')->name('document_create');
 
-
-
-
 //Forum - Index
 Route::get('/forum/index', 'ForumController@index')->name('forum_index');
+Route::get('/forum/public-index', function () {
+    $forum = Forum::where('status', 'Nuevo')->get()->take(5);
+    return view('forum.public_index', compact('forum'));
+})->name('forum_public_index');
 Route::get('/forum/forum/{id}-{name?}', 'ForumController@forum', function ($id, $random_link = null) {
     $forum = Forum::findOrFail($id);
     $name = $forum->random_link;
@@ -64,8 +67,8 @@ Route::get('users/tickets/list', 'TicketsController@view_list')->name('list_tick
 Route::get('/tickets/new', 'TicketsController@create')->name('new_ticket');
 Route::post('/tickets/store', 'TicketsController@store')->name('tickets_store');
 Route::get('/tickets/list', 'TicketsController@index')->name('list_tickets');
-Route::put('/tickets/view/options/{id}','TicketsController@update_options')->name('options_tickets');
-Route::get('/tickets/view/data/{id}','TicketsController@view_options')->name('data_tickets');
+Route::put('/tickets/view/options/{id}', 'TicketsController@update_options')->name('options_tickets');
+Route::get('/tickets/view/data/{id}', 'TicketsController@view_options')->name('data_tickets');
 Route::get('/tickets/edit/{id}', 'TicketsController@edit')->name('tickets_edit');
 Route::put('/tickets/update/{id}', 'TicketsController@update')->name('tickets_update');
 Route::get('/tickets/status/{id}', 'TicketsController@question_status')->name('tickets_status');
@@ -91,7 +94,6 @@ Route::put('/questions/status/{id}', 'QuestionsController@question_status')->nam
 Route::get('/profiles/create', 'ProfileController@create')->name('profiles_create');
 Route::post('/profiles/new', 'ProfileController@store')->name('profiles_store');
 route::get('/profiles/index', 'ProfileController@index')->name('profiles_index');
-
 
 //Profile_files
 Route::get('/profiles/createfile', 'FileController@create')->name('files_create');

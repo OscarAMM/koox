@@ -30,7 +30,6 @@ class HomeController extends Controller
         if(Auth::user()->hasRole('Administrador')){
             return view('home');
         }else{
-            
             return view('Welcome', compact('profile'));
         }
         
