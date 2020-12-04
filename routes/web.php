@@ -2,6 +2,7 @@
 
 use App\Content;
 use App\Forum;
+use App\Profile;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,8 +18,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $content = Content::orderBy('id', 'desc')->get()->take(1);
-    return view('welcome', compact('content'));
+    $profiles = Profile::all();
+    return view('welcome', compact('content','profiles'));
 })->name('welcome');
+
 Route::get('/question', function () {
     return view('guest.question');
 })->name('question');
@@ -96,6 +99,8 @@ Route::post('/profiles/new', 'ProfileController@store')->name('profiles_store');
 route::get('/profiles/index', 'ProfileController@index')->name('profiles_index');
 
 //Profile_files
-Route::get('/profiles/createfile', 'FileController@create')->name('files_create');
-Route::post('/profiles/store', 'FileController@store')->name('file_store');
+Route::get('/profiles/createfile/{id}', 'FileController@create')->name('files_create');
+Route::post('/profiles/store/{id}', 'FileController@store')->name('file_store');
 Route::post('/file/delete/{id}', 'FileController@delete')->name('file_delete');
+Route::get('/file/download-file/{id}', 'FileController@downloadFile')->name('file_download');
+

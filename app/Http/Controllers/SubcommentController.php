@@ -12,16 +12,13 @@ use App\Subcomment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class SubcommentController extends Controller
-{
-    public function __construct()
-    {
+class SubcommentController extends Controller {
+    public function __construct() {
         $this->middleware('auth');
     }
 
 
-    public function store(Request $request, $id)
-    {
+    public function store(Request $request, $id) {
         $comment = Comment::findOrFail($id);
         $user_id = Auth::user()->id;
         $subcomment = new Subcomment();
@@ -55,8 +52,7 @@ class SubcommentController extends Controller
     }
 
 
-    public function delete($id)
-    {
+    public function delete($id) {
         $subcomment = Subcomment::findOrFail($id);
         $files = $subcomment->files;
         foreach ($files as $file) {

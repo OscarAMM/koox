@@ -25,14 +25,10 @@
                         @if($forum->count() > 0)
                         @foreach($forum as $row)
                         <li class="list-group-item">
-                            @if(Auth::check())
                             <a href="{{route('forum_forum', [$row->id, $row->random_link])}}" class="stretched-link"
                                 style="color:black;">
                                 <h5 class="card-title">{{$row->topic}}</h5>
                             </a>
-                            @else
-
-                            @endif
                             <p class="card-text text-muted">{{$row->description}}</p>
                             <small class="small">{{$row->creator_name}} -
                                 {{$row->updated_at->diffForHumans()}}</small>
