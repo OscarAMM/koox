@@ -8,10 +8,9 @@
             respuestas.</p>
         <div class="text-center">
             <div class="btn-group">
-                <a href="{{route('home')}}" class="btn btn-sm btn-link"><i class="fas fa-arrow-circle-left"
-                        style="color:black;"></i> Regresar</a>
-                <a href="{{route('questions_create')}}" class="btn btn-sm btn-link"><i class="fas fa-plus-circle"
-                        style="color:green;"></i> Agregar pregunta</a>
+                <a href="{{route('home')}}" class="btn btn-sm btn-outline-secondary"><i class="fas fa-arrow-circle-left"
+                        ></i> Regresar</a>
+                <a href="{{route('questions_create')}}" class="btn btn-sm btn-outline-primary"><i class="fas fa-plus-circle"></i> Agregar pregunta</a>
             </div>
         </div>
     </div>

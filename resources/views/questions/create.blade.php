@@ -7,29 +7,28 @@
             <div class="card box shadow">
                 <div class="card-body">
                     <div class="py-2 text-center">
-                        <i class="fas fa-university fa-2x"></i>
-                        <h4 class="text-center">Pregunta</h4>
+                    <i class="fas fa-question-circle fa-2x"></i>
+                        <h3>FAQ</h3>
                     </div>
                     <form action="{{route('questions_store')}}" method="post">
-                    @csrf
-                        <div class="row text-center">
+                        @csrf
+                        <div class="row">
                             <div class="col-lg-12">
                                 <label for="question">Pregunta frecuente</label>
                                 <input type="text" name="question" id="question" class="form-control"
                                     autocomplete="off">
                             </div>
-                            </div>
+                        </div>
 
-                            <div class="row text-center">
+                        <div class="row">
                             <div class="col-lg-12">
                                 <label for="answer">Respuesta</label>
-                                <textarea name="answer" id="answer" class="form-control"
-                                    autocomplete="off">
+                                <textarea name="answer" id="answer" cols="20" rows="5" class="form-control" autocomplete="off">
                                     </textarea>
                             </div>
-                            </div>
-                            <div class="row text-center">
-                            <div class="col-lg-6">
+                        </div>
+                        <div class="row ">
+                            <div class="col-lg-12">
                                 <label for="status">Estatus</label>
                                 <select name="status" id="status" class="form-control">
                                     <option value="">seleccione un estatus</option>
@@ -37,15 +36,15 @@
                                     <option value="Inactive">Inactivo</option>
                                 </select>
                             </div>
-                            </div>
-                            
+                        </div>
+
                         <div class="text-center">
                             <div class="btn-group mt-3">
-                                <a href="{{route('questions_index')}}" class="btn btn-sm btn-secondary">Regresar</a>
-                                <button type="submit" class="btn btn-sm btn-primary">Guardar</button>
+                                <a href="{{route('questions_index')}}" class="btn btn-sm btn-outline-secondary">Regresar</a>
+                                <button type="submit" class="btn btn-sm btn-outline-success">Guardar</button>
                             </div>
                         </div>
-                       
+
                     </form>
                 </div>
             </div>
