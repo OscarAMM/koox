@@ -20,7 +20,7 @@
     <link href="{{ asset('css/font.css') }}" rel="stylesheet">
 </head>
 
-<body class="d-flex flex-column vh-100">
+<body class="d-flex flex-column vh-100" style="background-color: #ffffff">
     <div id="app" style="background-color:#ffffff">
         <nav class="navbar navbar-light navbar-expand-lg bg-light justify-content-lg-center">
             <a class="navbar-brand font-weight-bold d-md-none d-inline" href="{{route('welcome')}}">Ko'ox Tsikbal</a>

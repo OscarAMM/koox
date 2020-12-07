@@ -117,9 +117,9 @@
                                 </li>
                                 @else
                                 <li class="list-inline-item dropdown">
-                                    <a id="navbarDropdown" class="dropdown-toggle" href="#" role="button"
+                                    <a id="navbarDropdown" class="dropdown-toggle text-white" href="#" role="button"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                        <i class="fas fa-user" style="color:#344A40;"></i> {{ Auth::user()->name }}
+                                        <i class="fas fa-user"></i> {{ Auth::user()->name }}
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
