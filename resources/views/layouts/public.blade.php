@@ -12,8 +12,9 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-   <!--reload sin refresh-->
-   <script language="javascript" src="js/jquery-1.2.6.min.js"></script>
+    <!--reload sin refresh-->
+    <!--
+   <script language="javascript" src="js/jquery-1.2.6.min.js"></script>-->
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -107,6 +108,36 @@
                                     </a>
                                 </li>
                                 <li><a href="#" class="text-white"> <i class="fas fa-envelope"></i> Contacto </a></li>
+                                <!-- Authentication Links -->
+                                @guest
+                                <li class="list-inline-item">
+                                    <p class="text-white"> <a href="{{ route('login') }}" class="text-white"><i
+                                                class="fas fa-sign-in-alt"></i>
+                                            {{ __('Iniciar sesión') }}</a></p>
+                                </li>
+                                @else
+                                <li class="list-inline-item dropdown">
+                                    <a id="navbarDropdown" class="dropdown-toggle" href="#" role="button"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        <i class="fas fa-user" style="color:#344A40;"></i> {{ Auth::user()->name }}
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+                                        </a>
+                                        @if(Auth::user()->hasRole('Administrador'))
+                                        <a class="dropdown-item" href="{{route('home')}}">
+                                            <i class="fas fa-cog"></i> Administrar sitio
+                                        </a>
+                                        @endif
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                            class="d-none">
+                                            @csrf
+                                        </form>
+                                    </div>
+                                </li>
+                                @endguest
                             </ul>
                         </div>
                         <div class="col-md-2 text-left">
