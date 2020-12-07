@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Profile;
+use App\Content;
 use Auth;
 
 class HomeController extends Controller
@@ -27,10 +28,11 @@ class HomeController extends Controller
     {
 
         $profile = Profile::all();
+        $content = Content::all();
         if(Auth::user()->hasRole('Administrador')){
             return view('home');
         }else{
-            return view('Welcome', compact('profile'));
+            return view('Welcome', compact('profile', 'content'));
         }
         
     }
