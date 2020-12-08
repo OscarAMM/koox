@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\User;
 use Spatie\Permission\Models\Role;
+use Auth;
 
 class UserController extends Controller
 {
@@ -73,5 +74,10 @@ class UserController extends Controller
             $user->update();
             return back()->with('success', 'Se ha habilitado el usuario con éxito.');
         }
+    }
+    public function user_profile($id){
+        $user = User::findOrFail($id);
+        $profiles = $user->getRoleNames();
+        return view('auth.profile', compact('user', 'profiles'));
     }
 }

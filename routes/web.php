@@ -36,6 +36,7 @@ Route::post('/usuarios/store', 'UserController@store')->name('user_store');
 Route::get('/usuarios/edit/{id}', 'UserController@edit')->name('user_edit');
 Route::put('/usuarios/update/{id}', 'UserController@update')->name('user_update');
 Route::post('/usuarios/status/{id}', 'UserController@user_status')->name('user_status');
+Route::get('/usuario/perfil/{id}', 'UserController@user_profile')->name('user_profile');
 
 //UploadDocuments
 Route::get('/documents/index', 'DocumentController@index')->name('document_index');
