@@ -2,7 +2,7 @@
 @section('content')
 <div class="container">
     <div class="row d-flex justify-content-center">
-        <div class="col-md-8 col-lg-8">
+        <div class="col-md-6 col-lg-6">
             <div class="card shadow-sm">
                 <div class="card-body">
                     <div class="text-center"><i class="fas fa-user-tie fa-3x"></i></div>
@@ -15,6 +15,10 @@
                         <li class="list-group-item">Correo: {{$user->email}}</li>
                         <li class="list-group-item">Fecha de registro: {{$user->created_at}}</li>
                         <li class="list-group-item">Fecha del último cambio: {{$user->updated_at}}</li>
+                    </ul>
+                    <ul class="list-inline text-center my-3">
+                        <li class="list-inline-item"><a href="{{route('user_public_edit', $user->id)}}"><i class="fas fa-user-edit"></i></a></li>
+                        <li class="list-inline-item"></li>
                     </ul>
                 </div>
             </div>
