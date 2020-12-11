@@ -20,8 +20,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     $content = Content::orderBy('id', 'desc')->get()->take(1);
     $profiles = Profile::all();
-    
-   
     return view('welcome', compact('content','profiles'));
 })->name('welcome');
 
