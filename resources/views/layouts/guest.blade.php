@@ -23,7 +23,7 @@
 <body class="d-flex flex-column vh-100" style="background-color: #ffffff">
     <div id="app" style="background-color:#ffffff">
         <nav class="navbar navbar-light navbar-expand-lg bg-light justify-content-lg-center">
-            <a class="navbar-brand font-weight-bold d-md-none d-inline" href="{{route('welcome')}}">Ko'ox Tsikbal</a>
+            <a class="navbar-brand font-weight-bold d-md-none d-inline" href="{{route('welcome')}}"><img src="{{asset('images/logo.png')}}" class="img-fluid" alt="logo-mobile"> Ko'ox Tsikbal</a>
             <button class="navbar-toggler justify-content-end ml-3" type="button" data-toggle="collapse"
                 data-target="#collapsingNavbar2">
                 <span class="navbar-toggler-icon"></span>
@@ -40,7 +40,7 @@
                     </li>
                     <li class="nav-item my-auto">
                         <a class="nav-link navbar-brand mx-0 d-none font-weight-bold d-md-inline"
-                            href="{{route('welcome')}}">Ko'ox
+                            href="{{route('welcome')}}"><img src="{{asset('images/logo.png')}}" class="img-fluid" alt="logo-web"> Ko'ox Tsikbal</a> Ko'ox
                             Tsikbal</a>
                     </li>
                     <li class="nav-item">
