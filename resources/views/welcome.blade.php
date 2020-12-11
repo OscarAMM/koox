@@ -147,11 +147,9 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body">
-
-
                         <nav>
-
                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                @if(count($profiles)>0)
                                 @foreach ($profiles as $row)
                                 @if($row == Arr::first($profiles))
                                 <a class="nav-item nav-link active" id="nav-{{$row->id}}-tab" data-toggle="tab"
@@ -164,11 +162,17 @@
                                     aria-selected="false">{{$row->profile_name}}</a>
                                 @endif
                                 @endforeach
+                                @else
+                                <a class="nav-item nav-link active" id="nav-no-content-tab" data-toggle="tab"
+                                    href="#nav-no-content" role="tab" aria-controls="nav-no-content"
+                                    aria-selected="true">¡Aviso!</a>
+                                @endif
                             </div>
 
                         </nav>
 
                         <div class="tab-content" id="nav-tabContent">
+                            @if(count($profiles)>0)
                             @foreach($profiles as $content)
                             @if($content == Arr::first($profiles))
 
@@ -198,6 +202,24 @@
                                 </div>
                                 @endforeach
                             </div>
+                            @else
+                            <div class="tab-pane fade show active" id="nav-no-content" role="tabpanel"
+                                aria-labelledby="nav-no-content">
+                                @if(Auth::check())
+                                <p class="text-center">
+                                    Se informa. No se tiene contenido, estamos trabajando para brindar un mejor
+                                    servicio. Si tiene alguna duda o inconveniente, favor de levantar un <a
+                                        href="{{route('new_ticket')}}" class="btn btn-sm btn-link">Ticket</a>
+                                </p>
+                                @else
+                                <p class="text-center">
+                                    Se informa. No se tiene contenido, estamos trabajando para brindar un mejor
+                                    servicio. Si tiene alguna duda o inconveniente, favor de levantar un <a
+                                        href="#" data-toggle="modal" data-target="#welcome_modal" class="btn btn-sm btn-link">Ticket</a>
+                                </p>
+                                @endif
+                            </div>
+                            @endif
                         </div>
                     </div>
                 </div>

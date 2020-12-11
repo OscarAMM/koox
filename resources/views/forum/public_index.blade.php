@@ -6,7 +6,7 @@
         <img src="{{asset('images/logoSegey.png')}}" alt="logo-segey" class="img-fluid" width="250px"
             style="margin-bottom:24px; margin-top:24px;">
     </div>
-    <h1 class="text-center"><i class="fas fa-globe-americas" style="color:blue;"></i> Foros</h1>
+    <h1 class="text-center" style="color:blue;"><i class="fas fa-globe-americas"></i> Foros</h1>
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card shadow-sm">
