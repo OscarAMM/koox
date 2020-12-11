@@ -19,8 +19,13 @@ class ForumController extends Controller
     }
     public function index()
     {
-        $forum = Forum::where('status', 'Nuevo')->get()->take(5);
-        return view('forum.index', compact('forum'));
+        if(Auth::user()->hasRole('Administrador')){
+            $forum = Forum::where('status', 'Nuevo')->get()->take(5);
+            return view('forum.index', compact('forum'));
+        }else{
+            $forum = Forum::where('status', 'Nuevo')->get()->take(5);
+            return view('forum.public_index', compact('forum'));
+        }
     }
     public function forum($id)
     {
