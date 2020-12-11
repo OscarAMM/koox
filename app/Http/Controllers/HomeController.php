@@ -27,12 +27,12 @@ class HomeController extends Controller
     public function index()
     {
 
-        $profile = Profile::all();
+        $profiles = Profile::all();
         $content = Content::all();
         if(Auth::user()->hasRole('Administrador')){
             return view('home');
         }else{
-            return view('Welcome', compact('profile', 'content'));
+            return view('Welcome', compact('profiles', 'content'));
         }
         
     }
