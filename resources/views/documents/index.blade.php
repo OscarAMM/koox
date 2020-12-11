@@ -34,7 +34,6 @@
 
              <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
-
             <div class="card mt-2">
                 <div class="card-body">
                     <form action="{{route('document_delete', $document->id)}}" method="post">
