@@ -147,8 +147,64 @@
                 <div class="card">
                     <div class="card-body">
 
+
+                 <nav>
+                   
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                   @foreach ($profiles as $row)
+                   @if($row == Arr::first($profiles)) 
+                   <a class="nav-item nav-link active" id="nav-{{$row->id}}-tab" data-toggle="tab" href="#nav-{{$row->id}}" role="tab" aria-controls="nav-{{$row->id}}" aria-selected="true">{{$row->profile_name}}</a>
+                   @else
+
+                      <a class="nav-item nav-link " id="nav-{{$row->id}}-tab" data-toggle="tab" href="#nav-{{$row->id}}" role="tab" aria-controls="nav-{{$row->id}}" aria-selected="false">{{$row->profile_name}}</a>
+                   @endif
+                   @endforeach
+                    </div>
+                  
+               </nav>
+
+                <div class="tab-content" id="nav-tabContent">
+                  @foreach ($profiles as $content)
+                  @if($content == Arr::first($profiles))
+
+                  <div class="tab-pane fade show active" id="nav-{{$content->id}}" role="tabpanel" aria-labelledby="nav-{{$content->id}}">
+                  <p>
+                  {{$content->profile_content}}
+                 </p>
+                  @else
+                    <div class="tab-pane fade" id="nav-{{$content->id}}" role="tabpanel" aria-labelledby="nav-{{$content->id}}">
+                 <p>
+                  {{$content->profile_content}}
+                 </p>
+                @endif
+                <div class="card-footer card-back-color">
+                                    <div class="row">
+                                    @foreach($content->file_profile as $file)
+                                     
+                                    
+
+                                        <div class="col-sm-5 col-md-5 col-lg-5">
+                                            <a href="{{route('file_download', $file->id)}}"
+                                                target="_blank" class="btn  btn-link text-white text-center">
+                                                {{$file->fileName}}</a>
+                                        </div>
+                                        
+                                     @endforeach   
+                                                                               
+                                    </div>
+                        </div>
+                </div>
+                                             
+                  @endforeach
+
+                        
+        
+                </div>
+
+
+
                                
-                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <!--    <ul class="nav nav-tabs" id="myTab" role="tablist">
                         
                             <li class="nav-item" role="presentation">
                                                                
@@ -357,7 +413,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div> 
 
                 </div>
