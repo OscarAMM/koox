@@ -2,21 +2,11 @@
 @section('content')
 @include('modal.welcome_modal')
 <div class="container">
-    <div class="jumbotron shadow-sm" style="background-color:white;">
-        <h1 class="text-center"><i class="fas fa-globe-americas"></i> Foros</h1>
-        <p class="lead text-center text-muted">Se listan todos los foros creados</p>
-        <div class="text-center">
-            <div class="btn-group">
-                @if(Auth::check())
-                <a href="{{route('forum_create')}}" class="btn btn-sm btn-link"><i class="fas fa-plus-circle"
-                        style="color:green;"></i> Crear foros</a>
-                @else
-                <a href="#" class="btn btn-sm btn-link" data-toggle="modal" data-target="#forum_modal"><i
-                        class="fas fa-plus-circle" style="color:green;"></i> Crear foros</a>
-                @endif
-            </div>
-        </div>
+    <div class="d-flex justify-content-left">
+        <img src="{{asset('images/logoSegey.png')}}" alt="logo-segey" class="img-fluid" width="250px"
+            style="margin-bottom:24px; margin-top:24px;">
     </div>
+    <h1 class="text-center"><i class="fas fa-globe-americas" style="color:blue;"></i> Foros</h1>
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card shadow-sm">
