@@ -17,7 +17,7 @@
             <p style="color:#344A40;"><a href="https://www.facebook.com/educacionyucatan" target="_blank"
                     style="color:#344A40;"><i class="fab fa-facebook"></i> Síguenos </a></p>
         </li>
-       
+
     </ul>
 </div>
 <div class="container">
@@ -49,8 +49,9 @@
                     <a class="dropdown-item" href="{{route('forum_index')}}">Foro</a>
                     <a class="dropdown-item" href="{{route('new_ticket')}}">Realiza tu ticket</a>
                     @else
-                    <a class="dropdown-item" href="{{route('forum_public_index')}}" >Foro</a>
-                    <a class="dropdown-item" href="#"  data-toggle="modal" data-target="#welcome_modal">Realiza tu ticket</a>
+                    <a class="dropdown-item" href="{{route('forum_public_index')}}">Foro</a>
+                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#welcome_modal">Realiza tu
+                        ticket</a>
                     @endif
                 </div>
             </li>
@@ -148,278 +149,60 @@
                     <div class="card-body">
 
 
-                 <nav>
-                   
-                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                   @foreach ($profiles as $row)
-                   @if($row == Arr::first($profiles)) 
-                   <a class="nav-item nav-link active" id="nav-{{$row->id}}-tab" data-toggle="tab" href="#nav-{{$row->id}}" role="tab" aria-controls="nav-{{$row->id}}" aria-selected="true">{{$row->profile_name}}</a>
-                   @else
+                        <nav>
 
-                      <a class="nav-item nav-link " id="nav-{{$row->id}}-tab" data-toggle="tab" href="#nav-{{$row->id}}" role="tab" aria-controls="nav-{{$row->id}}" aria-selected="false">{{$row->profile_name}}</a>
-                   @endif
-                   @endforeach
-                    </div>
-                  
-               </nav>
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                @foreach ($profiles as $row)
+                                @if($row == Arr::first($profiles))
+                                <a class="nav-item nav-link active" id="nav-{{$row->id}}-tab" data-toggle="tab"
+                                    href="#nav-{{$row->id}}" role="tab" aria-controls="nav-{{$row->id}}"
+                                    aria-selected="true">{{$row->profile_name}}</a>
+                                @else
 
-                <div class="tab-content" id="nav-tabContent">
-                  @foreach ($profiles as $content)
-                  @if($content == Arr::first($profiles))
+                                <a class="nav-item nav-link " id="nav-{{$row->id}}-tab" data-toggle="tab"
+                                    href="#nav-{{$row->id}}" role="tab" aria-controls="nav-{{$row->id}}"
+                                    aria-selected="false">{{$row->profile_name}}</a>
+                                @endif
+                                @endforeach
+                            </div>
 
-                  <div class="tab-pane fade show active" id="nav-{{$content->id}}" role="tabpanel" aria-labelledby="nav-{{$content->id}}">
-                  <p>
-                  {{$content->profile_content}}
-                 </p>
-                  @else
-                    <div class="tab-pane fade" id="nav-{{$content->id}}" role="tabpanel" aria-labelledby="nav-{{$content->id}}">
-                 <p>
-                  {{$content->profile_content}}
-                 </p>
-                @endif
-                <div class="card-footer card-back-color">
-                                    <div class="row">
-                                    @foreach($content->file_profile as $file)
-                                     
-                                    
+                        </nav>
 
-                                        <div class="col-sm-5 col-md-5 col-lg-5">
-                                            <a href="{{route('file_download', $file->id)}}"
-                                                target="_blank" class="btn  btn-link text-white text-center">
-                                                {{$file->fileName}}</a>
+                        <div class="tab-content" id="nav-tabContent">
+                            @foreach($profiles as $content)
+                            @if($content == Arr::first($profiles))
+
+                            <div class="tab-pane fade show active" id="nav-{{$content->id}}" role="tabpanel"
+                                aria-labelledby="nav-{{$content->id}}">
+                                <p>
+                                    {{$content->profile_content}}
+                                </p>
+                                @else
+                                <div class="tab-pane fade" id="nav-{{$content->id}}" role="tabpanel"
+                                    aria-labelledby="nav-{{$content->id}}">
+                                    <p>
+                                        {{$content->profile_content}}
+                                    </p>
+                                    @endif
+                                    <div class="card-footer card-back-color">
+                                        <div class="row">
+                                            @foreach($content->file_profile as $file)
+                                            <div class="col-sm-5 col-md-5 col-lg-5">
+                                                <a href="{{route('file_download', $file->id)}}" target="_blank"
+                                                    class="btn  btn-link text-white text-center">
+                                                    {{$file->fileName}}</a>
+                                            </div>
+                                            @endforeach
                                         </div>
-                                        
-                                     @endforeach   
-                                                                               
                                     </div>
+                                </div>
+                                @endforeach
+                            </div>
                         </div>
-                </div>
-                                             
-                  @endforeach
-
-                        
-        
-                </div>
-
-
-
-                               
-                    <!--    <ul class="nav nav-tabs" id="myTab" role="tablist">
-                        
-                            <li class="nav-item" role="presentation">
-                                                               
-                                
-                                <a class="nav-link active" id="parent-tab" data-toggle="tab" href="#parent" role="tab"
-                                    aria-controls="parent" aria-selected="true">Soy madre/padre de
-                                    familia/tutor</a>
-
-
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="teacher-tab" data-toggle="tab" href="#teacher" role="tab"
-                                    aria-controls="teacher" aria-selected="false">Soy docente</a>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="principal-tab" data-toggle="tab" href="#principal" role="tab"
-                                    aria-controls="principal" aria-selected="false">Soy director(a)</a>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="supervisor-tab" data-toggle="tab" href="#supervisor" role="tab"
-                                    aria-controls="supervisor" aria-selected="false">Soy
-                                    supervisor(a)</a>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="connection-tab" data-toggle="tab" href="#connection" role="tab"
-                                    aria-controls="connection" aria-selected="false">Soy enlace</a>
-                            </li>
-                        </ul>
-                        <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active border border-secondary" id="parent" role="tabpanel"
-                                aria-labelledby="parent-tab">
-                                <p class="text-justify ml-2">
-                                    Mantienen comunicación con la o él docente de su hija o hijo y trabajan en
-                                    conjunto con las autoridades educativas para promover la colaboración entre las
-                                    y los integrantes de la escuela.
-                                    Así mismo, son fuentes de apoyo tanto en el proceso educativo como en el ámbito
-                                    emocional de su hija o hijo.zxczxczcx
-                                </p>
-                                <div class="card-footer card-back-color">
-                                    <div class="row">
-                                        <div class="col-sm-3 col-md-3 col-lg-3">
-                                            <a href="docs/guides/004 guía madres y padres de familia.pdf"
-                                                target="_blank" class="btn  btn-link text-white text-center">
-                                                Guía
-                                                para
-                                                padres</a>
-                                        </div>
-                                        <div class="col-sm-3 col-md-3 col-lg-3">
-                                            <a href="docs/info/parents/Infografía_padres de familia_libros de texto_09092020.pdf"
-                                                target="_blank" class="btn btn-link text-white text-center">
-                                                Infografía Libros de texto
-                                            </a>
-                                        </div>
-                                        <div class="col-sm-3 col-md-3 col-lg-3">
-                                            <a href="docs/info/parents/Infografía_padres de familia_radio y tv_09092020.pdf"
-                                                target="_blank" class="btn btn-link text-white text-center">Infografía
-                                                Radio y
-                                                TV</a>
-                                        </div>
-                                        <div class="col-sm-3 col-md-3 col-lg-3">
-                                            <a href="docs/info/parents/Infografía_padres de familia_herramientas digitales_09092020.pdf"
-                                                target="_blank" class="btn btn-link text-white text-center">Infografía
-                                                Herramientas
-                                                digitales</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade border border-secondary" id="teacher" role="tabpanel"
-                                aria-labelledby="teacher-tab">
-                                <p class="text-justify ml-2">
-                                    Se encuentran en constante comunicación con estudiantes y padres o madres de
-                                    familia.
-                                    Generan condiciones para que las y los NNA de su grupo tengan la atención
-                                    educativa a distancia y consideran el apoyo de un enlace solidario para
-                                    propiciar redes de colaboración en comunidades donde no se tiene acceso a las
-                                    TIC.
-                                    Realizan procesos de coevaluación con padres y madres de familia para valorar el
-                                    desempeño del estudio a distancia y las áreas de mejora de los NNA.
-
-                                </p>
-                                <div class="card-footer card-back-color">
-                                    <div class="row">
-                                        <div class="col-sm-3 col-md-3 col-lg-3">
-                                            <a href="docs/guides/003 guía docentes.pdf" target="_blank"
-                                                class="btn  btn-link text-white text-center">Guía para docentes</a>
-                                        </div>
-                                        <div class="col-sm-3 col-md-3 col-lg-3">
-                                            <a href="docs/info/teachers/Infografía_docentes_libros de texto_09092020.pdf"
-                                                target="_blank" class="btn btn-link text-white text-center">Infografía
-                                                Libros de
-                                                texto</a>
-                                        </div>
-                                        <div class="col-sm-3 col-md-3 col-lg-3">
-                                            <a href="docs/info/teachers/Infografía_docentes_radio y tv_09092020.pdf"
-                                                target="_blank" class="btn btn-link text-white text-center">Infografía
-                                                Radio y
-                                                TV</a>
-                                        </div>
-                                        <div class="col-sm-3 col-md-3 col-lg-3">
-                                            <a href="docs/info/teachers/Infografía_docentes_herramientas digitales_09092020.pdf"
-                                                target="_blank" class="btn btn-link text-white text-center">Infografía
-                                                Herramientas
-                                                digitales</a>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade border border-secondary" id="principal" role="tabpanel"
-                                aria-labelledby="principal-tab">
-                                <p class="text-justify ml-2">
-                                    Siempre en contacto con las y los docentes de su centro de trabajo, el personal
-                                    de apoyo y las madres y padres, además de integrar a las o los enlaces
-                                    solidarios.
-                                    Dan autonomía al área de docencia para establecer las estrategias pedagógicas de
-                                    acuerdo con las características de sus estudiantes y apoyan en caso de alguna
-                                    dificultad.
-                                    .</p>
-                                <div class="card-footer card-back-color">
-                                    <div class="row">
-                                        <div class="col-sm-3 col-md-3 col-lg-3">
-                                            <a href="docs/guides/002 guía directoras y directores.pdf" target="_blank"
-                                                class="btn  btn-link text-white text-center">Guía
-                                                para directores(as)</a>
-                                        </div>
-                                        <div class="col-sm-3 col-md-3 col-lg-3">
-                                            <a href="docs/info/principal/Infografía_directores_libros de texto_09092020.pdf"
-                                                target="_blank" class="btn btn-link text-white text-center">Infografía
-                                                Libros de
-                                                texto</a>
-                                        </div>
-                                        <div class="col-sm-3 col-md-3 col-lg-3">
-                                            <a href="docs/info/principal/Infografía_directores_radio y tv_09092020.pdf"
-                                                target="_blank" class="btn btn-link text-white text-center">Infografía
-                                                Radio y
-                                                TV</a>
-                                        </div>
-                                        <div class="col-sm-3 col-md-3 col-lg-3">
-                                            <a href="docs/info/principal/Infografía_directores_herramientas digitales_09092020.pdf"
-                                                target="_blank" class="btn btn-link text-white text-center">Infografía
-                                                Herramientas
-                                                digitales</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade border border-secondary" id="supervisor" role="tabpanel"
-                                aria-labelledby="supervisor-tab">
-                                <p class="text-justify ml-2">
-                                    Están en comunicación con directoras y directores, así como docentes de la zona
-                                    escolar.
-                                    Integran a las o los enlaces solidarios a dicha zona.
-                                    Brindan autonomía a la dirección para establecer las estrategias pedagógicas
-                                    adecuadas al contexto y acompañan al área de dirección o docencia al presentar
-                                    dificultades.
-
-                                </p>
-                                <div class="card-footer card-back-color">
-                                    <div class="row">
-
-                                        <div class="col-sm-3 col-md-3 col-lg-3">
-                                            <a href="docs/guides/001 guía supervisoras y supervisores.pdf"
-                                                target="_blank" class="btn  btn-link text-white text-center">Guía
-                                                para supervisores(as)</a>
-                                        </div>
-                                        <div class="col-sm-3 col-md-3 col-lg-3">
-                                            <a href="docs/info/supervisor/Infografía_supervisores_libros de texto_09092020.pdf"
-                                                target="_blank" class="btn btn-link text-white text-center">Infografía
-                                                Libros de
-                                                texto</a>
-                                        </div>
-                                        <div class="col-sm-3 col-md-3 col-lg-3">
-                                            <a href="docs/info/supervisor/Infografía_supervisores_radio y tv_09092020.pdf"
-                                                target="_blank" class="btn btn-link text-white text-center">Infografía
-                                                Radio y
-                                                TV</a>
-                                        </div>
-                                        <div class="col-sm-3 col-md-3 col-lg-3">
-                                            <a href="docs/info/supervisor/Infografía_supervisores_herramientas digitales_09092020.pdf"
-                                                target="_blank" class="btn btn-link text-white text-center">Infografía
-                                                Herramientas
-                                                digitales</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade border border-secondary" id="connection" role="tabpanel"
-                                aria-labelledby="connection-tab">
-                                <p class="text-justify ml-2">
-                                    Funciona como vínculo de comunicación y apoyo educativo entre NNA de comunidades
-                                    alejadas y docentes de educación básica, además que proviene de la misma
-                                    comunidad y posee recursos como las TIC.
-                                    Está presente en 3 momentos del proceso educativo: Planeación, Duración del
-                                    proceso y Evaluación.
-
-                                </p>
-                                <div class="card-footer card-back-color">
-                                    <div class="row">
-                                        <div class="col-sm-12 col-md-12 col-lg-12 text-center">
-                                            <a href="docs/info/connection/Infografía_enlaces_libros de texto_09092020.pdf"
-                                                target="_blank" class="btn btn-link text-white text-center">Infografía
-                                                Libros de
-                                                texto</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-                    </div> 
-
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 @endsection
