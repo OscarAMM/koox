@@ -80,4 +80,18 @@ class UserController extends Controller
         $profiles = $user->getRoleNames();
         return view('auth.profile', compact('user', 'profiles'));
     }
+    public function user_edit_form($id){
+        $user = User::findOrFail($id);
+        return view('auth.public_edit', compact('user'));
+    }
+    public function user_public_edit(Request $request, $id){
+        $user = User::findOrFail($id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        if($request->password){
+            $user->password = bcrypt($request->password);
+        }
+        $user->update();
+        return back()->with('success', 'El perfil se ha actualizado con éxito.');
+    }
 }

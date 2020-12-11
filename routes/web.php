@@ -33,13 +33,15 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 //usuarios
-Route::get('/usuarios/index', 'UserController@index')->name('user_index');
-Route::get('/usuarios/create', 'UserController@create')->name('user_create');
-Route::post('/usuarios/store', 'UserController@store')->name('user_store');
-Route::get('/usuarios/edit/{id}', 'UserController@edit')->name('user_edit');
-Route::put('/usuarios/update/{id}', 'UserController@update')->name('user_update');
-Route::post('/usuarios/status/{id}', 'UserController@user_status')->name('user_status');
-Route::get('/usuario/perfil/{id}', 'UserController@user_profile')->name('user_profile');
+Route::get('/user/index', 'UserController@index')->name('user_index');
+Route::get('/user/create', 'UserController@create')->name('user_create');
+Route::post('/user/store', 'UserController@store')->name('user_store');
+Route::get('/user/edit/{id}', 'UserController@edit')->name('user_edit');
+Route::put('/user/update/{id}', 'UserController@update')->name('user_update');
+Route::post('/user/status/{id}', 'UserController@user_status')->name('user_status');
+Route::get('/user/perfil/{id}', 'UserController@user_profile')->name('user_profile');
+Route::get('/user/public_edit/{id}', 'UserController@user_edit_form')->name('user_public_edit');
+Route::put('/user/public_update/{id}', 'UserController@user_public_edit')->name('user_public_update');
 
 //UploadDocuments
 Route::get('/documents/index', 'DocumentController@index')->name('document_index');

@@ -1,63 +1,91 @@
 @extends('layouts.app')
 @section('content')
 <div class="container-fluid">
-    <div class="jumbotron text-center my-3 text-white shadow-sm" style="background-color: #F18B39 ">
+    <div class="jumbotron text-center my-3 text-dark shadow-sm">
+        <img src="{{asset('images/logo_144.png')}}" alt="" width="64" class="img-fluid">
         <h1 class="font-weight-bold">¡Bienvenido a Ko'ox Tsikbal {{Auth::user()->name}}! </h1>
         <p class="lead">Aquí se podrá realizar las modificaciones del sistema, así como las consultas que se tengan por
             los usuarios.</p>
-            <a href="{{route('welcome')}}" class="btn btn-sm btn-primary">Regresar a la vista principal</a>
+        <a href="{{route('welcome')}}" class="btn btn-sm btn-primary">Regresar a la vista principal</a>
     </div>
-    <div class="row my-3">
-        <!-- Team item -->
-        <div class="col-xl-3 col-sm-6 mb-5 text-center">
-            <div class="bg-white rounded shadow-sm py-5 px-4"><i class="fas fa-comments fa-3x"></i>
-                <h5 class="mb-0">Foro</h5><span class="small text-uppercase text-muted">Módulo dedicado para supervisar
-                    los foros creados.</span>
-                    <p><a href="{{route('forum_index')}}" class="btn btn-sm btn-primary">Acceder </a></p>
+    <div class="row">
+        <div class="col-md-3 col-lg-3 mb-4">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h5 class="card-title" style="color:red;"> <i class="fas fa-comments"></i> Foro</h5>
+                    <p class="card-text">
+                        Módulo dedicado para la supervisión de los foros creados.
+                    </p>
+                    <a href="{{route('forum_index')}}" class="btn btn-outline-success btn-sm">Acceder</a>
+                </div>
             </div>
         </div>
-        <div class="col-xl-3 col-sm-6 mb-5 text-center">
-            <div class="bg-white rounded shadow-sm py-5 px-4" ><i class="fas fa-clone fa-3x" ></i>
-                <h5 class="mb-0">Principal</h5><span class="small text-uppercase text-muted">
-                    Módulo dedicado al contenido de la página principal.</span>
-                    <p><a href="{{route('content_index')}}" class="btn btn-sm btn-primary">Acceder </a></p>
+        <div class="col-md-3 col-lg-3 mb-4">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h5 class="card-title" style="color:green;"><i class="fas fa-clone"></i> Principal</h5>
+                    <p class="card-text">
+                        Módulo dedicado al contenido de la página principal.
+                    </p>
+                    <a href="{{route('content_index')}}" class="btn btn-outline-success btn-sm">Acceder</a>
+                </div>
             </div>
         </div>
-        <div class="col-xl-3 col-sm-6 mb-5 text-center">
-            <div class="bg-white rounded shadow-sm py-5 px-4"><i class="fas fa-file-upload fa-3x" ></i>
-                <h5 class="mb-0">Archivos</h5><span class="small text-uppercase text-muted">
-                    Módulo dedicado al manejo de la carga de archivos.</span>
-                    <p><a href="{{route('document_index')}}" class="btn btn-sm btn-primary">Acceder </a></p>
+        <div class="col-md-3 col-lg-3 mb-4">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h5 class="card-title" style="color:blue;"><i class="fas fa-file-upload"></i> Archivos</h5>
+                    <p class="card-text">
+                        Módulo dedicado al manejo de la carga de archivos.
+                    </p>
+                    <a href="{{route('document_index')}}" class="btn btn-outline-success btn-sm">Acceder</a>
+                </div>
             </div>
         </div>
-        <div class="col-xl-3 col-sm-6 mb-5 text-center">
-            <div class="bg-white rounded shadow-sm py-5 px-4"><i class="fas fa-users fa-3x"></i>
-                <h5 class="mb-0">Usuarios</h5><span class="small text-uppercase text-muted">Módulo dedicado al manejo de
-                    los usuarios</span>
-                    <p><a href="{{route('user_index')}}" class="btn btn-sm btn-primary">Acceder </a></p>
+        <div class="col-md-3 col-lg-3 mb-4">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h5 class="card-title" style="color:skyblue;"><i class="fas fa-users"></i> Usuarios</h5>
+                    <p class="card-text">
+                        Módulo dedicado al manejo de usuarios con acceso al sistema y sus funciones.
+                    </p>
+                    <a href="{{route('user_index')}}" class="btn btn-outline-success btn-sm">Acceder</a>
+                </div>
             </div>
         </div>
-        <div class="col-xl-3 col-sm-6 mb-5 text-center">
-            <div class="bg-white rounded shadow-sm py-5 px-4"><i class="fas fa-question-circle fa-3x"></i>
-                <h5 class="mb-0">
-                    FAQ</h5><span class="small text-uppercase text-muted">Módulo dedicado para la sección de preguntas
-                    frecuentes.</span>
-                    <p><a href="{{route('questions_index')}}" class="btn btn-sm btn-primary">Acceder </a></p>
-                
+    </div>
+    <div class="row">
+        <div class="col-md-3 col-lg-3 mb-4">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h5 class="card-title" style="color: orange;"> <i class="fas fa-question-circle"></i> FAQ</h5>
+                    <p class="card-text">
+                        Módulo dedicado a las preguntas más frecuntes 
+                    </p>
+                    <a href="{{route('questions_index')}}" class="btn btn-outline-success btn-sm">Acceder</a>
+                </div> 
             </div>
         </div>
-        <div class="col-xl-3 col-sm-6 mb-5 text-center">
-            <div class="bg-white rounded shadow-sm py-5 px-4"><i class="fas fa-file fa-3x" ></i>
-                <h5 class="mb-0">Tickets</h5><span class="small text-uppercase text-muted">Módulo dedicado para la
-                    sección de ticktes creados por usuarios</span>
-                    <p><a href="{{route('list_tickets')}}" class="btn btn-sm btn-primary">Acceder</a></p>
+        <div class="col-md-3 col-lg-3 mb-4">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h5 class="card-title" style="color: darkred;"><i class="fas fa-ticket-alt"></i> Ticktes</h5>
+                    <p class="card-text">
+                        Módulo dedicado al contenido de la página principal.
+                    </p>
+                    <a href="{{route('list_tickets')}}" class="btn btn-outline-success btn-sm">Acceder</a>
+                </div>
             </div>
         </div>
-        <div class="col-xl-3 col-sm-6 mb-5 text-center">
-            <div class="bg-white rounded shadow-sm py-5 px-4"><i class="fas fa-user-tie fa-3x"></i>
-                <h5 class="mb-0">Perfiles</h5><span class="small text-uppercase text-muted">Módulo dedicado para la
-                    sección de perfiles y archivos relacionados </span>
-                    <p><a href="{{route('profiles_index')}}" class="btn btn-sm btn-primary">Acceder</a></p>
+        <div class="col-md-3 col-lg-3 mb-4">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h5 class="card-title" style="color:purple;"><i class="fas fa-user-tie"></i> Perfiles</h5>
+                    <p class="card-text">
+                        Módulo dedicado al contenido de la página principal.
+                    </p>
+                    <a href="{{route('profiles_index')}}" class="btn btn-outline-success btn-sm">Acceder</a>
+                </div>
             </div>
         </div>
     </div>
