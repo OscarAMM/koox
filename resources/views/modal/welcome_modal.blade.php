@@ -13,7 +13,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-sm btn-primary">Iniciar sesión</button>
+                <a href="{{route('login')}}" class="btn btn-sm btn-primary">Iniciar sesión</a>
                 <small>¿No tienes una cuenta? <a href="{{route('register')}}"> Regístrate</a></small>
             </div>
         </div>
