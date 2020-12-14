@@ -40,10 +40,15 @@
                             <div id="collapse-{{$row->id}}" class="collapse" aria-labelledby="headingOne"
                                 data-parent="#accordion">
                                 <div class="card-body">
-                                    <p class="text-muted">{{$row->answer}}</p>
-                                    <ul class="list-group-horizontal">
+
+                                    <ul class="list-group-flush">
+                                        <li class="list-group-item">
+                                            <p class="text-muted">{{$row->answer}}</p>
+                                        </li>
                                         @foreach($row->files as $file)
-                                        <li class="list-group-item"><a href="{{route('faq_download_file', $file->id)}}" style="color:red;"><i class="fas fa-file-pdf"></i> {{$file->name}}</a></li>
+                                        <li class="list-group-item"><a href="{{route('faq_download_file', $file->id)}}"
+                                                style="color:red;"><i class="fas fa-file-pdf"></i> {{$file->name}}</a>
+                                        </li>
                                         @endforeach
                                     </ul>
                                 </div>
