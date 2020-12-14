@@ -89,13 +89,14 @@ Route::get('/tickets/view/data/{id}', 'TicketsController@view_options')->name('d
 //Preguntas y respuestas
 Auth::routes();
 //preguntas y respuestas
-Route::get('/questions/index', 'QuestionsController@index')->name('questions_index');
-Route::get('/questions/user_index', 'QuestionsController@user_index')->name('questions_user_index');
-Route::get('/questions/create', 'QuestionsController@create')->name('questions_create');
-Route::post('/questions/store', 'QuestionsController@store')->name('questions_store');
-Route::get('/questions/edit/{id}', 'QuestionsController@edit')->name('questions_edit');
-Route::put('/questions/update/{id}', 'QuestionsController@update')->name('questions_update');
-Route::put('/questions/status/{id}', 'QuestionsController@question_status')->name('questions_status');
+Route::get('/questions/index', 'FaqController@index')->name('questions_index');
+Route::get('/questions/user_index', 'FaqController@user_index')->name('questions_user_index');
+Route::get('/questions/create', 'FaqController@create')->name('questions_create');
+Route::post('/questions/store', 'FaqController@store')->name('questions_store');
+Route::get('/questions/edit/{id}', 'FaqController@edit')->name('questions_edit');
+Route::put('/questions/update/{id}', 'FaqController@update')->name('questions_update');
+Route::put('/questions/status/{id}', 'FaqController@question_status')->name('questions_status');
+Route::get('/questions/download-file/{id}', 'FaqController@download_faq_file')->name('faq_download_file');
 
 //Perfiles
 Route::get('/profiles/create', 'ProfileController@create')->name('profiles_create');
