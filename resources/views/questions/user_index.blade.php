@@ -6,15 +6,17 @@
             style="margin-bottom:24px; margin-top:24px;">
     </div>
     <div class="py-3 text-center">
-        <h2 class="font-weight-bold">Preguntas Frecuentes</h2>
+
+        <h2 class="font-weight-bold" style="color:#F18B39"><i class="fas fa-question-circle"></i> Preguntas Frecuentes
+        </h2>
         <p class="lead">Esta sección contiene las dudas más frecuentes. Si tiene una duda que no se encuentra en este
             sitio, por favor realice un <a href="{{route('new_ticket')}}">Ticket</a> con su duda y en la brevedad
             posible se le dará respuesta.
         </p>
         <div class="text-center">
             <div class="btn-group">
-                <a href="{{route('welcome')}}" class="btn btn-sm btn-link"><i class="fas fa-arrow-circle-left"
-                        style="color:black;"></i> Regresar a página de inicio</a>
+                <a href="{{route('welcome')}}" class="btn btn-sm btn-primary"><i class="fas fa-arrow-circle-left"></i>
+                    Regresar a página de inicio</a>
             </div>
         </div>
     </div>
@@ -38,8 +40,14 @@
                             <div id="collapse-{{$row->id}}" class="collapse" aria-labelledby="headingOne"
                                 data-parent="#accordion">
                                 <div class="card-body">
-                                    {{$row->answer}}
+                                    <p class="text-muted">{{$row->answer}}</p>
+                                    <ul class="list-group-horizontal">
+                                        @foreach($row->files as $file)
+                                        <li class="list-group-item"><a href="{{route('faq_download_file', $file->id)}}" style="color:red;"><i class="fas fa-file-pdf"></i> {{$file->name}}</a></li>
+                                        @endforeach
+                                    </ul>
                                 </div>
+
                             </div>
                         </div>
                     </div>
