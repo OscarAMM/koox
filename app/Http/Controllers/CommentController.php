@@ -31,7 +31,7 @@ class CommentController extends Controller {
             $fileName = $file->getClientOriginalName();
             $file_path = $file->getPathName();
             //File store at folder specified ('files')
-            $path = $file->storeAs('files', $fileName);
+            $path = $file->storeAs('files/forum/', $fileName);
             //File's path and name to save into db
             $file_model = new File();
             $file_model->name = $fileName;
