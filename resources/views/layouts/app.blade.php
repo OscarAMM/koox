@@ -22,7 +22,7 @@
 </head>
 <body class="d-flex flex-column vh-100" style="background-color: #ffffff">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-dark bg-secondary shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{route('home')}}">
                   <img src="{{asset('images/logo.png')}}" alt="">  {{ config('app.name', 'Koox') }}
@@ -59,9 +59,9 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                       <i class="fas fa-sign-out-alt"></i> {{ __('Cerrar sesión') }}
                                     </a>
-                                    <a href="{{route('user_profile', Auth::user()->id)}}" class="dropdown-item">Perfil</a>
+                                    <a href="{{route('user_profile', Auth::user()->id)}}" class="dropdown-item"><i class="fas fa-id-badge"></i> Perfil</a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
