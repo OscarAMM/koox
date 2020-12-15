@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content')
 <div class="container-fluid">
-    <div class="jumbotron text-center my-3 text-dark shadow-sm">
-        <img src="{{asset('images/logo_144.png')}}" alt="" width="64" class="img-fluid">
+    <div class=" text-center my-3 text-dark bg-white">
+        <img src="{{asset('images/logo_144.png')}}" alt="tsikbal_logo" width="64" class="img-fluid">
         <h1 class="font-weight-bold">¡Bienvenido a Ko'ox Tsikbal {{Auth::user()->name}}! </h1>
         <p class="lead">Aquí se podrá realizar las modificaciones del sistema, así como las consultas que se tengan por
             los usuarios.</p>
@@ -60,10 +60,10 @@
                 <div class="card-body">
                     <h5 class="card-title" style="color: orange;"> <i class="fas fa-question-circle"></i> FAQ</h5>
                     <p class="card-text">
-                        Módulo dedicado a las preguntas más frecuntes 
+                        Módulo dedicado a las preguntas más frecuntes
                     </p>
                     <a href="{{route('questions_index')}}" class="btn btn-outline-success btn-sm">Acceder</a>
-                </div> 
+                </div>
             </div>
         </div>
         <div class="col-md-3 col-lg-3 mb-4">
