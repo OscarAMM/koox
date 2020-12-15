@@ -1,19 +1,18 @@
-@extends('layouts.app')
+@extends('layouts.guest')
 @section('content')
-<div class="container">
+<div class="container mt-2">
     <div class="row justify-content-center">
         <div class="class col-md-6">
             {{--Aqui comienza el div inicial donde ira el form para hacer un neuvo
                 ticket--}}
-
             <div class="card shadow-sm">
                 <div class="card-body">
+                    <div class="form-icon text-center">
+                        <h4><i class="fas fa-ticket-alt"></i> Ticket</h4>
+                    </div>
                     {{--Aqui abrimos el form--}}
                     <form action="{{ route('tickets_store') }}" method="POST">
                         @csrf
-                        <div class="form-icon text-center">
-                            <span><i class="fas fa-question-circle fa-3x"></i></span>
-                        </div>
                         <div class="form-group">
                             <label for="ticket_own">Nombre</label>
                             <input type="text" name="name" id="name" class="form-control"

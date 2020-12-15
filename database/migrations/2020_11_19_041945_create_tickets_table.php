@@ -19,7 +19,7 @@ class CreateTicketsTable extends Migration
             $table->string('issue');
             $table->text('description');
             $table->string('status');
-            $table->string('unique_char');
+            $table->string('unique_char')->nullable();
             $table->foreignId('user_id')->constrained('users');
             $table->timestamps();
         });
