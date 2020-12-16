@@ -24,6 +24,7 @@
         <div class="col-lg-12">
             <div class="card shadow-sm">
                 <div class="card-body">
+                    @if(count($question) > 0)
                     @foreach($question as $row)
                     <div id="accordion">
                         <div class="card">
@@ -40,7 +41,6 @@
                             <div id="collapse-{{$row->id}}" class="collapse" aria-labelledby="headingOne"
                                 data-parent="#accordion">
                                 <div class="card-body">
-
                                     <ul class="list-group-flush">
                                         <li class="list-group-item">
                                             <p class="text-muted">{{$row->answer}}</p>
@@ -51,12 +51,16 @@
                                         </li>
                                         @endforeach
                                     </ul>
+
                                 </div>
 
                             </div>
                         </div>
                     </div>
                     @endforeach
+                    @else
+                    <h5 class="font-weight-bold text-center">No se han agregado preguntas frecuentes. <i class="fas fa-search"></i></h5>
+                    @endif
                 </div>
             </div>
         </div>
