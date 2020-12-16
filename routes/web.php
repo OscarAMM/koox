@@ -80,7 +80,7 @@ Route::get('/tickets/edit/{id}', 'TicketsController@edit')->name('tickets_edit')
 Route::put('/tickets/update/{id}', 'TicketsController@update')->name('tickets_update');
 Route::get('/tickets/status/{id}', 'TicketsController@question_status')->name('tickets_status');
 Route::put('/tickets/status/cancel/{id}', 'TicketsController@cancel')->name('tickets_cancel');
-Route::put('/tickets/user_message_ok', 'TicketsController@view_message')->name('tickets_message');
+Route::get('/tickets/user_message_ok', 'TicketsController@view_message')->name('tickets_message');
 //Content routes
 Route::get('/main-content/index', 'ContentController@index')->name('content_index');
 Route::get('/main-content/create', 'ContentController@create')->name('content_create');

@@ -46,7 +46,7 @@ class TicketsController extends Controller
         if(Auth::user()->hasRole('Administrador')){
             return redirect()->route('list_tickets');
         }else{
-            return rediect()->route('tickets_message');
+            return redirect()->route('tickets_message');
         }
         
     }
