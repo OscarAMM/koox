@@ -43,7 +43,12 @@ class TicketsController extends Controller
         $ticket->status = $request->status;
         $ticket->status = "Activado";
         $ticket->save();
-        return redirect()->route('list_tickets');
+        if(Auth::user()->hasRole('Administrador')){
+            return redirect()->route('list_tickets');
+        }else{
+            return rediect()->route('tickets_message');
+        }
+        
     }
     public function edit($id)
     {
@@ -93,8 +98,9 @@ class TicketsController extends Controller
         $ticket->update();
         return redirect()->route('list_tickets');
        }
-
-
+    }
+    public function view_message(){
+        return view('tickets.message');
     }
 
 }
